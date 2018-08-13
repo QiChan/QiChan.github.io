@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -89,7 +89,9 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fu63bazdbjj20lk0jon1a.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fu63bax1ovj20j60htgo8.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fu642vp7iwj20j30523yj.jpg">
-<meta property="og:updated_time" content="2018-08-11T15:17:28.824Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fu70o6fdfzj20bi08h0sy.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fu715dls3zj20vr0dxaam.jpg">
+<meta property="og:updated_time" content="2018-08-12T09:10:02.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="markdown usage">
 <meta name="twitter:description" content="pic&amp;amp;link  separator  codeBlock用三个`把代码块包起来即可 123456789string Timestamp::toString() const&amp;#123;    char buf[32] = &amp;#123; 0 &amp;#125;;    int64_t seconds = microSecondsSinceEpoch_ / kMicroSecondsPerSeco">
@@ -101,7 +103,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -190,6 +192,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -331,6 +343,13 @@
 <hr>
 <h5 id="codeBlock"><a href="#codeBlock" class="headerlink" title="codeBlock"></a>codeBlock</h5><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu642vp7iwj20j30523yj.jpg" alt=""><br>用三个`把代码块包起来即可</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">string Timestamp::toString() const</span><br><span class="line">&#123;</span><br><span class="line">    char buf[32] = &#123; 0 &#125;;</span><br><span class="line">    int64_t seconds = microSecondsSinceEpoch_ / kMicroSecondsPerSecond;</span><br><span class="line">    int64_t microseconds = microSecondsSinceEpoch_ % kMicroSecondsPerSecond;</span><br><span class="line">    snprintf(buf, sizeof(buf)-1, &quot;%ld.%06ld&quot;, seconds, microseconds);</span><br><span class="line">	// &apos;-1&apos; is leave a byte for the terminating null byte.</span><br><span class="line">    return buf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="indent"><a href="#indent" class="headerlink" title="indent"></a>indent</h5><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu70o6fdfzj20bi08h0sy.jpg" alt=""><br>tip: 一般用两个&amp;emsp;作为首行缩进</p>
+<hr>
+<h4 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h4><p>用反斜杠’\’进行转义</p>
+<hr>
+<h4 id="常用转义字符"><a href="#常用转义字符" class="headerlink" title="常用转义字符"></a>常用转义字符</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu715dls3zj20vr0dxaam.jpg" alt=""></p>
+<hr>
 
       
     </div>
@@ -444,7 +463,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -455,7 +474,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -490,7 +509,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#pic-amp-link"><span class="nav-number">1.</span> <span class="nav-text">pic&amp;link</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#separator"><span class="nav-number">2.</span> <span class="nav-text">separator</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#codeBlock"><span class="nav-number">3.</span> <span class="nav-text">codeBlock</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#pic-amp-link"><span class="nav-number">1.</span> <span class="nav-text">pic&amp;link</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#separator"><span class="nav-number">2.</span> <span class="nav-text">separator</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#codeBlock"><span class="nav-number">3.</span> <span class="nav-text">codeBlock</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#indent"><span class="nav-number">4.</span> <span class="nav-text">indent</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转义"><span class="nav-number"></span> <span class="nav-text">转义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用转义字符"><span class="nav-number"></span> <span class="nav-text">常用转义字符</span></a></div>
             
 
           </div>
@@ -528,7 +547,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -575,9 +594,14 @@
   
 
 
+  
 
 
 
+
+
+  
+  
 
 
 
@@ -613,6 +637,21 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
   
 
 
