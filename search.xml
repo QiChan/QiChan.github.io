@@ -1,75 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[class template and its instantiation]]></title>
-    <url>%2F2018%2F08%2F12%2FC%2B%2B3%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &lt;iostream&gt;using namespace std;template&lt; class T &gt;class array // define class template&#123;public: array( int ); T &amp; operator[]( int ); const T &amp; operator[] ( int )const; int getlen() const &#123; return length; &#125; ~array();private: array()&#123;&#125;; int length; T * num;&#125;;template &lt; class T &gt;array&lt; T &gt;::array( int n )// define member function outside class&#123; num = new T[n]; length = n;&#125;template &lt; class T &gt;array&lt; T &gt;::~array()&#123; delete[] num;&#125;template&lt; class T &gt;T &amp; array&lt; T &gt; ::operator[] ( int i )&#123; if( i &lt; 0 || i &gt;= length ) throw string( &quot;out of bounds&quot; ); return num[i];&#125;template&lt; class T &gt;const T &amp; array&lt; T &gt; ::operator[] (int i) const&#123; if( i &lt; 0 || i &gt;= length) throw string( &quot;out of bounds&quot; ); return num[i];&#125;template&lt; class T &gt;ostream &amp; operator&lt;&lt;( ostream &amp; out, const array &lt;T&gt; &amp; A )&#123; for(int i=0; i &lt; A.getlen(); i++) out&lt;&lt; A[i] &lt;&lt; &quot; &quot;; return out;&#125;int main()&#123; array&lt; int &gt; A(10); // the instantiation. for(int i = 0; i &lt; 10; i++) &#123; A[i] = 2*i; &#125; cout&lt;&lt;A&lt;&lt;endl; return 0;&#125;]]></content>
+    <title><![CDATA[common_type]]></title>
+    <url>%2F2018%2F08%2F13%2FC%2B%2B4%2F</url>
+    <content type="text"><![CDATA[在Types list中获取一个能共同转换成的目标type。这个共同type会被aliased为成员 common_type::type。 模板参数Types&emsp;&emsp;types列表，其中每一个type都是完整的类型或void(可能是cv-qualified类型)。 c-v qualified 成员 成员 定义 type Types中所有type都能转化成共同目标type 代码示例12345678910111213141516171819202122232425#include &lt;iostream&gt;#include &lt;type_traits&gt;struct Base&#123;&#125;;struct Derived : Base &#123;&#125;;int main() &#123; typedef std::common_type&lt;char,short,int&gt;::type A; // int typedef std::common_type&lt;float,double&gt;::type B; // double typedef std::common_type&lt;Derived,Base&gt;::type C; // Base typedef std::common_type&lt;Derived*,Base*&gt;::type D; // Base* // std::common_type&lt;type1, type2&gt; 使模板类对应的类实例化 typedef std::common_type&lt;const int,volatile int&gt;::type E; // int std::cout &lt;&lt; std::boolalpha; std::cout &lt;&lt; &quot;typedefs of int:&quot; &lt;&lt; std::endl; std::cout &lt;&lt; &quot;A: &quot; &lt;&lt; std::is_same&lt;int,A&gt;::value &lt;&lt; std::endl; std::cout &lt;&lt; &quot;B: &quot; &lt;&lt; std::is_same&lt;int,B&gt;::value &lt;&lt; std::endl; std::cout &lt;&lt; &quot;C: &quot; &lt;&lt; std::is_same&lt;int,C&gt;::value &lt;&lt; std::endl; std::cout &lt;&lt; &quot;D: &quot; &lt;&lt; std::is_same&lt;int,D&gt;::value &lt;&lt; std::endl; std::cout &lt;&lt; &quot;E: &quot; &lt;&lt; std::is_same&lt;int,E&gt;::value &lt;&lt; std::endl; return 0;&#125; std::chrono::common_type(duration) (括号中的duration代表这个模板实例化时要传递的参数类型是duration)这是一个针对std::chrono::duration的std::common_type的specialization。它根据两个std::chrono::duration定义了一个最精确的std::chrono::duration类型的变量。它默认返回一个由std::common_type&lt;Rep1,Rep2&gt;为duration第一个模板参数，Period1和Period2的最大公约数为第二个模板参数生成的std:chrono::duration的obj，。 模板对应的类的成员 member type 定义 type 最准确的common duration std::chrono::common_type(time_point)这是一个针对std::chrono::time_point的std::common_type的specialization。它定义了两个std::chrono::time_point的common type，通过利用相同的clock以及两个duration的std::chrono::common_type(duration) 模板对应的类的成员 mber type 定义 type time_point的common_type]]></content>
       <categories>
         <category>C++</category>
       </categories>
   </entry>
   <entry>
     <title><![CDATA[the usage of 'to which']]></title>
-    <url>%2F2018%2F08%2F12%2FEnglish1%2F</url>
+    <url>%2F2018%2F08%2F13%2FEnglish1%2F</url>
     <content type="text"><![CDATA[Obtains the common type for the types in the Types list to which all of them can be converted. || (means equivalent)obtains the commoi type for the types in the Types list which all of them can be converted to.]]></content>
       <categories>
         <category>English Learning</category>
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[chrono]]></title>
+    <url>%2F2018%2F08%2F13%2FC%2B%2B1%2F</url>
+    <content type="text"><![CDATA[chrono 是一个头文件的名称，也是namespace std 的一个 sub-namespace：所有包含在头文件内的元素都不是直接定义在namespace std中的(其他大部分standard library也是如此)，而是定义在namespace std::chrono内。 在头文件 中的元素用于处理时间。主要通过三个元素：1.Duration它用于测量时间跨度 2.Time points对一个确定时间点的引用 3.Clocks一个框架使一个 time point 与现实物理时间关联起来 chrono中的所有元素 std::chrono::time_point一个 std::chrono::time_point object代表一个相对于clock’s epoch的时间点。 template parametersClock&emsp;&emsp;chrono中代表clock的元素：std::chrono::system_clock, std::chrono::steady_clock, std::chrono::high_resolution_clock,或者自定义的clock。 Duration&emsp;&emsp;std::chrono::duration类型 std::chrono::duration一个 std::chrono::duration object通过一个 count 和一个 period 代表一个时间跨度。 template parametersRep&emsp;&emsp;代表上述的一个count Period&emsp;&emsp;一个std::ratio类型，代表有多少秒tip: 所以 (时间跨度) = (count * std::ratio的obj代表的秒数) std::ratio这个template用来实例化一个type用来表示一个由分子和分母组成的有理数。分子和分母都属于类型 ‘intmat_t’, intmat_t 是范围最大的 signed integer type。 模板参数N分子一个能用 intmat_t 类型表示的绝对值 D分母一个能用 intmax_t 类型表示的绝对值，但不能等于0 Member constants(此模板生成的类的值为常数的成员） member constexpr 描述 num 分子 den 分母 tip: 被声明为constexpr的变量被默认为const，以及必须被constant expressions初始化。 Member types(此模板生成的类的成员变量) member type 定义 描述 type ratio&lt;num,den&gt; 等效的std::ratio类型但有着同时约掉了最大公约数的N:D 模板实例化以下是存在的已预先定义了的std::ratio的标准实例化：&lt;img src=”http://ww1.sinaimg.cn/large/be778adagy1fu94rmk5blj20dj0h0jsk.jpg&quot;/ align=”left”&gt;]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[class template and its instantiation]]></title>
+    <url>%2F2018%2F08%2F13%2FC%2B%2B3%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &lt;iostream&gt;using namespace std;template&lt; class T &gt;class array // define class template&#123;public: array( int ); T &amp; operator[]( int ); const T &amp; operator[] ( int )const; int getlen() const &#123; return length; &#125; ~array();private: array()&#123;&#125;; int length; T * num;&#125;;template &lt; class T &gt;array&lt; T &gt;::array( int n )// define member function outside class&#123; num = new T[n]; length = n;&#125;template &lt; class T &gt;array&lt; T &gt;::~array()&#123; delete[] num;&#125;template&lt; class T &gt;T &amp; array&lt; T &gt; ::operator[] ( int i )&#123; if( i &lt; 0 || i &gt;= length ) throw string( &quot;out of bounds&quot; ); return num[i];&#125;template&lt; class T &gt;const T &amp; array&lt; T &gt; ::operator[] (int i) const&#123; if( i &lt; 0 || i &gt;= length) throw string( &quot;out of bounds&quot; ); return num[i];&#125;template&lt; class T &gt;ostream &amp; operator&lt;&lt;( ostream &amp; out, const array &lt;T&gt; &amp; A )&#123; for(int i=0; i &lt; A.getlen(); i++) out&lt;&lt; A[i] &lt;&lt; &quot; &quot;; return out;&#125;int main()&#123; array&lt; int &gt; A(10); // the instantiation. for(int i = 0; i &lt; 10; i++) &#123; A[i] = 2*i; &#125; cout&lt;&lt;A&lt;&lt;endl; return 0;&#125;]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[C++ standard library and namespace]]></title>
-    <url>%2F2018%2F08%2F12%2FC%2B%2B2%2F</url>
+    <url>%2F2018%2F08%2F13%2FC%2B%2B2%2F</url>
     <content type="text"><![CDATA[C++ standard libraryC++ standard library 的内容都定义在多个C++的头文件中。由于C++ standard library可能与第三方提供的library存在相同名称的冲突，所以通过namespace来避免这种冲突。 C++ standard library 中所有元素都被定义在namespace std中。没有’.h’后缀的头文件中内容才定义在namespace std中，即调用时需’std::xx..’，而&lt;xxx.h&gt;中的内容并非定义在namespace std中。即调用时无需先写明’std::’。]]></content>
       <categories>
         <category>C++</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[chrono]]></title>
-    <url>%2F2018%2F08%2F12%2FC%2B%2B1%2F</url>
-    <content type="text"><![CDATA[chrono 是一个头文件的名称，也是namespace std 的一个 sub-namespace：所有包含在头文件内的元素都不是直接定义在namespace std中的(其他大部分standard library也是如此)，而是直接定义在namespace std::chrono内。 在头文件 中的元素用于处理时间。主要通过三个元素：1.Duration它用于测量时间跨度 2.Time points对一个确定时间点的引用 3.Clocks一个框架使一个 time point 与现实物理时间关联起来 chrono中的所有元素 std::chrono::time_point一个 std::chrono::time_point object代表一个相对于clock’s epoch的时间点。 template parametersClock&emsp;&emsp;chrono中代表clock的元素：std::chrono::system_clock, std::chrono::steady_clock, std::chrono::high_resolution_clock,或者自定义的clock。 Duration&emsp;&emsp;std::chrono::duration类型 std::chrono::duration一个 std::chrono::duration object通过一个 count 和一个 period 代表一个时间跨度。 template parametersRep&emsp;&emsp;代表上述的一个count Period&emsp;&emsp;一个std::ratio类型，代表有多少秒tip: 所以 (时间跨度) = (count * std::ratio的obj代表的秒数)]]></content>
+    <title><![CDATA[hustle but dont know how]]></title>
+    <url>%2F2018%2F08%2F13%2Fdiary1%2F</url>
+    <content type="text"><![CDATA[Remember there’s lyrics in Eminem’s track:“They dont know what dope is!”hhhh~]]></content>
       <categories>
-        <category>C++</category>
+        <category>not-daily-diary</category>
       </categories>
   </entry>
   <entry>
     <title><![CDATA[create category page]]></title>
-    <url>%2F2018%2F08%2F11%2Fhexo2%2F</url>
+    <url>%2F2018%2F08%2F13%2Fhexo2%2F</url>
     <content type="text"><![CDATA[]]></content>
       <categories>
         <category>hexo</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[markdown usage]]></title>
-    <url>%2F2018%2F08%2F11%2Fmarkdown1%2F</url>
-    <content type="text"><![CDATA[pic&amp;link separator codeBlock用三个`把代码块包起来即可 123456789string Timestamp::toString() const&#123; char buf[32] = &#123; 0 &#125;; int64_t seconds = microSecondsSinceEpoch_ / kMicroSecondsPerSecond; int64_t microseconds = microSecondsSinceEpoch_ % kMicroSecondsPerSecond; snprintf(buf, sizeof(buf)-1, &quot;%ld.%06ld&quot;, seconds, microseconds); // &apos;-1&apos; is leave a byte for the terminating null byte. return buf;&#125; indenttip: 一般用两个&amp;emsp;作为首行缩进 转义用反斜杠’\’进行转义 常用转义字符]]></content>
-      <categories>
-        <category>markdown</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[hexo command]]></title>
-    <url>%2F2018%2F08%2F11%2Fhexo1%2F</url>
-    <content type="text"><![CDATA[此命令可用于清除categories. 可简写为 ‘hexo s’ 发布博客的command（发布静态网页文件到服务器）:hexo clean &amp;&amp; hexo g &amp;&amp; hexo d]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[hot-key to open chrome's book-label]]></title>
-    <url>%2F2018%2F08%2F11%2FChrome_hot-key1%2F</url>
+    <url>%2F2018%2F08%2F13%2FChrome_hot-key1%2F</url>
     <content type="text"><![CDATA[shift + ctl + o]]></content>
       <categories>
         <category>Chrome&#39;s hot-key</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[hustle but dont know how]]></title>
-    <url>%2F2018%2F08%2F11%2Fdiary1%2F</url>
-    <content type="text"><![CDATA[Remember there’s lyrics in Eminem’s track:“They dont know what dope is!”hhhh~]]></content>
+    <title><![CDATA[markdown usage]]></title>
+    <url>%2F2018%2F08%2F13%2Fmarkdown1%2F</url>
+    <content type="text"><![CDATA[pic&amp;link separator codeBlock用三个`把代码块包起来即可 123456789string Timestamp::toString() const&#123; char buf[32] = &#123; 0 &#125;; int64_t seconds = microSecondsSinceEpoch_ / kMicroSecondsPerSecond; int64_t microseconds = microSecondsSinceEpoch_ % kMicroSecondsPerSecond; snprintf(buf, sizeof(buf)-1, &quot;%ld.%06ld&quot;, seconds, microseconds); // &apos;-1&apos; is leave a byte for the terminating null byte. return buf;&#125; indenttip: 一般用两个&amp;emsp;作为首行缩进 转义用反斜杠’\’进行转义 常用转义字符 换行&gt;&gt; 左对齐图片，控制图片style 表格]]></content>
       <categories>
-        <category>not-daily-diary</category>
+        <category>markdown</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo command]]></title>
+    <url>%2F2018%2F08%2F13%2Fhexo1%2F</url>
+    <content type="text"><![CDATA[此命令可用于清除categories. 可简写为 ‘hexo s’ 发布博客的command（发布静态网页文件到服务器）:hexo clean &amp;&amp; hexo g &amp;&amp; hexo d]]></content>
+      <categories>
+        <category>hexo</category>
       </categories>
   </entry>
 </search>
