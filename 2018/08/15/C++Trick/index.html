@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="C++ standard libraryC++ standard library 的内容都定义在多个C++的头文件中。由于C++ standard library可能与第三方提供的library存在相同名称的冲突，所以通过namespace来避免这种冲突。 C++ standard library 中所有元素都被定义在namespace std中。没有’.h’后缀的头文件中内容才定义在namesp">
+<meta name="description" content="一个重载用于多个定义多个重载12345678910111213141516171819inline bool operator&amp;lt;(Timestamp lhs, Timestamp rhs)&amp;#123;	return lhs.microSecondsSinceEpoch() &amp;lt; rhs.microSecondsSinceEpoch();&amp;#125;inline bool operator">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ standard library and namespace">
-<meta property="og:url" content="http://yoursite.com/2018/08/13/C++2/index.html">
+<meta property="og:title" content="C++ Trick">
+<meta property="og:url" content="http://yoursite.com/2018/08/15/C++Trick/index.html">
 <meta property="og:site_name" content="QiChan&#39;s Blog">
-<meta property="og:description" content="C++ standard libraryC++ standard library 的内容都定义在多个C++的头文件中。由于C++ standard library可能与第三方提供的library存在相同名称的冲突，所以通过namespace来避免这种冲突。 C++ standard library 中所有元素都被定义在namespace std中。没有’.h’后缀的头文件中内容才定义在namesp">
+<meta property="og:description" content="一个重载用于多个定义多个重载12345678910111213141516171819inline bool operator&amp;lt;(Timestamp lhs, Timestamp rhs)&amp;#123;	return lhs.microSecondsSinceEpoch() &amp;lt; rhs.microSecondsSinceEpoch();&amp;#125;inline bool operator">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-13T13:24:45.185Z">
+<meta property="og:updated_time" content="2018-08-15T02:57:24.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ standard library and namespace">
-<meta name="twitter:description" content="C++ standard libraryC++ standard library 的内容都定义在多个C++的头文件中。由于C++ standard library可能与第三方提供的library存在相同名称的冲突，所以通过namespace来避免这种冲突。 C++ standard library 中所有元素都被定义在namespace std中。没有’.h’后缀的头文件中内容才定义在namesp">
+<meta name="twitter:title" content="C++ Trick">
+<meta name="twitter:description" content="一个重载用于多个定义多个重载12345678910111213141516171819inline bool operator&amp;lt;(Timestamp lhs, Timestamp rhs)&amp;#123;	return lhs.microSecondsSinceEpoch() &amp;lt; rhs.microSecondsSinceEpoch();&amp;#125;inline bool operator">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/13/C++2/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/15/C++Trick/"/>
 
 
 
 
 
-  <title>C++ standard library and namespace | QiChan's Blog</title>
+  <title>C++ Trick | QiChan's Blog</title>
   
 
 
@@ -276,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/C++2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/C++Trick/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="QiChan">
@@ -293,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++ standard library and namespace</h1>
+          <h1 class="post-title" itemprop="name headline">C++ Trick</h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T21:24:45+08:00">
-                2018-08-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T10:56:37+08:00">
+                2018-08-15
               </time>
             
 
@@ -345,7 +345,7 @@
 
           
           
-             <span id="/2018/08/13/C++2/" class="leancloud_visitors" data-flag-title="C++ standard library and namespace">
+             <span id="/2018/08/15/C++Trick/" class="leancloud_visitors" data-flag-title="C++ Trick">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -376,8 +376,7 @@
       
 
       
-        <h5 id="C-standard-library"><a href="#C-standard-library" class="headerlink" title="C++ standard library"></a>C++ standard library</h5><p>C++ standard library 的内容都定义在多个C++的头文件中。由于C++ standard library可能与第三方提供的library存在相同名称的冲突，所以通过namespace来避免这种冲突。</p>
-<p>C++ standard library 中所有元素都被定义在namespace std中。没有’.h’后缀的头文件<xxx>中内容才定义在namespace std中，即调用时需’std::xx..’，而&lt;xxx.h&gt;中的内容并非定义在namespace std中。即调用时无需先写明’std::’。</xxx></p>
+        <h3 id="一个重载用于多个定义多个重载"><a href="#一个重载用于多个定义多个重载" class="headerlink" title="一个重载用于多个定义多个重载"></a>一个重载用于多个定义多个重载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">inline bool operator&lt;(Timestamp lhs, Timestamp rhs)</span><br><span class="line">&#123;</span><br><span class="line">	return lhs.microSecondsSinceEpoch() &lt; rhs.microSecondsSinceEpoch();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline bool operator&gt;(Timestamp lhs, Timestamp rhs)</span><br><span class="line">&#123;</span><br><span class="line">	return rhs &lt; lhs;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline bool operator&lt;=(Timestamp lhs, Timestamp rhs)</span><br><span class="line">&#123;</span><br><span class="line">	return !(lhs &gt; rhs);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline bool operator&gt;=(Timestamp lhs, Timestamp rhs)</span><br><span class="line">&#123;</span><br><span class="line">	return !(lhs &lt; rhs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -402,8 +401,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/13/diary1/" rel="next" title="hustle but dont know how">
-                <i class="fa fa-chevron-left"></i> hustle but dont know how
+              <a href="/2018/08/15/utility/" rel="next" title="header &lt;utility&gt;">
+                <i class="fa fa-chevron-left"></i> header &lt;utility&gt;
               </a>
             
           </div>
@@ -412,8 +411,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/13/C++3/" rel="prev" title="class template and its instantiation">
-                class template and its instantiation <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/15/flamingoStruct/" rel="prev" title="flamingo structure">
+                flamingo structure <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -517,7 +516,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -528,7 +527,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -563,7 +562,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#C-standard-library"><span class="nav-number">1.</span> <span class="nav-text">C++ standard library</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个重载用于多个定义多个重载"><span class="nav-number">1.</span> <span class="nav-text">一个重载用于多个定义多个重载</span></a></li></ol></div>
             
 
           </div>
