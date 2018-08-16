@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="类模板12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &amp;lt;iostream&amp;gt;using namespace std;template&amp;lt; class T &amp;gt;cl">
+<meta name="description" content="Friendship between Classes一个class可以当另一个class为朋友，或可以当另一个class中的某个成员函数为朋友。 朋友class中的成员函数可以访问这个授予friendship的class的所有成员，包括非public成员。 代码示例12345class Screen&amp;#123;	// Window_mgr members can access the privat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="class template and its instantiation">
-<meta property="og:url" content="http://yoursite.com/2018/08/13/C++Template/index.html">
+<meta property="og:title" content="Friendship">
+<meta property="og:url" content="http://yoursite.com/2018/08/16/C++_Friendship/index.html">
 <meta property="og:site_name" content="QiChan&#39;s Blog">
-<meta property="og:description" content="类模板12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &amp;lt;iostream&amp;gt;using namespace std;template&amp;lt; class T &amp;gt;cl">
+<meta property="og:description" content="Friendship between Classes一个class可以当另一个class为朋友，或可以当另一个class中的某个成员函数为朋友。 朋友class中的成员函数可以访问这个授予friendship的class的所有成员，包括非public成员。 代码示例12345class Screen&amp;#123;	// Window_mgr members can access the privat">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-15T09:50:55.931Z">
+<meta property="og:updated_time" content="2018-08-16T07:08:25.986Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="class template and its instantiation">
-<meta name="twitter:description" content="类模板12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &amp;lt;iostream&amp;gt;using namespace std;template&amp;lt; class T &amp;gt;cl">
+<meta name="twitter:title" content="Friendship">
+<meta name="twitter:description" content="Friendship between Classes一个class可以当另一个class为朋友，或可以当另一个class中的某个成员函数为朋友。 朋友class中的成员函数可以访问这个授予friendship的class的所有成员，包括非public成员。 代码示例12345class Screen&amp;#123;	// Window_mgr members can access the privat">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/13/C++Template/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/16/C++_Friendship/"/>
 
 
 
 
 
-  <title>class template and its instantiation | QiChan's Blog</title>
+  <title>Friendship | QiChan's Blog</title>
   
 
 
@@ -276,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/C++Template/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/C++_Friendship/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="QiChan">
@@ -293,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">class template and its instantiation</h1>
+          <h1 class="post-title" itemprop="name headline">Friendship</h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T21:24:45+08:00">
-                2018-08-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T15:08:25+08:00">
+                2018-08-16
               </time>
             
 
@@ -345,7 +345,7 @@
 
           
           
-             <span id="/2018/08/13/C++Template/" class="leancloud_visitors" data-flag-title="class template and its instantiation">
+             <span id="/2018/08/16/C++_Friendship/" class="leancloud_visitors" data-flag-title="Friendship">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -376,9 +376,9 @@
       
 
       
-        <h3 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">template&lt; class T &gt;</span><br><span class="line">class array // define class template</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">    array( int );</span><br><span class="line">    T &amp; operator[]( int );</span><br><span class="line">    const T &amp; operator[] ( int )const;</span><br><span class="line">    int getlen() const &#123; return length; &#125;</span><br><span class="line">    ~array();</span><br><span class="line">private:</span><br><span class="line">    array()&#123;&#125;;</span><br><span class="line">    int length;</span><br><span class="line">    T * num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">template &lt; class T &gt;</span><br><span class="line">array&lt; T &gt;::array( int n )</span><br><span class="line">// define member function outside class</span><br><span class="line">&#123;</span><br><span class="line">    num = new T[n];</span><br><span class="line">    length = n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template &lt; class T &gt;</span><br><span class="line">array&lt; T &gt;::~array()</span><br><span class="line">&#123;</span><br><span class="line">    delete[] num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template&lt; class T &gt;</span><br><span class="line">T &amp; array&lt; T &gt; ::operator[] ( int i )</span><br><span class="line">&#123;</span><br><span class="line">    if( i &lt; 0 || i &gt;= length )</span><br><span class="line">        throw string( &quot;out of bounds&quot; );</span><br><span class="line">    return num[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template&lt; class T &gt;</span><br><span class="line">const T &amp; array&lt; T &gt; ::operator[] (int i) const</span><br><span class="line">&#123;</span><br><span class="line">    if( i &lt; 0 || i &gt;= length)</span><br><span class="line">        throw string( &quot;out of bounds&quot; );</span><br><span class="line">    return num[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template&lt; class T &gt;</span><br><span class="line">ostream &amp; operator&lt;&lt;( ostream &amp; out, const array &lt;T&gt; &amp; A )</span><br><span class="line">&#123;</span><br><span class="line">    for(int i=0; i &lt; A.getlen(); i++)</span><br><span class="line">        out&lt;&lt; A[i] &lt;&lt; &quot; &quot;;</span><br><span class="line">    return out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    array&lt; int &gt; A(10);</span><br><span class="line">    // the instantiation.</span><br><span class="line">    for(int i = 0; i &lt; 10; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        A[i] = 2*i;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;A&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">int compare(const T&amp; left, const T&amp; right) &#123;</span><br><span class="line">    if (left &lt; right) &#123;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    if (right &lt; left) &#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">compare&lt;int&gt;(1, 2); //使用模板函数</span><br></pre></td></tr></table></figure>
+        <h3 id="Friendship-between-Classes"><a href="#Friendship-between-Classes" class="headerlink" title="Friendship between Classes"></a>Friendship between Classes</h3><p>一个class可以当另一个class为朋友，或可以当另一个class中的某个成员函数为朋友。</p>
+<p>朋友class中的成员函数可以访问这个授予friendship的class的所有成员，包括非public成员。</p>
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Screen&#123;</span><br><span class="line">	// Window_mgr members can access the private parts of class Screen</span><br><span class="line">	friend class Window_mgr;</span><br><span class="line">	// ...rest of the Screen class</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <hr>
 
       
@@ -404,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/13/C++StdLibAndNamespace/" rel="next" title="C++ standard library and namespace">
-                <i class="fa fa-chevron-left"></i> C++ standard library and namespace
+              <a href="/2018/08/16/C++_Defining_a_Function_as_Deleted/" rel="next" title="Defining a Function as Deleted">
+                <i class="fa fa-chevron-left"></i> Defining a Function as Deleted
               </a>
             
           </div>
@@ -414,8 +414,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/13/chrono/" rel="prev" title="header &lt;chrono&gt;">
-                header &lt;chrono&gt; <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/16/C++_the_assert_Preprocessor_Marco/" rel="prev" title="the assert preprocessor macro">
+                the assert preprocessor macro <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -519,7 +519,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -530,7 +530,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -565,7 +565,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#类模板"><span class="nav-number">1.</span> <span class="nav-text">类模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数模板"><span class="nav-number">2.</span> <span class="nav-text">函数模板</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Friendship-between-Classes"><span class="nav-number">1.</span> <span class="nav-text">Friendship between Classes</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码示例"><span class="nav-number">1.1.</span> <span class="nav-text">代码示例</span></a></li></ol></li></ol></div>
             
 
           </div>

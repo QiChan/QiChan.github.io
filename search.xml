@@ -1,6 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[header &lt;mutex&gt;]]></title>
+    <url>%2F2018%2F08%2F16%2Fmutex%2F</url>
+    <content type="text"><![CDATA[std::unique_lockA unique lock is an object that manages a mutex object with unique ownership in both states: locked and unlocked. 代码示例123456789101112131415161718192021222324// unique_lock example#include &lt;iostream&gt; // std::cout#include &lt;thread&gt; // std::thread#include &lt;mutex&gt; // std::mutex, std::unique_lockstd::mutex mtx; // mutex for critical sectionvoid print_block (int n, char c) &#123; // critical section (exclusive access to std::cout signaled by lifetime of lck): std::unique_lock&lt;std::mutex&gt; lck (mtx); for (int i=0; i&lt;n; ++i) &#123; std::cout &lt;&lt; c; &#125; std::cout &lt;&lt; &apos;\n&apos;;&#125;int main ()&#123; std::thread th1 (print_block,50,&apos;*&apos;); std::thread th2 (print_block,50,&apos;$&apos;); th1.join(); th2.join(); return 0;&#125; std::mutexA mutex is a lockable object that is designed to signal when critical sections of code need exclusive access, preventing other threads with the same protection from executing concurrently and access the same memory locations. 代码示例12345678910111213141516171819202122232425// mutex example#include &lt;iostream&gt; // std::cout#include &lt;thread&gt; // std::thread#include &lt;mutex&gt; // std::mutexstd::mutex mtx; // mutex for critical sectionvoid print_block (int n, char c) &#123; // critical section (exclusive access to std::cout signaled by locking mtx): mtx.lock(); for (int i=0; i&lt;n; ++i) &#123; std::cout &lt;&lt; c; &#125; std::cout &lt;&lt; &apos;\n&apos;; mtx.unlock();&#125;int main ()&#123; std::thread th1 (print_block,50,&apos;*&apos;); std::thread th2 (print_block,50,&apos;$&apos;); th1.join(); th2.join(); return 0;&#125; 头文件mutex的内容]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux function]]></title>
+    <url>%2F2018%2F08%2F16%2FLinux_Function%2F</url>
+    <content type="text"><![CDATA[read()]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[system data types]]></title>
+    <url>%2F2018%2F08%2F16%2FLinux_system_data_types%2F</url>
+    <content type="text"><![CDATA[数据类型 SUSv3 类型要求 描述 ssize_t signed integer Byte count or (negative) error indication]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[GCC]]></title>
+    <url>%2F2018%2F08%2F16%2FLinux_GCC_Keyword%2F</url>
+    <content type="text"><![CDATA[__thread 关键字thread是GCC内置的线程局部存储设施,存取效率可以和全局变量相比.thread变量使每一个线程有一份独立实体,各个线程的值互不干扰,可以用来修饰那些带有全局性且值可以变,但是又不值的用全局变量保护的变量.]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[header &lt;sstream&gt;]]></title>
+    <url>%2F2018%2F08%2F16%2Fsstream%2F</url>
+    <content type="text"><![CDATA[std::stringstream std::basic_stringstream是一个用于操作字符串输入及输出的流类模板。 代码示例12std::stringstream ss;ss &lt;&lt; &quot;threadid_ = &quot; &lt;&lt; threadId_ &lt;&lt; &quot; this_thread::get_id() = &quot; &lt;&lt; std::this_thread::get_id(); std::basic_stringstream::str获取/设置 内容。 代码示例123456789101112// stringstream::str#include &lt;string&gt; // std::string#include &lt;iostream&gt; // std::cout#include &lt;sstream&gt; // std::stringstream, std::stringbufint main () &#123; std::stringstream ss; ss.str (&quot;Example string&quot;); std::string s = ss.str(); std::cout &lt;&lt; s &lt;&lt; &apos;\n&apos;; return 0;&#125;]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[header &lt;thread&gt;]]></title>
+    <url>%2F2018%2F08%2F16%2Fthread%2F</url>
+    <content type="text"><![CDATA[std::this_thread这个命名空间聚集了一组函数用于访问当前线程。 头文件-&gt;命名空间-&gt;函数 std::this_thread::get_id返回正被调用的线程的id，这个id唯一地确定一个线程。 ####代码示例1234567891011121314151617181920// thread::get_id / this_thread::get_id#include &lt;iostream&gt; // std::cout#include &lt;thread&gt; // std::thread, std::thread::id, std::this_thread::get_id#include &lt;chrono&gt; // std::chrono::secondsstd::thread::id main_thread_id = std::this_thread::get_id();void is_main_thread() &#123; if ( main_thread_id == std::this_thread::get_id() ) std::cout &lt;&lt; &quot;This is the main thread.\n&quot;; else std::cout &lt;&lt; &quot;This is not the main thread.\n&quot;;&#125;int main()&#123; is_main_thread(); std::thread th (is_main_thread); th.join();&#125; std::thread::id它地值是由thread::get_id和this_thread::get_id返回，用于验证线程。 头文件-&gt;类-&gt;类成员]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[the assert preprocessor macro]]></title>
+    <url>%2F2018%2F08%2F16%2FC%2B%2B_the_assert_Preprocessor_Marco%2F</url>
+    <content type="text"><![CDATA[assert(expr);计算expr，若该表达式为flase，则assert输出一条信息并终止此程序。若表达式为true，则assert不做任何操作。]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Friendship]]></title>
+    <url>%2F2018%2F08%2F16%2FC%2B%2B_Friendship%2F</url>
+    <content type="text"><![CDATA[Friendship between Classes一个class可以当另一个class为朋友，或可以当另一个class中的某个成员函数为朋友。 朋友class中的成员函数可以访问这个授予friendship的class的所有成员，包括非public成员。 代码示例12345class Screen&#123; // Window_mgr members can access the private parts of class Screen friend class Window_mgr; // ...rest of the Screen class&#125;;]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Defining a Function as Deleted]]></title>
+    <url>%2F2018%2F08%2F16%2FC%2B%2B_Defining_a_Function_as_Deleted%2F</url>
+    <content type="text"><![CDATA[defining a function as deleted可以通过定义cpy constructor和cpy-assignment operator为deleted functions使得类的obj不可被复制。 一个deleted function是一个被声明了但没有任何别的用处的函数，通过在函数的param list后附加上‘= delete’来定义一个deleted function。 代码示例1234567struct NoCopy &#123; NoCopy() = default; //使用系统默认提供的constructor NoCopy(const NoCopy&amp;) = delete; // 没有复制 NoCopy &amp;operator=(const NoCopy&amp;) = delete; // 没有赋值 ~NoCopy() = default; // 使用系统默认提供的destructor // 其他member&#125;;]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[header &lt;atomic&gt;]]></title>
     <url>%2F2018%2F08%2F15%2Fatomic%2F</url>
     <content type="text"><![CDATA[std::atomicamomic 类型的obj含有一个T类型的值。atomic obj的主要特性是：当多个不同线程并发访问它包含的值时，不会造成竞态。 代码示例1static std::atomic&lt;int64_t&gt; s_numCreated_;]]></content>
@@ -11,7 +83,7 @@
   <entry>
     <title><![CDATA[flamingo structure]]></title>
     <url>%2F2018%2F08%2F15%2FflamingoStruct%2F</url>
-    <content type="text"><![CDATA[以下是flamingo服务器的全部头文件：timestamp&emsp;&emsp;Done]]></content>
+    <content type="text"><![CDATA[以下是flamingo服务器的全部头文件： timestamp timer timerid timestamp timer timerid’s friend class is timerQueue LOG_FATAL待研究。]]></content>
       <categories>
         <category>Server Structure</category>
       </categories>
@@ -65,17 +137,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[class template and its instantiation]]></title>
-    <url>%2F2018%2F08%2F13%2FC%2B%2BTemplate%2F</url>
-    <content type="text"><![CDATA[类模板12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &lt;iostream&gt;using namespace std;template&lt; class T &gt;class array // define class template&#123;public: array( int ); T &amp; operator[]( int ); const T &amp; operator[] ( int )const; int getlen() const &#123; return length; &#125; ~array();private: array()&#123;&#125;; int length; T * num;&#125;;template &lt; class T &gt;array&lt; T &gt;::array( int n )// define member function outside class&#123; num = new T[n]; length = n;&#125;template &lt; class T &gt;array&lt; T &gt;::~array()&#123; delete[] num;&#125;template&lt; class T &gt;T &amp; array&lt; T &gt; ::operator[] ( int i )&#123; if( i &lt; 0 || i &gt;= length ) throw string( &quot;out of bounds&quot; ); return num[i];&#125;template&lt; class T &gt;const T &amp; array&lt; T &gt; ::operator[] (int i) const&#123; if( i &lt; 0 || i &gt;= length) throw string( &quot;out of bounds&quot; ); return num[i];&#125;template&lt; class T &gt;ostream &amp; operator&lt;&lt;( ostream &amp; out, const array &lt;T&gt; &amp; A )&#123; for(int i=0; i &lt; A.getlen(); i++) out&lt;&lt; A[i] &lt;&lt; &quot; &quot;; return out;&#125;int main()&#123; array&lt; int &gt; A(10); // the instantiation. for(int i = 0; i &lt; 10; i++) &#123; A[i] = 2*i; &#125; cout&lt;&lt;A&lt;&lt;endl; return 0;&#125; 函数模板123456789101112template&lt;typename T&gt;int compare(const T&amp; left, const T&amp; right) &#123; if (left &lt; right) &#123; return -1; &#125; if (right &lt; left) &#123; return 1; &#125; return 0;&#125;compare&lt;int&gt;(1, 2); //使用模板函数]]></content>
+    <title><![CDATA[C++ standard library and namespace]]></title>
+    <url>%2F2018%2F08%2F13%2FC%2B%2B_StdLib_and_Namespace%2F</url>
+    <content type="text"><![CDATA[C++ standard libraryC++ standard library 的内容都定义在多个C++的头文件中。由于C++ standard library可能与第三方提供的library存在相同名称的冲突，所以通过namespace来避免这种冲突。 C++ standard library 中所有元素都被定义在namespace std中。没有’.h’后缀的头文件中内容才定义在namespace std中，即调用时需’std::xx..’，而&lt;xxx.h&gt;中的内容并非定义在namespace std中。即调用时无需先写明’std::’。]]></content>
       <categories>
         <category>C++</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[C++ standard library and namespace]]></title>
-    <url>%2F2018%2F08%2F13%2FC%2B%2BStdLibAndNamespace%2F</url>
-    <content type="text"><![CDATA[C++ standard libraryC++ standard library 的内容都定义在多个C++的头文件中。由于C++ standard library可能与第三方提供的library存在相同名称的冲突，所以通过namespace来避免这种冲突。 C++ standard library 中所有元素都被定义在namespace std中。没有’.h’后缀的头文件中内容才定义在namespace std中，即调用时需’std::xx..’，而&lt;xxx.h&gt;中的内容并非定义在namespace std中。即调用时无需先写明’std::’。]]></content>
+    <title><![CDATA[class template and its instantiation]]></title>
+    <url>%2F2018%2F08%2F13%2FC%2B%2B_Template%2F</url>
+    <content type="text"><![CDATA[类模板12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &lt;iostream&gt;using namespace std;template&lt; class T &gt;class array // define class template&#123;public: array( int ); T &amp; operator[]( int ); const T &amp; operator[] ( int )const; int getlen() const &#123; return length; &#125; ~array();private: array()&#123;&#125;; int length; T * num;&#125;;template &lt; class T &gt;array&lt; T &gt;::array( int n )// define member function outside class&#123; num = new T[n]; length = n;&#125;template &lt; class T &gt;array&lt; T &gt;::~array()&#123; delete[] num;&#125;template&lt; class T &gt;T &amp; array&lt; T &gt; ::operator[] ( int i )&#123; if( i &lt; 0 || i &gt;= length ) throw string( &quot;out of bounds&quot; ); return num[i];&#125;template&lt; class T &gt;const T &amp; array&lt; T &gt; ::operator[] (int i) const&#123; if( i &lt; 0 || i &gt;= length) throw string( &quot;out of bounds&quot; ); return num[i];&#125;template&lt; class T &gt;ostream &amp; operator&lt;&lt;( ostream &amp; out, const array &lt;T&gt; &amp; A )&#123; for(int i=0; i &lt; A.getlen(); i++) out&lt;&lt; A[i] &lt;&lt; &quot; &quot;; return out;&#125;int main()&#123; array&lt; int &gt; A(10); // the instantiation. for(int i = 0; i &lt; 10; i++) &#123; A[i] = 2*i; &#125; cout&lt;&lt;A&lt;&lt;endl; return 0;&#125; 函数模板123456789101112template&lt;typename T&gt;int compare(const T&amp; left, const T&amp; right) &#123; if (left &lt; right) &#123; return -1; &#125; if (right &lt; left) &#123; return 1; &#125; return 0;&#125;compare&lt;int&gt;(1, 2); //使用模板函数]]></content>
       <categories>
         <category>C++</category>
       </categories>
