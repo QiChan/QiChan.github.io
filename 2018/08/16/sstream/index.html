@@ -90,7 +90,8 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fubpgd0ewvj20ur04ejrl.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fubptyghgxj20un03h74e.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fubqu1s0f9j20uv03iglm.jpg">
-<meta property="og:updated_time" content="2018-08-16T11:00:36.081Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuchj2k48bj20uk05sglq.jpg">
+<meta property="og:updated_time" content="2018-08-17T02:27:13.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="header &amp;lt;sstream&amp;gt;">
 <meta name="twitter:description" content="std::stringstream std::basic_stringstream是一个用于操作字符串输入及输出的流类模板。 代码示例12std::stringstream ss;ss &amp;lt;&amp;lt; &amp;quot;threadid_ = &amp;quot; &amp;lt;&amp;lt; threadId_ &amp;lt;&amp;lt; &amp;quot; this_thread::get_id() = &amp;quot; &amp;lt;&amp;lt">
@@ -386,6 +387,8 @@
 <h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::stringstream ss;</span><br><span class="line">ss &lt;&lt; &quot;threadid_ = &quot; &lt;&lt; threadId_ &lt;&lt; &quot; this_thread::get_id() = &quot; &lt;&lt; std::this_thread::get_id();</span><br></pre></td></tr></table></figure>
 <h4 id="std-basic-stringstream-str"><a href="#std-basic-stringstream-str" class="headerlink" title="std::basic_stringstream::str"></a>std::basic_stringstream::str</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubptyghgxj20un03h74e.jpg" align="left"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1fubqu1s0f9j20uv03iglm.jpg" align="left"><br>获取/设置 内容。</p>
 <h5 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// stringstream::str</span><br><span class="line">#include &lt;string&gt;       // std::string</span><br><span class="line">#include &lt;iostream&gt;     // std::cout</span><br><span class="line">#include &lt;sstream&gt;      // std::stringstream, std::stringbuf</span><br><span class="line"></span><br><span class="line">int main () &#123;</span><br><span class="line">  std::stringstream ss;</span><br><span class="line">  ss.str (&quot;Example string&quot;);</span><br><span class="line">  std::string s = ss.str();</span><br><span class="line">  std::cout &lt;&lt; s &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="std-ostringstream"><a href="#std-ostringstream" class="headerlink" title="std::ostringstream"></a>std::ostringstream</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuchj2k48bj20uk05sglq.jpg"><br>用于操作字符串输出的流类</p>
+<h4 id="std-ostringstream-str"><a href="#std-ostringstream-str" class="headerlink" title="std::ostringstream::str"></a>std::ostringstream::str</h4><p>get/set content</p>
 <hr>
 
       
@@ -526,7 +529,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -572,7 +575,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#std-stringstream"><span class="nav-number">1.</span> <span class="nav-text">std::stringstream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#std-basic-stringstream"><span class="nav-number">2.</span> <span class="nav-text">std::basic_stringstream</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码示例"><span class="nav-number">2.1.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#std-basic-stringstream-str"><span class="nav-number">2.2.</span> <span class="nav-text">std::basic_stringstream::str</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码示例-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">代码示例</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#std-stringstream"><span class="nav-number">1.</span> <span class="nav-text">std::stringstream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#std-basic-stringstream"><span class="nav-number">2.</span> <span class="nav-text">std::basic_stringstream</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码示例"><span class="nav-number">2.1.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#std-basic-stringstream-str"><span class="nav-number">2.2.</span> <span class="nav-text">std::basic_stringstream::str</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码示例-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">代码示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#std-ostringstream"><span class="nav-number">3.</span> <span class="nav-text">std::ostringstream</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#std-ostringstream-str"><span class="nav-number">3.1.</span> <span class="nav-text">std::ostringstream::str</span></a></li></ol></li></ol></div>
             
 
           </div>

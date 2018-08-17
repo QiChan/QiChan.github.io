@@ -79,18 +79,19 @@
 
 
 
-<meta name="description" content="read()">
+<meta name="description" content="read()  eventfd()使用这个函数来创建一个事件对象，linux线程间通信为了提高效率，大多使用异步通信，采用事件监听和回调函数的方式来实现高效的任务处理方式（虽然会将逻辑变得复杂）。 linux内核会为这个事件对象维护一个64位的计数器(uint64_t).并在初始化时用传进去的initval来初始化这个计数器，然后返回一个文件描述符来代表这个事件对象。 第二个参数是描述这个事件对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux function">
 <meta property="og:url" content="http://yoursite.com/2018/08/16/Linux_Function/index.html">
 <meta property="og:site_name" content="QiChan&#39;s Blog">
-<meta property="og:description" content="read()">
+<meta property="og:description" content="read()  eventfd()使用这个函数来创建一个事件对象，linux线程间通信为了提高效率，大多使用异步通信，采用事件监听和回调函数的方式来实现高效的任务处理方式（虽然会将逻辑变得复杂）。 linux内核会为这个事件对象维护一个64位的计数器(uint64_t).并在初始化时用传进去的initval来初始化这个计数器，然后返回一个文件描述符来代表这个事件对象。 第二个参数是描述这个事件对象">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fubtalmxi5j20l80570sy.jpg">
-<meta property="og:updated_time" content="2018-08-16T15:15:25.556Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fucnxe6owgj20cc05emx3.jpg">
+<meta property="og:updated_time" content="2018-08-17T07:20:18.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux function">
-<meta name="twitter:description" content="read()">
+<meta name="twitter:description" content="read()  eventfd()使用这个函数来创建一个事件对象，linux线程间通信为了提高效率，大多使用异步通信，采用事件监听和回调函数的方式来实现高效的任务处理方式（虽然会将逻辑变得复杂）。 linux内核会为这个事件对象维护一个64位的计数器(uint64_t).并在初始化时用传进去的initval来初始化这个计数器，然后返回一个文件描述符来代表这个事件对象。 第二个参数是描述这个事件对象">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/be778adagy1fubtalmxi5j20l80570sy.jpg">
 
 
@@ -378,7 +379,46 @@
       
 
       
-        <h3 id="read"><a href="#read" class="headerlink" title="read()"></a>read()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubtalmxi5j20l80570sy.jpg" align="left"><br><br><br><br><br><br></p>
+        <h3 id="read"><a href="#read" class="headerlink" title="read()"></a>read()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubtalmxi5j20l80570sy.jpg"></p>
+<hr>
+<h3 id="eventfd"><a href="#eventfd" class="headerlink" title="eventfd()"></a>eventfd()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fucnxe6owgj20cc05emx3.jpg"><br>使用这个函数来创建一个事件对象，linux线程间通信为了提高效率，大多使用异步通信，采用事件监听和回调函数的方式来实现高效的任务处理方式（虽然会将逻辑变得复杂）。</p>
+<p>linux内核会为这个事件对象维护一个64位的计数器(uint64_t).并在初始化时用传进去的initval来初始化这个计数器，然后返回一个文件描述符来代表这个事件对象。</p>
+<p>第二个参数是描述这个事件对象的属性，可以设置为EFD_NONBLOCK , EFD_CLOEXEC；前面的是设置对象为非阻塞状态，如果没有设置为非阻塞状态，read系统调用来读这个计数器，且计数器的值为0时，就会一直阻塞在read系统调用上，反之如果设置了该标志位，就会返回EAGAIN错误。后面的EFD_CLOEXEC功能是在程序调用exec()函数族加载其他程序时自动关闭当前已有的文件描述符（具体为什么暂不解释）。</p>
+<p>通过此函数得到的对象既然是一个计数器，我们就可以对它进行读和写：</p>
+<p>使用write将缓冲区写入的8字节整形值加到内核计数器上。</p>
+<p>使用read将内核计数的8字节值读取到缓冲区中，并把计数器重设为0，如果buffer的长度小于8字节则read会失败，错误码设为EINVAl。</p>
+<p>用处：对eventfd进行Epoll监听.</p>
+<h4 id="flags"><a href="#flags" class="headerlink" title="flags"></a>flags</h4><p>The following values may be bitwise ORed in flags to change the behaviour of eventfd():</p>
+<p>FD_CLOEXEC (since Linux 2.6.27)<br>Set the close-on-exec (FD_CLOEXEC) flag on the new file descriptor. See the description of the O_CLOEXEC flag in open(2) for reasons why this may be useful.</p>
+<p>EFD_NONBLOCK (since Linux 2.6.27)（就是将新文件描述符设置成非阻塞）<br>Set the O_NONBLOCK file status flag on the new open file description. Using this flag saves extra calls to fcntl(2) to achieve the same result.</p>
+<hr>
+<h3 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h3><p>Table Values for the flags argument of open()</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O_CLOEXEC</td>
+<td>Set the close-on-exec flag</td>
+</tr>
+<tr>
+<td>O_NONBLOCK</td>
+<td>Open in nonblocking mode</td>
+</tr>
+</tbody>
+</table>
+<h4 id="close-on-exec-flag"><a href="#close-on-exec-flag" class="headerlink" title="close-on-exec flag"></a>close-on-exec flag</h4><p>the kernel provides a close-on-exec flag for each file descriptor. if this flag is set, then the file descriptor is automatically closed during a successful exec(), but left open if the exec() fails.</p>
+<hr>
+<h3 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h3><p>Name<br>execl, execlp, execle, execv, execvp, execvpe - execute a file</p>
+<p>Synopsis</p>
+<p>#include &lt;unistd.h&gt;</p>
+<p>extern char **environ;</p>
+<p>int execl(const char <em>path, const char </em>arg, …);<br>int execlp(const char <em>file, const char </em>arg, …);<br>int execle(const char <em>path, const char </em>arg,<br>…, char <em> const envp[]);<br>int execv(const char </em>path, char <em>const argv[]);<br>int execvp(const char </em>file, char <em>const argv[]);<br>int execvpe(const char </em>file, char <em>const argv[],<br>char </em>const envp[]);</p>
+<p>The exec() family of functions replaces the current process with a new process image.<br>fork函数是用于创建一个子进程，该子进程几乎是父进程的副本，而有时我们希望子进程去执行另外的程序，exec函数族就提供了一个在进程中启动另一个程序执行的方法。它可以根据指定的文件名或目录名找到可执行文件，并用它来取代原调用进程的数据段、代码段和堆栈段，在执行完之后，原调用进程的内容除了进程号外，其他全部被新程序的内容替换了。另外，这里的可执行文件既可以是二进制文件，也可以是Linux下任何可执行脚本文件。</p>
 <hr>
 
       
@@ -519,7 +559,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -565,7 +605,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#read"><span class="nav-number">1.</span> <span class="nav-text">read()</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#read"><span class="nav-number">1.</span> <span class="nav-text">read()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eventfd"><span class="nav-number">2.</span> <span class="nav-text">eventfd()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flags"><span class="nav-number">2.1.</span> <span class="nav-text">flags</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#open"><span class="nav-number">3.</span> <span class="nav-text">open()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#close-on-exec-flag"><span class="nav-number">3.1.</span> <span class="nav-text">close-on-exec flag</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exec"><span class="nav-number">4.</span> <span class="nav-text">exec()</span></a></li></ol></div>
             
 
           </div>
