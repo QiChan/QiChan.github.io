@@ -273,6 +273,640 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/18/map/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/18/map/" itemprop="url">header &lt;map&gt;</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T21:13:14+08:00">
+                2018-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/18/map/" class="leancloud_visitors" data-flag-title="header &lt;map&gt;">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="contents-of-header-map"><a href="#contents-of-header-map" class="headerlink" title="contents of header map"></a>contents of header map</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue5tqgcljj209u02h3ya.jpg"></p>
+<hr>
+<h3 id="std-map"><a href="#std-map" class="headerlink" title="std::map"></a>std::map</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue5v1krffj20ul05774f.jpg"></p>
+<h4 id="std-map-find"><a href="#std-map-find" class="headerlink" title="std::map::find"></a>std::map::find</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue5wjm3fpj20ut03ddfu.jpg"><br>Searches the container for an element with a key equivalent to k and returns an iterator to it if found, otherwise it returns an iterator to map::end.</p>
+<h5 id="codes-example"><a href="#codes-example" class="headerlink" title="codes example"></a>codes example</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// map::find</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  std::map&lt;char,int&gt; mymap;</span><br><span class="line">  std::map&lt;char,int&gt;::iterator it;</span><br><span class="line"></span><br><span class="line">  mymap[&apos;a&apos;]=50;</span><br><span class="line">  mymap[&apos;b&apos;]=100;</span><br><span class="line">  mymap[&apos;c&apos;]=150;</span><br><span class="line">  mymap[&apos;d&apos;]=200;</span><br><span class="line"></span><br><span class="line">  it = mymap.find(&apos;b&apos;);</span><br><span class="line">  if (it != mymap.end())</span><br><span class="line">    mymap.erase (it);</span><br><span class="line"></span><br><span class="line">  // print content:</span><br><span class="line">  std::cout &lt;&lt; &quot;elements in mymap:&quot; &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; &quot;a =&gt; &quot; &lt;&lt; mymap.find(&apos;a&apos;)-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; &quot;c =&gt; &quot; &lt;&lt; mymap.find(&apos;c&apos;)-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; &quot;d =&gt; &quot; &lt;&lt; mymap.find(&apos;d&apos;)-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="std-map-end"><a href="#std-map-end" class="headerlink" title="std::map::end"></a>std::map::end</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue630v3i5j20ux04y0st.jpg"><br>Returns an iterator referring to the past-the-end element in the map container.</p>
+<h5 id="codes-example-1"><a href="#codes-example-1" class="headerlink" title="codes example"></a>codes example</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// map::begin/end</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  std::map&lt;char,int&gt; mymap;</span><br><span class="line"></span><br><span class="line">  mymap[&apos;b&apos;] = 100;</span><br><span class="line">  mymap[&apos;a&apos;] = 200;</span><br><span class="line">  mymap[&apos;c&apos;] = 300;</span><br><span class="line"></span><br><span class="line">  // show content:</span><br><span class="line">  for (std::map&lt;char,int&gt;::iterator it=mymap.begin(); it!=mymap.end(); ++it)</span><br><span class="line">    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/18/ios/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/18/ios/" itemprop="url">header &lt;ios&gt;</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T20:47:16+08:00">
+                2018-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/18/ios/" class="leancloud_visitors" data-flag-title="header &lt;ios&gt;">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="contents-of-header-ios"><a href="#contents-of-header-ios" class="headerlink" title="contents of header ios"></a>contents of header ios</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue52jq7ifj209y0qi74v.jpg"></p>
+<hr>
+<h3 id="std-hex"><a href="#std-hex" class="headerlink" title="std::hex"></a>std::hex</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue54v465sj20us02yt8l.jpg"></p>
+<h4 id="codes-example"><a href="#codes-example" class="headerlink" title="codes example"></a>codes example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// modify basefield</span><br><span class="line">#include &lt;iostream&gt;     // std::cout, std::dec, std::hex, std::oct</span><br><span class="line"></span><br><span class="line">int main () &#123;</span><br><span class="line">  int n = 70;</span><br><span class="line">  std::cout &lt;&lt; std::dec &lt;&lt; n &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; std::hex &lt;&lt; n &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; std::oct &lt;&lt; n &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/doubtsCollection/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/17/doubtsCollection/" itemprop="url">doubts</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-17T19:12:51+08:00">
+                2018-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Doubts-Collection/" itemprop="url" rel="index">
+                    <span itemprop="name">Doubts Collection</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/17/doubtsCollection/" class="leancloud_visitors" data-flag-title="doubts">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.LOG_FATAL<br>2.LOG_TRACE</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/memory/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/17/memory/" itemprop="url">header &lt;memory&gt;</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-17T16:57:28+08:00">
+                2018-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/17/memory/" class="leancloud_visitors" data-flag-title="header &lt;memory&gt;">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="header-contents"><a href="#header-contents" class="headerlink" title="header contents"></a>header contents</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fucw9zs6k0j209z0rt0u5.jpg"></p>
+<hr>
+<h3 id="smart-ptr"><a href="#smart-ptr" class="headerlink" title="smart ptr"></a>smart ptr</h3><p>智能指针是一个类，它对普通指针进行封装，使智能指针类的obj具有如普通指针一样的操作。</p>
+<p>智能指针类的obj的值是内存地址。</p>
+<h3 id="std-shared-ptr"><a href="#std-shared-ptr" class="headerlink" title="std::shared_ptr"></a>std::shared_ptr</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fucspuq7ixj20up02wq2x.jpg"><br>Manages the storage of a pointer, providing a limited garbage-collection facility, possibly sharing that management with other objects.</p>
+<hr>
+<h3 id="std-weak-ptr"><a href="#std-weak-ptr" class="headerlink" title="std:weak_ptr"></a>std:weak_ptr</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fucw7klw9qj20uy02uq2x.jpg"><br>weak shared pointer.</p>
+<h4 id="std-weak-ptr-lock"><a href="#std-weak-ptr-lock" class="headerlink" title="std::weak_ptr::lock"></a>std::weak_ptr::lock</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fucwbz1ylwj20um02vq2z.jpg"><br>returns a shared_ptr with the information perserved by the weak_ptr obj if it is not expired.</p>
+<h5 id="code-example"><a href="#code-example" class="headerlink" title="code example"></a>code example</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// weak_ptr::lock example</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;memory&gt;</span><br><span class="line"></span><br><span class="line">int main () &#123;</span><br><span class="line">  std::shared_ptr&lt;int&gt; sp1,sp2;</span><br><span class="line">  std::weak_ptr&lt;int&gt; wp;</span><br><span class="line">                                       // sharing group:</span><br><span class="line">                                       // --------------</span><br><span class="line">  sp1 = std::make_shared&lt;int&gt; (20);    // sp1</span><br><span class="line">  wp = sp1;                            // sp1, wp</span><br><span class="line"></span><br><span class="line">  sp2 = wp.lock();                     // sp1, wp, sp2</span><br><span class="line">  sp1.reset();                         //      wp, sp2</span><br><span class="line"></span><br><span class="line">  sp1 = wp.lock();                     // sp1, wp, sp2</span><br><span class="line"></span><br><span class="line">  std::cout &lt;&lt; &quot;*sp1: &quot; &lt;&lt; *sp1 &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; &quot;*sp2: &quot; &lt;&lt; *sp2 &lt;&lt; &apos;\n&apos;;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="trick"><a href="#trick" class="headerlink" title="trick"></a>trick</h4><p>std::weak_ptr<void>和std::shared_ptr<void>可以指向不同的数据类型</void></void></p>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/Linux_IO_Multiplex/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1240,654 +1874,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/Linux_system_data_types/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/Linux_system_data_types/" itemprop="url">system data types</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T19:52:25+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/16/Linux_system_data_types/" class="leancloud_visitors" data-flag-title="system data types">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>SUSv3 类型要求</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ssize_t</td>
-<td>signed integer</td>
-<td>Byte count or (negative) error indication</td>
-</tr>
-</tbody>
-</table>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/Linux_GCC_Keyword/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/Linux_GCC_Keyword/" itemprop="url">GCC</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T19:44:52+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/16/Linux_GCC_Keyword/" class="leancloud_visitors" data-flag-title="GCC">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="thread-关键字"><a href="#thread-关键字" class="headerlink" title="__thread 关键字"></a>__thread 关键字</h3><p><strong>thread是GCC内置的线程局部存储设施,存取效率可以和全局变量相比.</strong>thread变量使每一个线程有一份独立实体,各个线程的值互不干扰,可以用来修饰那些带有全局性且值可以变,但是又不值的用全局变量保护的变量.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/sstream/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/sstream/" itemprop="url">header &lt;sstream&gt;</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T18:21:28+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/16/sstream/" class="leancloud_visitors" data-flag-title="header &lt;sstream&gt;">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="std-stringstream"><a href="#std-stringstream" class="headerlink" title="std::stringstream"></a>std::stringstream</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubp814semj20uj06z3yp.jpg" align="left"></p>
-<h3 id="std-basic-stringstream"><a href="#std-basic-stringstream" class="headerlink" title="std::basic_stringstream"></a>std::basic_stringstream</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubpgd0ewvj20ur04ejrl.jpg" align="left"><br>是一个用于操作字符串输入及输出的流类模板。</p>
-<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::stringstream ss;</span><br><span class="line">ss &lt;&lt; &quot;threadid_ = &quot; &lt;&lt; threadId_ &lt;&lt; &quot; this_thread::get_id() = &quot; &lt;&lt; std::this_thread::get_id();</span><br></pre></td></tr></table></figure>
-<h4 id="std-basic-stringstream-str"><a href="#std-basic-stringstream-str" class="headerlink" title="std::basic_stringstream::str"></a>std::basic_stringstream::str</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubptyghgxj20un03h74e.jpg" align="left"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1fubqu1s0f9j20uv03iglm.jpg" align="left"><br>获取/设置 内容。</p>
-<h5 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// stringstream::str</span><br><span class="line">#include &lt;string&gt;       // std::string</span><br><span class="line">#include &lt;iostream&gt;     // std::cout</span><br><span class="line">#include &lt;sstream&gt;      // std::stringstream, std::stringbuf</span><br><span class="line"></span><br><span class="line">int main () &#123;</span><br><span class="line">  std::stringstream ss;</span><br><span class="line">  ss.str (&quot;Example string&quot;);</span><br><span class="line">  std::string s = ss.str();</span><br><span class="line">  std::cout &lt;&lt; s &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="std-ostringstream"><a href="#std-ostringstream" class="headerlink" title="std::ostringstream"></a>std::ostringstream</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuchj2k48bj20uk05sglq.jpg"><br>用于操作字符串输出的流类</p>
-<h4 id="std-ostringstream-str"><a href="#std-ostringstream-str" class="headerlink" title="std::ostringstream::str"></a>std::ostringstream::str</h4><p>get/set content</p>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/thread/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/thread/" itemprop="url">header &lt;thread&gt;</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T15:37:02+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/16/thread/" class="leancloud_visitors" data-flag-title="header &lt;thread&gt;">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="std-this-thread"><a href="#std-this-thread" class="headerlink" title="std::this_thread"></a>std::this_thread</h3><p>这个命名空间聚集了一组函数用于访问当前线程。</p>
-<h4 id="头文件-gt-命名空间-gt-函数"><a href="#头文件-gt-命名空间-gt-函数" class="headerlink" title="头文件-&gt;命名空间-&gt;函数"></a>头文件-&gt;命名空间-&gt;函数</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubky9dds8j20a508ljrm.jpg" align="left"><br><br><br><br><br><br><br><br><br></p>
-<hr>
-<h3 id="std-this-thread-get-id"><a href="#std-this-thread-get-id" class="headerlink" title="std::this_thread::get_id"></a>std::this_thread::get_id</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubkzmxuumj20ur02xgll.jpg" align="left"><br>返回正被调用的线程的id，这个id唯一地确定一个线程。</p>
-<p>####代码示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// thread::get_id / this_thread::get_id</span><br><span class="line">#include &lt;iostream&gt;       // std::cout</span><br><span class="line">#include &lt;thread&gt;         // std::thread, std::thread::id, std::this_thread::get_id</span><br><span class="line">#include &lt;chrono&gt;         // std::chrono::seconds</span><br><span class="line"></span><br><span class="line">std::thread::id main_thread_id = std::this_thread::get_id();</span><br><span class="line"></span><br><span class="line">void is_main_thread() &#123;</span><br><span class="line">  if ( main_thread_id == std::this_thread::get_id() )</span><br><span class="line">    std::cout &lt;&lt; &quot;This is the main thread.\n&quot;;</span><br><span class="line">  else</span><br><span class="line">    std::cout &lt;&lt; &quot;This is not the main thread.\n&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  is_main_thread();</span><br><span class="line">  std::thread th (is_main_thread);</span><br><span class="line">  th.join();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h3 id="std-thread-id"><a href="#std-thread-id" class="headerlink" title="std::thread::id"></a>std::thread::id</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubl48usc3j20ug02w3yh.jpg" align="left"><br>它地值是由thread::get_id和this_thread::get_id返回，用于验证线程。</p>
-<h4 id="头文件-gt-类-gt-类成员"><a href="#头文件-gt-类-gt-类成员" class="headerlink" title="头文件-&gt;类-&gt;类成员"></a>头文件-&gt;类-&gt;类成员</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubladkmloj209u0g8dgo.jpg" align="left"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1933,7 +1924,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1944,7 +1935,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

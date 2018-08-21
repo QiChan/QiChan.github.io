@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[header &lt;map&gt;]]></title>
+    <url>%2F2018%2F08%2F18%2Fmap%2F</url>
+    <content type="text"><![CDATA[contents of header map std::map std::map::findSearches the container for an element with a key equivalent to k and returns an iterator to it if found, otherwise it returns an iterator to map::end. codes example1234567891011121314151617181920212223242526// map::find#include &lt;iostream&gt;#include &lt;map&gt;int main ()&#123; std::map&lt;char,int&gt; mymap; std::map&lt;char,int&gt;::iterator it; mymap[&apos;a&apos;]=50; mymap[&apos;b&apos;]=100; mymap[&apos;c&apos;]=150; mymap[&apos;d&apos;]=200; it = mymap.find(&apos;b&apos;); if (it != mymap.end()) mymap.erase (it); // print content: std::cout &lt;&lt; &quot;elements in mymap:&quot; &lt;&lt; &apos;\n&apos;; std::cout &lt;&lt; &quot;a =&gt; &quot; &lt;&lt; mymap.find(&apos;a&apos;)-&gt;second &lt;&lt; &apos;\n&apos;; std::cout &lt;&lt; &quot;c =&gt; &quot; &lt;&lt; mymap.find(&apos;c&apos;)-&gt;second &lt;&lt; &apos;\n&apos;; std::cout &lt;&lt; &quot;d =&gt; &quot; &lt;&lt; mymap.find(&apos;d&apos;)-&gt;second &lt;&lt; &apos;\n&apos;; return 0;&#125; std::map::endReturns an iterator referring to the past-the-end element in the map container. codes example12345678910111213141516171819// map::begin/end#include &lt;iostream&gt;#include &lt;map&gt;int main ()&#123; std::map&lt;char,int&gt; mymap; mymap[&apos;b&apos;] = 100; mymap[&apos;a&apos;] = 200; mymap[&apos;c&apos;] = 300; // show content: for (std::map&lt;char,int&gt;::iterator it=mymap.begin(); it!=mymap.end(); ++it) std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; &apos;\n&apos;; return 0;&#125;`]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[header &lt;ios&gt;]]></title>
+    <url>%2F2018%2F08%2F18%2Fios%2F</url>
+    <content type="text"><![CDATA[contents of header ios std::hex codes example12345678910// modify basefield#include &lt;iostream&gt; // std::cout, std::dec, std::hex, std::octint main () &#123; int n = 70; std::cout &lt;&lt; std::dec &lt;&lt; n &lt;&lt; &apos;\n&apos;; std::cout &lt;&lt; std::hex &lt;&lt; n &lt;&lt; &apos;\n&apos;; std::cout &lt;&lt; std::oct &lt;&lt; n &lt;&lt; &apos;\n&apos;; return 0;&#125;]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[doubts]]></title>
+    <url>%2F2018%2F08%2F17%2FdoubtsCollection%2F</url>
+    <content type="text"><![CDATA[1.LOG_FATAL2.LOG_TRACE]]></content>
+      <categories>
+        <category>Doubts Collection</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[header &lt;memory&gt;]]></title>
+    <url>%2F2018%2F08%2F17%2Fmemory%2F</url>
+    <content type="text"><![CDATA[header contents smart ptr智能指针是一个类，它对普通指针进行封装，使智能指针类的obj具有如普通指针一样的操作。 智能指针类的obj的值是内存地址。 std::shared_ptrManages the storage of a pointer, providing a limited garbage-collection facility, possibly sharing that management with other objects. std:weak_ptrweak shared pointer. std::weak_ptr::lockreturns a shared_ptr with the information perserved by the weak_ptr obj if it is not expired. code example12345678910111213141516171819202122// weak_ptr::lock example#include &lt;iostream&gt;#include &lt;memory&gt;int main () &#123; std::shared_ptr&lt;int&gt; sp1,sp2; std::weak_ptr&lt;int&gt; wp; // sharing group: // -------------- sp1 = std::make_shared&lt;int&gt; (20); // sp1 wp = sp1; // sp1, wp sp2 = wp.lock(); // sp1, wp, sp2 sp1.reset(); // wp, sp2 sp1 = wp.lock(); // sp1, wp, sp2 std::cout &lt;&lt; &quot;*sp1: &quot; &lt;&lt; *sp1 &lt;&lt; &apos;\n&apos;; std::cout &lt;&lt; &quot;*sp2: &quot; &lt;&lt; *sp2 &lt;&lt; &apos;\n&apos;; return 0;&#125; trickstd::weak_ptr和std::shared_ptr可以指向不同的数据类型]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Linux IO-Multiplex]]></title>
     <url>%2F2018%2F08%2F17%2FLinux_IO_Multiplex%2F</url>
     <content type="text"><![CDATA[epollepoll是对select,poll这种IO多路转接方式的改进 接口:&emsp;&emsp;int epoll_create(int intsize); &emsp;&emsp;int epoll_ctl(int epfd, int op, int fd, struct epoll_event* event); &emsp;&emsp;int epoll_wait(int epfd, struct epoll_event* events,int maxevents, int timeout); 工作模式： &emsp;&emsp;水平触发：缺省的工作方式，并且同时支持block和no-blocksocket，在这种做法中，内核告诉你一个文件描述符是否就绪了，然后你可以对这个就绪的fd进行IO操作。如果你不作任何操作，内核还是会继续通知你的，所以，这种模式编程出错误可能性要小一点。传统的select/poll都是这种模型的代表 &emsp;&emsp;边缘触发：高速工作方式，只支持no-blocksocket。在这种模式下，当描述符从未就绪变为就绪时，内核通过epoll告诉你。然后它会假设你知道文件描述符已经就绪，并且不会再为那个文件描述符发送更多的就绪通知，直到你做了某些操作导致那个文件描述符不再为就绪状态了 用途：使用epoll_wait对某个文件描述符进行事件监听，监听到事件后会返回相关的结构体，得到其中有事件到来的fd，使用对应的回调函数(手动实现fd到回调函数的映射)来处理该fd上的事件：读数据或者写数据之类的。]]></content>
