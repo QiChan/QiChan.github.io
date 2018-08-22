@@ -90,7 +90,8 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fue5v1krffj20ul05774f.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fue5wjm3fpj20ut03ddfu.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fue630v3i5j20ux04y0st.jpg">
-<meta property="og:updated_time" content="2018-08-18T13:20:34.787Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuihb5sjz1j20um05pdg5.jpg">
+<meta property="og:updated_time" content="2018-08-22T06:54:57.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="header &amp;lt;map&amp;gt;">
 <meta name="twitter:description" content="contents of header map  std::map std::map::findSearches the container for an element with a key equivalent to k and returns an iterator to it if found, otherwise it returns an iterator to map::end. co">
@@ -389,6 +390,10 @@
 <h4 id="std-map-end"><a href="#std-map-end" class="headerlink" title="std::map::end"></a>std::map::end</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue630v3i5j20ux04y0st.jpg"><br>Returns an iterator referring to the past-the-end element in the map container.</p>
 <h5 id="codes-example-1"><a href="#codes-example-1" class="headerlink" title="codes example"></a>codes example</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// map::begin/end</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  std::map&lt;char,int&gt; mymap;</span><br><span class="line"></span><br><span class="line">  mymap[&apos;b&apos;] = 100;</span><br><span class="line">  mymap[&apos;a&apos;] = 200;</span><br><span class="line">  mymap[&apos;c&apos;] = 300;</span><br><span class="line"></span><br><span class="line">  // show content:</span><br><span class="line">  for (std::map&lt;char,int&gt;::iterator it=mymap.begin(); it!=mymap.end(); ++it)</span><br><span class="line">    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
 <hr>
+<h4 id="std-map-erase"><a href="#std-map-erase" class="headerlink" title="std::map::erase"></a>std::map::erase</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuihb5sjz1j20um05pdg5.jpg"><br>Removes from the map container either a single element or a range of elements ([first,last)).</p>
+<p>This effectively reduces the container size by the number of elements removed, which are destroyed.</p>
+<h5 id="codes-example-2"><a href="#codes-example-2" class="headerlink" title="codes example"></a>codes example</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// erasing from map</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  std::map&lt;char,int&gt; mymap;</span><br><span class="line">  std::map&lt;char,int&gt;::iterator it;</span><br><span class="line"></span><br><span class="line">  // insert some values:</span><br><span class="line">  mymap[&apos;a&apos;]=10;</span><br><span class="line">  mymap[&apos;b&apos;]=20;</span><br><span class="line">  mymap[&apos;c&apos;]=30;</span><br><span class="line">  mymap[&apos;d&apos;]=40;</span><br><span class="line">  mymap[&apos;e&apos;]=50;</span><br><span class="line">  mymap[&apos;f&apos;]=60;</span><br><span class="line"></span><br><span class="line">  it=mymap.find(&apos;b&apos;);</span><br><span class="line">  mymap.erase (it);                   // erasing by iterator</span><br><span class="line"></span><br><span class="line">  mymap.erase (&apos;c&apos;);                  // erasing by key</span><br><span class="line"></span><br><span class="line">  it=mymap.find (&apos;e&apos;);</span><br><span class="line">  mymap.erase ( it, mymap.end() );    // erasing by range</span><br><span class="line"></span><br><span class="line">// show content:</span><br><span class="line">  for (it=mymap.begin(); it!=mymap.end(); ++it)</span><br><span class="line">    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
 
       
     </div>
@@ -422,6 +427,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/21/cstring/" rel="prev" title="header &lt;cstring&gt;">
+                header &lt;cstring&gt; <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -524,7 +533,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -570,7 +579,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#contents-of-header-map"><span class="nav-number">1.</span> <span class="nav-text">contents of header map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#std-map"><span class="nav-number">2.</span> <span class="nav-text">std::map</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#std-map-find"><span class="nav-number">2.1.</span> <span class="nav-text">std::map::find</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#codes-example"><span class="nav-number">2.1.1.</span> <span class="nav-text">codes example</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#std-map-end"><span class="nav-number">2.2.</span> <span class="nav-text">std::map::end</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#codes-example-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">codes example</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#contents-of-header-map"><span class="nav-number">1.</span> <span class="nav-text">contents of header map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#std-map"><span class="nav-number">2.</span> <span class="nav-text">std::map</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#std-map-find"><span class="nav-number">2.1.</span> <span class="nav-text">std::map::find</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#codes-example"><span class="nav-number">2.1.1.</span> <span class="nav-text">codes example</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#std-map-end"><span class="nav-number">2.2.</span> <span class="nav-text">std::map::end</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#codes-example-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">codes example</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#std-map-erase"><span class="nav-number">2.3.</span> <span class="nav-text">std::map::erase</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#codes-example-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">codes example</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

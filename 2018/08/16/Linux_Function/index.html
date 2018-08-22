@@ -88,7 +88,13 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fubtalmxi5j20l80570sy.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fucnxe6owgj20cc05emx3.jpg">
-<meta property="og:updated_time" content="2018-08-17T07:20:18.707Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuik8w6fh3j20ka032jrb.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuhqkivo8oj20bs0753yl.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuij77pr21j20dx03xaax.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuijhiwxqpj210407kt9k.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuhrgjkfo7j20k903274b.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuikjjmztrj20lh04kgnr.jpg">
+<meta property="og:updated_time" content="2018-08-22T08:48:52.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux function">
 <meta name="twitter:description" content="read()  eventfd()使用这个函数来创建一个事件对象，linux线程间通信为了提高效率，大多使用异步通信，采用事件监听和回调函数的方式来实现高效的任务处理方式（虽然会将逻辑变得复杂）。 linux内核会为这个事件对象维护一个64位的计数器(uint64_t).并在初始化时用传进去的initval来初始化这个计数器，然后返回一个文件描述符来代表这个事件对象。 第二个参数是描述这个事件对象">
@@ -413,12 +419,29 @@
 </table>
 <h4 id="close-on-exec-flag"><a href="#close-on-exec-flag" class="headerlink" title="close-on-exec flag"></a>close-on-exec flag</h4><p>the kernel provides a close-on-exec flag for each file descriptor. if this flag is set, then the file descriptor is automatically closed during a successful exec(), but left open if the exec() fails.</p>
 <hr>
+<h3 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuik8w6fh3j20ka032jrb.jpg"><br>closing a file</p>
+<hr>
 <h3 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h3><p>Name<br>execl, execlp, execle, execv, execvp, execvpe - execute a file</p>
 <p>Synopsis</p>
 <p>#include &lt;unistd.h&gt;</p>
 <p>extern char **environ;</p>
 <p>int execl(const char <em>path, const char </em>arg, …);<br>int execlp(const char <em>file, const char </em>arg, …);<br>int execle(const char <em>path, const char </em>arg,<br>…, char <em> const envp[]);<br>int execv(const char </em>path, char <em>const argv[]);<br>int execvp(const char </em>file, char <em>const argv[]);<br>int execvpe(const char </em>file, char <em>const argv[],<br>char </em>const envp[]);</p>
 <p>The exec() family of functions replaces the current process with a new process image.<br>fork函数是用于创建一个子进程，该子进程几乎是父进程的副本，而有时我们希望子进程去执行另外的程序，exec函数族就提供了一个在进程中启动另一个程序执行的方法。它可以根据指定的文件名或目录名找到可执行文件，并用它来取代原调用进程的数据段、代码段和堆栈段，在执行完之后，原调用进程的内容除了进程号外，其他全部被新程序的内容替换了。另外，这里的可执行文件既可以是二进制文件，也可以是Linux下任何可执行脚本文件。</p>
+<hr>
+<h3 id="bzero"><a href="#bzero" class="headerlink" title="bzero()"></a>bzero()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuhqkivo8oj20bs0753yl.jpg"><br>set the first n bytes of the area starting at s to zero (bytes constaining aq\0aq).</p>
+<hr>
+<h3 id="epoll-create"><a href="#epoll-create" class="headerlink" title="epoll_create()"></a>epoll_create()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuij77pr21j20dx03xaax.jpg"><br>creating an epoll instance.</p>
+<h4 id="parameter"><a href="#parameter" class="headerlink" title="parameter"></a>parameter</h4><p>size&emsp;&emsp;epoll实例的大小</p>
+<hr>
+<h3 id="epoll-create1"><a href="#epoll-create1" class="headerlink" title="epoll_create1()"></a>epoll_create1()</h3><p>#include &lt;sys/epoll.h&gt;<br>int epoll_create1(int flags);<br><img src="http://ww1.sinaimg.cn/large/be778adagy1fuijhiwxqpj210407kt9k.jpg"><br>如果flags为0，则除了原size参数被省略了，其它都和epoll_create()一样的。</p>
+<hr>
+<h3 id="epoll-ctl"><a href="#epoll-ctl" class="headerlink" title="epoll_ctl()"></a>epoll_ctl()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuhrgjkfo7j20k903274b.jpg"><br>生成epoll例程后，应在其内部注册监视对象文件描述符，此时使用epoll_ctl().</p>
+<p> performs control operations on the epoll instance referred to by the file descriptor epfd. It requests that the operation op be performed for the target file descriptor, fd.</p>
+<h4 id="parameter-1"><a href="#parameter-1" class="headerlink" title="parameter"></a>parameter</h4><p>epfd&emsp;&emsp;用于注册监视对象的epoll例程的文件描述符<br>op&emsp;&emsp;用于指定监视对象的添加，删除或更改等操作<br>fd&emsp;&emsp;需要注册的监视对象文件描述符<br>event&emsp;&emsp;监视对象的事件类型</p>
+<h5 id="parameter-op"><a href="#parameter-op" class="headerlink" title="parameter op"></a>parameter op</h5><p>EPOLL_CTL_ADD:将文件描述符注册到epoll例程<br>EPOLL_CTL_DEL:从epoll例程中删除文件描述符<br>EPOLL_CTL_MOD:更改注册的文件描述符的关注事件发生情况 ???</p>
+<hr>
+<h3 id="epoll-wait"><a href="#epoll-wait" class="headerlink" title="epoll_wait()"></a>epoll_wait()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuikjjmztrj20lh04kgnr.jpg"><br>waiting for events,the epoll_wait() system call returns information about ready file descriptors from the epoll instance referred to by the file descriptor epfd. A single epoll_wait() call can return information about multiple ready file descriptors.</p>
+<h4 id="param"><a href="#param" class="headerlink" title="param"></a>param</h4><p>epfd&emsp;&emsp;表示事件发生监视范围的epoll例程的文件描述符<br>events&emsp;&emsp;保存发生事件的文件描述符集合的结构体地址值<br>maxevents&emsp;&emsp;第二个参数中可以保存的最大事件数<br>timeout&emsp;&emsp;以1/1000秒为单位的等待时间，传递-1时，一直等待直到发生事件</p>
 <hr>
 
       
@@ -559,7 +582,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -605,7 +628,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#read"><span class="nav-number">1.</span> <span class="nav-text">read()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eventfd"><span class="nav-number">2.</span> <span class="nav-text">eventfd()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flags"><span class="nav-number">2.1.</span> <span class="nav-text">flags</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#open"><span class="nav-number">3.</span> <span class="nav-text">open()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#close-on-exec-flag"><span class="nav-number">3.1.</span> <span class="nav-text">close-on-exec flag</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exec"><span class="nav-number">4.</span> <span class="nav-text">exec()</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#read"><span class="nav-number">1.</span> <span class="nav-text">read()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eventfd"><span class="nav-number">2.</span> <span class="nav-text">eventfd()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flags"><span class="nav-number">2.1.</span> <span class="nav-text">flags</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#open"><span class="nav-number">3.</span> <span class="nav-text">open()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#close-on-exec-flag"><span class="nav-number">3.1.</span> <span class="nav-text">close-on-exec flag</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#close"><span class="nav-number">4.</span> <span class="nav-text">close()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exec"><span class="nav-number">5.</span> <span class="nav-text">exec()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bzero"><span class="nav-number">6.</span> <span class="nav-text">bzero()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-create"><span class="nav-number">7.</span> <span class="nav-text">epoll_create()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#parameter"><span class="nav-number">7.1.</span> <span class="nav-text">parameter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-create1"><span class="nav-number">8.</span> <span class="nav-text">epoll_create1()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-ctl"><span class="nav-number">9.</span> <span class="nav-text">epoll_ctl()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#parameter-1"><span class="nav-number">9.1.</span> <span class="nav-text">parameter</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#parameter-op"><span class="nav-number">9.1.1.</span> <span class="nav-text">parameter op</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-wait"><span class="nav-number">10.</span> <span class="nav-text">epoll_wait()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#param"><span class="nav-number">10.1.</span> <span class="nav-text">param</span></a></li></ol></li></ol></div>
             
 
           </div>
