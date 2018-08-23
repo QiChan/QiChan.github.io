@@ -1323,7 +1323,7 @@
 <p>右值引用通过&amp;&amp;而不是&amp;来获取。</p>
 <p>右值引用的重要属性: 它只能与即将要销毁的obj绑定，所以我们可自由地把资源从右值引用‘移动’至另一个obj。</p>
 <p>与任何引用一般，右值引用也只是一个obj的别名而已。</p>
-<p>我们不能使常规引用（通过&amp;获得的引用，亦称左值引用）去绑定一个需要conversion的表达式，或一个literals，或一个返回左值的表达式。但左值引用刚好相反：它可以绑定上述的任何表达式，但不能直接绑定一个左值。</p>
+<p>我们不能使常规引用（通过&amp;获得的引用，亦称左值引用）去绑定一个需要conversion的表达式，或一个literals，或一个返回右值的表达式。但右值引用刚好相反：它可以绑定上述的任何表达式，但不能直接绑定一个左值。</p>
 <p>返回左值引用的函数，以及assignment，subscript，dereference和prefix increment/decrement 运算符，全都返回左值，所以可以将左值引用与任一绑定。</p>
 <p>返回值为非引用的函数，以及arithmetic，relational，bitwise和postfix increment/decrement 运算符，全都返回右值，所以可以将右值引用或const左值引用与任一绑定。</p>
 <p>因为右值引用只能绑定temporary obj，所以：<br>&emsp;&emsp;被绑定的obj即将销毁<br>&emsp;&emsp;被绑定的obj没有user使用<br>所以可以自由地接管被绑定的obj中的资源</p>
