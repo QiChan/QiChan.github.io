@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux Miscellaneous]]></title>
+    <url>%2F2018%2F08%2F24%2FLinux_miscellaneous%2F</url>
+    <content type="text"><![CDATA[pthread data type]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[net programing struct]]></title>
+    <url>%2F2018%2F08%2F24%2FNet_struct%2F</url>
+    <content type="text"><![CDATA[IPv4地址的结构体]]></content>
+      <categories>
+        <category>Net Programming</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Keywords]]></title>
     <url>%2F2018%2F08%2F22%2FC%2B%2BKeyword%2F</url>
     <content type="text"><![CDATA[__cdecl函数调用约定关键字，作用是：参数由右向左压入栈; 但栈由调用者清理。 调用者：函数A中调用了函数B，则A是B的调用者。]]></content>
@@ -11,7 +27,7 @@
   <entry>
     <title><![CDATA[Class]]></title>
     <url>%2F2018%2F08%2F22%2FC%2B%2BClass%2F</url>
-    <content type="text"><![CDATA[construct and destruct orderconstruct order: parentClass -&gt; subClass’ member obj -&gt; subClass destruct order: subClass -&gt; subClass’s member obj -&gt; parentClass the order of above is quite contrary]]></content>
+    <content type="text"><![CDATA[construct and destruct orderconstruct order: parentClass -&gt; subClass’ member obj -&gt; subClass destruct order: subClass -&gt; subClass’s member obj -&gt; parentClass the order of above is quite contrary 初始化列表1234567891011121314151617181920#include &lt;iostream&gt;using namespace std;class timer&#123;public: timer(double interval):repeat(interval &gt; 0.0) // interval的bool值由 interval&gt;0.0 的真假来决定 &#123;&#125;public: bool repeat;&#125;;int main () &#123; timer t(0.0); cout &lt;&lt; t.repeat &lt;&lt; endl; return 0;&#125;]]></content>
       <categories>
         <category>C++</category>
       </categories>
@@ -123,7 +139,7 @@
   <entry>
     <title><![CDATA[Linux function]]></title>
     <url>%2F2018%2F08%2F16%2FLinux_Function%2F</url>
-    <content type="text"><![CDATA[read() eventfd()使用这个函数来创建一个事件对象，linux线程间通信为了提高效率，大多使用异步通信，采用事件监听和回调函数的方式来实现高效的任务处理方式（虽然会将逻辑变得复杂）。 linux内核会为这个事件对象维护一个64位的计数器(uint64_t).并在初始化时用传进去的initval来初始化这个计数器，然后返回一个文件描述符来代表这个事件对象。 第二个参数是描述这个事件对象的属性，可以设置为EFD_NONBLOCK , EFD_CLOEXEC；前面的是设置对象为非阻塞状态，如果没有设置为非阻塞状态，read系统调用来读这个计数器，且计数器的值为0时，就会一直阻塞在read系统调用上，反之如果设置了该标志位，就会返回EAGAIN错误。后面的EFD_CLOEXEC功能是在程序调用exec()函数族加载其他程序时自动关闭当前已有的文件描述符（具体为什么暂不解释）。 通过此函数得到的对象既然是一个计数器，我们就可以对它进行读和写： 使用write将缓冲区写入的8字节整形值加到内核计数器上。 使用read将内核计数的8字节值读取到缓冲区中，并把计数器重设为0，如果buffer的长度小于8字节则read会失败，错误码设为EINVAl。 用处：对eventfd进行Epoll监听. flagsThe following values may be bitwise ORed in flags to change the behaviour of eventfd(): FD_CLOEXEC (since Linux 2.6.27)Set the close-on-exec (FD_CLOEXEC) flag on the new file descriptor. See the description of the O_CLOEXEC flag in open(2) for reasons why this may be useful. EFD_NONBLOCK (since Linux 2.6.27)（就是将新文件描述符设置成非阻塞）Set the O_NONBLOCK file status flag on the new open file description. Using this flag saves extra calls to fcntl(2) to achieve the same result. open()Table Values for the flags argument of open() Flag Purpose O_CLOEXEC Set the close-on-exec flag O_NONBLOCK Open in nonblocking mode close-on-exec flagthe kernel provides a close-on-exec flag for each file descriptor. if this flag is set, then the file descriptor is automatically closed during a successful exec(), but left open if the exec() fails. close()closing a file exec()Nameexecl, execlp, execle, execv, execvp, execvpe - execute a file Synopsis #include &lt;unistd.h&gt; extern char **environ; int execl(const char path, const char arg, …);int execlp(const char file, const char arg, …);int execle(const char path, const char arg,…, char const envp[]);int execv(const char path, char const argv[]);int execvp(const char file, char const argv[]);int execvpe(const char file, char const argv[],char const envp[]); The exec() family of functions replaces the current process with a new process image.fork函数是用于创建一个子进程，该子进程几乎是父进程的副本，而有时我们希望子进程去执行另外的程序，exec函数族就提供了一个在进程中启动另一个程序执行的方法。它可以根据指定的文件名或目录名找到可执行文件，并用它来取代原调用进程的数据段、代码段和堆栈段，在执行完之后，原调用进程的内容除了进程号外，其他全部被新程序的内容替换了。另外，这里的可执行文件既可以是二进制文件，也可以是Linux下任何可执行脚本文件。 bzero()set the first n bytes of the area starting at s to zero (bytes constaining aq\0aq). epoll_create()creating an epoll instance. parametersize&emsp;&emsp;epoll实例的大小 epoll_create1()#include &lt;sys/epoll.h&gt;int epoll_create1(int flags);如果flags为0，则除了原size参数被省略了，其它都和epoll_create()一样的。 epoll_ctl()生成epoll例程后，应在其内部注册监视对象文件描述符，此时使用epoll_ctl(). performs control operations on the epoll instance referred to by the file descriptor epfd. It requests that the operation op be performed for the target file descriptor, fd. parameterepfd&emsp;&emsp;用于注册监视对象的epoll例程的文件描述符op&emsp;&emsp;用于指定监视对象的添加，删除或更改等操作fd&emsp;&emsp;需要注册的监视对象文件描述符event&emsp;&emsp;监视对象的事件类型 parameter opEPOLL_CTL_ADD:将文件描述符注册到epoll例程EPOLL_CTL_DEL:从epoll例程中删除文件描述符EPOLL_CTL_MOD:更改注册的文件描述符的关注事件发生情况 ??? epoll_wait()waiting for events,the epoll_wait() system call returns information about ready file descriptors from the epoll instance referred to by the file descriptor epfd. A single epoll_wait() call can return information about multiple ready file descriptors. paramepfd&emsp;&emsp;表示事件发生监视范围的epoll例程的文件描述符events&emsp;&emsp;保存发生事件的文件描述符集合的结构体地址值maxevents&emsp;&emsp;第二个参数中可以保存的最大事件数timeout&emsp;&emsp;以1/1000秒为单位的等待时间，传递-1时，一直等待直到发生事件]]></content>
+    <content type="text"><![CDATA[read() eventfd()使用这个函数来创建一个事件对象，linux线程间通信为了提高效率，大多使用异步通信，采用事件监听和回调函数的方式来实现高效的任务处理方式（虽然会将逻辑变得复杂）。 linux内核会为这个事件对象维护一个64位的计数器(uint64_t).并在初始化时用传进去的initval来初始化这个计数器，然后返回一个文件描述符来代表这个事件对象。 第二个参数是描述这个事件对象的属性，可以设置为EFD_NONBLOCK , EFD_CLOEXEC；前面的是设置对象为非阻塞状态，如果没有设置为非阻塞状态，read系统调用来读这个计数器，且计数器的值为0时，就会一直阻塞在read系统调用上，反之如果设置了该标志位，就会返回EAGAIN错误。后面的EFD_CLOEXEC功能是在程序调用exec()函数族加载其他程序时自动关闭当前已有的文件描述符（具体为什么暂不解释）。 通过此函数得到的对象既然是一个计数器，我们就可以对它进行读和写： 使用write将缓冲区写入的8字节整形值加到内核计数器上。 使用read将内核计数的8字节值读取到缓冲区中，并把计数器重设为0，如果buffer的长度小于8字节则read会失败，错误码设为EINVAl。 用处：对eventfd进行Epoll监听. flagsThe following values may be bitwise ORed in flags to change the behaviour of eventfd(): FD_CLOEXEC (since Linux 2.6.27)Set the close-on-exec (FD_CLOEXEC) flag on the new file descriptor. See the description of the O_CLOEXEC flag in open(2) for reasons why this may be useful. EFD_NONBLOCK (since Linux 2.6.27)（就是将新文件描述符设置成非阻塞）Set the O_NONBLOCK file status flag on the new open file description. Using this flag saves extra calls to fcntl(2) to achieve the same result. open()Table Values for the flags argument of open() Flag Purpose O_CLOEXEC Set the close-on-exec flag O_NONBLOCK Open in nonblocking mode close-on-exec flagthe kernel provides a close-on-exec flag for each file descriptor. if this flag is set, then the file descriptor is automatically closed during a successful exec(), but left open if the exec() fails. close()closing a file exec()Nameexecl, execlp, execle, execv, execvp, execvpe - execute a file Synopsis #include &lt;unistd.h&gt; extern char **environ; int execl(const char path, const char arg, …);int execlp(const char file, const char arg, …);int execle(const char path, const char arg,…, char const envp[]);int execv(const char path, char const argv[]);int execvp(const char file, char const argv[]);int execvpe(const char file, char const argv[],char const envp[]); The exec() family of functions replaces the current process with a new process image.fork函数是用于创建一个子进程，该子进程几乎是父进程的副本，而有时我们希望子进程去执行另外的程序，exec函数族就提供了一个在进程中启动另一个程序执行的方法。它可以根据指定的文件名或目录名找到可执行文件，并用它来取代原调用进程的数据段、代码段和堆栈段，在执行完之后，原调用进程的内容除了进程号外，其他全部被新程序的内容替换了。另外，这里的可执行文件既可以是二进制文件，也可以是Linux下任何可执行脚本文件。 bzero()set the first n bytes of the area starting at s to zero (bytes constaining aq\0aq). epoll_create()creating an epoll instance. parametersize&emsp;&emsp;epoll实例的大小 epoll_create1()#include &lt;sys/epoll.h&gt;int epoll_create1(int flags);如果flags为0，则除了原size参数被省略了，其它都和epoll_create()一样的。 epoll_ctl()生成epoll例程后，应在其内部注册监视对象文件描述符，此时使用epoll_ctl(). performs control operations on the epoll instance referred to by the file descriptor epfd. It requests that the operation op be performed for the target file descriptor, fd. parameterepfd&emsp;&emsp;用于注册监视对象的epoll例程的文件描述符op&emsp;&emsp;用于指定监视对象的添加，删除或更改等操作fd&emsp;&emsp;需要注册的监视对象文件描述符event&emsp;&emsp;监视对象的事件类型 parameter opEPOLL_CTL_ADD:将文件描述符注册到epoll例程EPOLL_CTL_DEL:从epoll例程中删除文件描述符EPOLL_CTL_MOD:更改注册的文件描述符的关注事件发生情况 ??? epoll_wait()waiting for events,the epoll_wait() system call returns information about ready file descriptors from the epoll instance referred to by the file descriptor epfd. A single epoll_wait() call can return information about multiple ready file descriptors. paramepfd&emsp;&emsp;表示事件发生监视范围的epoll例程的文件描述符events&emsp;&emsp;保存发生事件的文件描述符集合的结构体地址值maxevents&emsp;&emsp;第二个参数中可以保存的最大事件数timeout&emsp;&emsp;以1/1000秒为单位的等待时间，传递-1时，一直等待直到发生事件 socket()创建socket paramdomain(procotol family) 套接字类型（type）套接字类型1：面向连接的套接字（SOCK_STREAM）套接字类型2：面向消息的套接字（sock_DGRAM） procotol大部分情况下传递0即可]]></content>
       <categories>
         <category>Linux</category>
       </categories>
@@ -249,17 +265,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[C++ standard library and namespace]]></title>
-    <url>%2F2018%2F08%2F13%2FC%2B%2B_StdLib_and_Namespace%2F</url>
-    <content type="text"><![CDATA[C++ standard libraryC++ standard library 的内容都定义在多个C++的头文件中。由于C++ standard library可能与第三方提供的library存在相同名称的冲突，所以通过namespace来避免这种冲突。 C++ standard library 中所有元素都被定义在namespace std中。没有’.h’后缀的头文件中内容才定义在namespace std中，即调用时需’std::xx..’，而&lt;xxx.h&gt;中的内容并非定义在namespace std中。即调用时无需先写明’std::’。]]></content>
+    <title><![CDATA[class template and its instantiation]]></title>
+    <url>%2F2018%2F08%2F13%2FC%2B%2B_Template%2F</url>
+    <content type="text"><![CDATA[类模板12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &lt;iostream&gt;using namespace std;template&lt; class T &gt;class array // define class template&#123;public: array( int ); T &amp; operator[]( int ); const T &amp; operator[] ( int )const; int getlen() const &#123; return length; &#125; ~array();private: array()&#123;&#125;; int length; T * num;&#125;;template &lt; class T &gt;array&lt; T &gt;::array( int n )// define member function outside class&#123; num = new T[n]; length = n;&#125;template &lt; class T &gt;array&lt; T &gt;::~array()&#123; delete[] num;&#125;template&lt; class T &gt;T &amp; array&lt; T &gt; ::operator[] ( int i )&#123; if( i &lt; 0 || i &gt;= length ) throw string( &quot;out of bounds&quot; ); return num[i];&#125;template&lt; class T &gt;const T &amp; array&lt; T &gt; ::operator[] (int i) const&#123; if( i &lt; 0 || i &gt;= length) throw string( &quot;out of bounds&quot; ); return num[i];&#125;template&lt; class T &gt;ostream &amp; operator&lt;&lt;( ostream &amp; out, const array &lt;T&gt; &amp; A )&#123; for(int i=0; i &lt; A.getlen(); i++) out&lt;&lt; A[i] &lt;&lt; &quot; &quot;; return out;&#125;int main()&#123; array&lt; int &gt; A(10); // the instantiation. for(int i = 0; i &lt; 10; i++) &#123; A[i] = 2*i; &#125; cout&lt;&lt;A&lt;&lt;endl; return 0;&#125; 函数模板123456789101112template&lt;typename T&gt;int compare(const T&amp; left, const T&amp; right) &#123; if (left &lt; right) &#123; return -1; &#125; if (right &lt; left) &#123; return 1; &#125; return 0;&#125;compare&lt;int&gt;(1, 2); //使用模板函数]]></content>
       <categories>
         <category>C++</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[class template and its instantiation]]></title>
-    <url>%2F2018%2F08%2F13%2FC%2B%2B_Template%2F</url>
-    <content type="text"><![CDATA[类模板12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &lt;iostream&gt;using namespace std;template&lt; class T &gt;class array // define class template&#123;public: array( int ); T &amp; operator[]( int ); const T &amp; operator[] ( int )const; int getlen() const &#123; return length; &#125; ~array();private: array()&#123;&#125;; int length; T * num;&#125;;template &lt; class T &gt;array&lt; T &gt;::array( int n )// define member function outside class&#123; num = new T[n]; length = n;&#125;template &lt; class T &gt;array&lt; T &gt;::~array()&#123; delete[] num;&#125;template&lt; class T &gt;T &amp; array&lt; T &gt; ::operator[] ( int i )&#123; if( i &lt; 0 || i &gt;= length ) throw string( &quot;out of bounds&quot; ); return num[i];&#125;template&lt; class T &gt;const T &amp; array&lt; T &gt; ::operator[] (int i) const&#123; if( i &lt; 0 || i &gt;= length) throw string( &quot;out of bounds&quot; ); return num[i];&#125;template&lt; class T &gt;ostream &amp; operator&lt;&lt;( ostream &amp; out, const array &lt;T&gt; &amp; A )&#123; for(int i=0; i &lt; A.getlen(); i++) out&lt;&lt; A[i] &lt;&lt; &quot; &quot;; return out;&#125;int main()&#123; array&lt; int &gt; A(10); // the instantiation. for(int i = 0; i &lt; 10; i++) &#123; A[i] = 2*i; &#125; cout&lt;&lt;A&lt;&lt;endl; return 0;&#125; 函数模板123456789101112template&lt;typename T&gt;int compare(const T&amp; left, const T&amp; right) &#123; if (left &lt; right) &#123; return -1; &#125; if (right &lt; left) &#123; return 1; &#125; return 0;&#125;compare&lt;int&gt;(1, 2); //使用模板函数]]></content>
+    <title><![CDATA[C++ standard library and namespace]]></title>
+    <url>%2F2018%2F08%2F13%2FC%2B%2B_StdLib_and_Namespace%2F</url>
+    <content type="text"><![CDATA[C++ standard libraryC++ standard library 的内容都定义在多个C++的头文件中。由于C++ standard library可能与第三方提供的library存在相同名称的冲突，所以通过namespace来避免这种冲突。 C++ standard library 中所有元素都被定义在namespace std中。没有’.h’后缀的头文件中内容才定义在namespace std中，即调用时需’std::xx..’，而&lt;xxx.h&gt;中的内容并非定义在namespace std中。即调用时无需先写明’std::’。]]></content>
       <categories>
         <category>C++</category>
       </categories>
@@ -281,19 +297,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[markdown usage]]></title>
-    <url>%2F2018%2F08%2F13%2Fmarkdown1%2F</url>
-    <content type="text"><![CDATA[pic&amp;link separator codeBlock用三个`把代码块包起来即可 123456789string Timestamp::toString() const&#123; char buf[32] = &#123; 0 &#125;; int64_t seconds = microSecondsSinceEpoch_ / kMicroSecondsPerSecond; int64_t microseconds = microSecondsSinceEpoch_ % kMicroSecondsPerSecond; snprintf(buf, sizeof(buf)-1, &quot;%ld.%06ld&quot;, seconds, microseconds); // &apos;-1&apos; is leave a byte for the terminating null byte. return buf;&#125; indenttip: 一般用两个&amp;emsp;作为首行缩进 转义用反斜杠’\’进行转义 常用转义字符 换行 左对齐图片，控制图片style 表格 居中]]></content>
-      <categories>
-        <category>markdown</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[hot-key to open chrome's book-label]]></title>
     <url>%2F2018%2F08%2F13%2FChrome_hot-key1%2F</url>
     <content type="text"><![CDATA[shift + ctl + o]]></content>
       <categories>
         <category>Chrome&#39;s hot-key</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[markdown usage]]></title>
+    <url>%2F2018%2F08%2F13%2Fmarkdown1%2F</url>
+    <content type="text"><![CDATA[pic&amp;link separator codeBlock用三个`把代码块包起来即可 123456789string Timestamp::toString() const&#123; char buf[32] = &#123; 0 &#125;; int64_t seconds = microSecondsSinceEpoch_ / kMicroSecondsPerSecond; int64_t microseconds = microSecondsSinceEpoch_ % kMicroSecondsPerSecond; snprintf(buf, sizeof(buf)-1, &quot;%ld.%06ld&quot;, seconds, microseconds); // &apos;-1&apos; is leave a byte for the terminating null byte. return buf;&#125; indenttip: 一般用两个&amp;emsp;作为首行缩进 转义用反斜杠’\’进行转义 常用转义字符 换行 左对齐图片，控制图片style 表格 居中 多图并排]]></content>
+      <categories>
+        <category>markdown</category>
       </categories>
   </entry>
   <entry>

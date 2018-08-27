@@ -94,7 +94,9 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuijhiwxqpj210407kt9k.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuhrgjkfo7j20k903274b.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuikjjmztrj20lh04kgnr.jpg">
-<meta property="og:updated_time" content="2018-08-22T08:48:52.954Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1ful82cuf17j20fm06g768.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1ful8j3gw17j20pj0bedjh.jpg">
+<meta property="og:updated_time" content="2018-08-27T03:07:24.545Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux function">
 <meta name="twitter:description" content="read()  eventfd()使用这个函数来创建一个事件对象，linux线程间通信为了提高效率，大多使用异步通信，采用事件监听和回调函数的方式来实现高效的任务处理方式（虽然会将逻辑变得复杂）。 linux内核会为这个事件对象维护一个64位的计数器(uint64_t).并在初始化时用传进去的initval来初始化这个计数器，然后返回一个文件描述符来代表这个事件对象。 第二个参数是描述这个事件对象">
@@ -443,6 +445,11 @@
 <h3 id="epoll-wait"><a href="#epoll-wait" class="headerlink" title="epoll_wait()"></a>epoll_wait()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuikjjmztrj20lh04kgnr.jpg"><br>waiting for events,the epoll_wait() system call returns information about ready file descriptors from the epoll instance referred to by the file descriptor epfd. A single epoll_wait() call can return information about multiple ready file descriptors.</p>
 <h4 id="param"><a href="#param" class="headerlink" title="param"></a>param</h4><p>epfd&emsp;&emsp;表示事件发生监视范围的epoll例程的文件描述符<br>events&emsp;&emsp;保存发生事件的文件描述符集合的结构体地址值<br>maxevents&emsp;&emsp;第二个参数中可以保存的最大事件数<br>timeout&emsp;&emsp;以1/1000秒为单位的等待时间，传递-1时，一直等待直到发生事件</p>
 <hr>
+<h3 id="socket"><a href="#socket" class="headerlink" title="socket()"></a>socket()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1ful82cuf17j20fm06g768.jpg"><br>创建socket</p>
+<h4 id="param-1"><a href="#param-1" class="headerlink" title="param"></a>param</h4><p>domain(procotol family)<br><img src="http://ww1.sinaimg.cn/large/be778adagy1ful8j3gw17j20pj0bedjh.jpg"></p>
+<p>套接字类型（type）<br>套接字类型1：面向连接的套接字（SOCK_STREAM）<br>套接字类型2：面向消息的套接字（sock_DGRAM）</p>
+<p>procotol<br>大部分情况下传递0即可</p>
+<hr>
 
       
     </div>
@@ -582,7 +589,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -593,7 +600,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -628,7 +635,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#read"><span class="nav-number">1.</span> <span class="nav-text">read()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eventfd"><span class="nav-number">2.</span> <span class="nav-text">eventfd()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flags"><span class="nav-number">2.1.</span> <span class="nav-text">flags</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#open"><span class="nav-number">3.</span> <span class="nav-text">open()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#close-on-exec-flag"><span class="nav-number">3.1.</span> <span class="nav-text">close-on-exec flag</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#close"><span class="nav-number">4.</span> <span class="nav-text">close()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exec"><span class="nav-number">5.</span> <span class="nav-text">exec()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bzero"><span class="nav-number">6.</span> <span class="nav-text">bzero()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-create"><span class="nav-number">7.</span> <span class="nav-text">epoll_create()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#parameter"><span class="nav-number">7.1.</span> <span class="nav-text">parameter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-create1"><span class="nav-number">8.</span> <span class="nav-text">epoll_create1()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-ctl"><span class="nav-number">9.</span> <span class="nav-text">epoll_ctl()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#parameter-1"><span class="nav-number">9.1.</span> <span class="nav-text">parameter</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#parameter-op"><span class="nav-number">9.1.1.</span> <span class="nav-text">parameter op</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-wait"><span class="nav-number">10.</span> <span class="nav-text">epoll_wait()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#param"><span class="nav-number">10.1.</span> <span class="nav-text">param</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#read"><span class="nav-number">1.</span> <span class="nav-text">read()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eventfd"><span class="nav-number">2.</span> <span class="nav-text">eventfd()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flags"><span class="nav-number">2.1.</span> <span class="nav-text">flags</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#open"><span class="nav-number">3.</span> <span class="nav-text">open()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#close-on-exec-flag"><span class="nav-number">3.1.</span> <span class="nav-text">close-on-exec flag</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#close"><span class="nav-number">4.</span> <span class="nav-text">close()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exec"><span class="nav-number">5.</span> <span class="nav-text">exec()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bzero"><span class="nav-number">6.</span> <span class="nav-text">bzero()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-create"><span class="nav-number">7.</span> <span class="nav-text">epoll_create()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#parameter"><span class="nav-number">7.1.</span> <span class="nav-text">parameter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-create1"><span class="nav-number">8.</span> <span class="nav-text">epoll_create1()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-ctl"><span class="nav-number">9.</span> <span class="nav-text">epoll_ctl()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#parameter-1"><span class="nav-number">9.1.</span> <span class="nav-text">parameter</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#parameter-op"><span class="nav-number">9.1.1.</span> <span class="nav-text">parameter op</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-wait"><span class="nav-number">10.</span> <span class="nav-text">epoll_wait()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#param"><span class="nav-number">10.1.</span> <span class="nav-text">param</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#socket"><span class="nav-number">11.</span> <span class="nav-text">socket()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#param-1"><span class="nav-number">11.1.</span> <span class="nav-text">param</span></a></li></ol></li></ol></div>
             
 
           </div>

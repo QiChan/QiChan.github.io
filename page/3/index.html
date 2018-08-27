@@ -273,6 +273,327 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/sstream/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/16/sstream/" itemprop="url">header &lt;sstream&gt;</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T18:21:28+08:00">
+                2018-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/16/sstream/" class="leancloud_visitors" data-flag-title="header &lt;sstream&gt;">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="std-stringstream"><a href="#std-stringstream" class="headerlink" title="std::stringstream"></a>std::stringstream</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubp814semj20uj06z3yp.jpg" align="left"></p>
+<h3 id="std-basic-stringstream"><a href="#std-basic-stringstream" class="headerlink" title="std::basic_stringstream"></a>std::basic_stringstream</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubpgd0ewvj20ur04ejrl.jpg" align="left"><br>是一个用于操作字符串输入及输出的流类模板。</p>
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::stringstream ss;</span><br><span class="line">ss &lt;&lt; &quot;threadid_ = &quot; &lt;&lt; threadId_ &lt;&lt; &quot; this_thread::get_id() = &quot; &lt;&lt; std::this_thread::get_id();</span><br></pre></td></tr></table></figure>
+<h4 id="std-basic-stringstream-str"><a href="#std-basic-stringstream-str" class="headerlink" title="std::basic_stringstream::str"></a>std::basic_stringstream::str</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubptyghgxj20un03h74e.jpg" align="left"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1fubqu1s0f9j20uv03iglm.jpg" align="left"><br>获取/设置 内容。</p>
+<h5 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// stringstream::str</span><br><span class="line">#include &lt;string&gt;       // std::string</span><br><span class="line">#include &lt;iostream&gt;     // std::cout</span><br><span class="line">#include &lt;sstream&gt;      // std::stringstream, std::stringbuf</span><br><span class="line"></span><br><span class="line">int main () &#123;</span><br><span class="line">  std::stringstream ss;</span><br><span class="line">  ss.str (&quot;Example string&quot;);</span><br><span class="line">  std::string s = ss.str();</span><br><span class="line">  std::cout &lt;&lt; s &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="std-ostringstream"><a href="#std-ostringstream" class="headerlink" title="std::ostringstream"></a>std::ostringstream</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuchj2k48bj20uk05sglq.jpg"><br>用于操作字符串输出的流类</p>
+<h4 id="std-ostringstream-str"><a href="#std-ostringstream-str" class="headerlink" title="std::ostringstream::str"></a>std::ostringstream::str</h4><p>get/set content</p>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/thread/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/16/thread/" itemprop="url">header &lt;thread&gt;</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T15:37:02+08:00">
+                2018-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/16/thread/" class="leancloud_visitors" data-flag-title="header &lt;thread&gt;">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="std-this-thread"><a href="#std-this-thread" class="headerlink" title="std::this_thread"></a>std::this_thread</h3><p>这个命名空间聚集了一组函数用于访问当前线程。</p>
+<h4 id="头文件-gt-命名空间-gt-函数"><a href="#头文件-gt-命名空间-gt-函数" class="headerlink" title="头文件-&gt;命名空间-&gt;函数"></a>头文件-&gt;命名空间-&gt;函数</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubky9dds8j20a508ljrm.jpg" align="left"><br><br><br><br><br><br><br><br><br></p>
+<hr>
+<h3 id="std-this-thread-get-id"><a href="#std-this-thread-get-id" class="headerlink" title="std::this_thread::get_id"></a>std::this_thread::get_id</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubkzmxuumj20ur02xgll.jpg" align="left"><br>返回正被调用的线程的id，这个id唯一地确定一个线程。</p>
+<p>####代码示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// thread::get_id / this_thread::get_id</span><br><span class="line">#include &lt;iostream&gt;       // std::cout</span><br><span class="line">#include &lt;thread&gt;         // std::thread, std::thread::id, std::this_thread::get_id</span><br><span class="line">#include &lt;chrono&gt;         // std::chrono::seconds</span><br><span class="line"></span><br><span class="line">std::thread::id main_thread_id = std::this_thread::get_id();</span><br><span class="line"></span><br><span class="line">void is_main_thread() &#123;</span><br><span class="line">  if ( main_thread_id == std::this_thread::get_id() )</span><br><span class="line">    std::cout &lt;&lt; &quot;This is the main thread.\n&quot;;</span><br><span class="line">  else</span><br><span class="line">    std::cout &lt;&lt; &quot;This is not the main thread.\n&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  is_main_thread();</span><br><span class="line">  std::thread th (is_main_thread);</span><br><span class="line">  th.join();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="std-thread-id"><a href="#std-thread-id" class="headerlink" title="std::thread::id"></a>std::thread::id</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubl48usc3j20ug02w3yh.jpg" align="left"><br>它地值是由thread::get_id和this_thread::get_id返回，用于验证线程。</p>
+<h4 id="头文件-gt-类-gt-类成员"><a href="#头文件-gt-类-gt-类成员" class="headerlink" title="头文件-&gt;类-&gt;类成员"></a>头文件-&gt;类-&gt;类成员</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubladkmloj209u0g8dgo.jpg" align="left"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/C++_the_assert_Preprocessor_Marco/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1524,383 +1845,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/type_traits/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/13/type_traits/" itemprop="url">header &lt;type_traits&gt;</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T21:51:11+08:00">
-                2018-08-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/13/type_traits/" class="leancloud_visitors" data-flag-title="header &lt;type_traits&gt;">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="std-common-type"><a href="#std-common-type" class="headerlink" title="std::common_type"></a>std::common_type</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu8ejv79jfj20bj02qt8o.jpg" align="left"> <br><br><br><br><br>在Types list中获取一个能共同转换成的目标type。这个共同type会被aliased为成员 common_type::type。</p>
-<h5 id="模板参数"><a href="#模板参数" class="headerlink" title="模板参数"></a>模板参数</h5><p>Types<br>&emsp;&emsp;types列表，其中每一个type都是完整的类型或void(可能是cv-qualified类型)。</p>
-<h6 id="c-v-qualified"><a href="#c-v-qualified" class="headerlink" title="c-v qualified"></a>c-v qualified</h6><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu8gcka4tvj20dz06qmxa.jpg" align="left"> <br><br><br><br><br><br><br><br></p>
-<h5 id="类模板生成的类的成员"><a href="#类模板生成的类的成员" class="headerlink" title="类模板生成的类的成员"></a>类模板生成的类的成员</h5><table>
-<thead>
-<tr>
-<th>成员</th>
-<th>定义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>Types中所有type都能转化成的 common type</td>
-</tr>
-</tbody>
-</table>
-<h5 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;type_traits&gt;</span><br><span class="line"></span><br><span class="line">struct Base&#123;&#125;;</span><br><span class="line">struct Derived : Base &#123;&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line"></span><br><span class="line">  typedef std::common_type&lt;char,short,int&gt;::type A;           // int</span><br><span class="line">  typedef std::common_type&lt;float,double&gt;::type B;             // double</span><br><span class="line">  typedef std::common_type&lt;Derived,Base&gt;::type C;             // Base</span><br><span class="line">  typedef std::common_type&lt;Derived*,Base*&gt;::type D;           // Base*</span><br><span class="line">  // std::common_type&lt;type1, type2&gt; 使模板类对应的类实例化</span><br><span class="line">  typedef std::common_type&lt;const int,volatile int&gt;::type E;   // int</span><br><span class="line"></span><br><span class="line">  std::cout &lt;&lt; std::boolalpha;</span><br><span class="line">  std::cout &lt;&lt; &quot;typedefs of int:&quot; &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; &quot;A: &quot; &lt;&lt; std::is_same&lt;int,A&gt;::value &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; &quot;B: &quot; &lt;&lt; std::is_same&lt;int,B&gt;::value &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; &quot;C: &quot; &lt;&lt; std::is_same&lt;int,C&gt;::value &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; &quot;D: &quot; &lt;&lt; std::is_same&lt;int,D&gt;::value &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; &quot;E: &quot; &lt;&lt; std::is_same&lt;int,E&gt;::value &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="std-chrono-common-type-duration-括号中的duration代表这个模板实例化时要传递的参数类型是duration"><a href="#std-chrono-common-type-duration-括号中的duration代表这个模板实例化时要传递的参数类型是duration" class="headerlink" title="std::chrono::common_type(duration) (括号中的duration代表这个模板实例化时要传递的参数类型是duration)"></a>std::chrono::common_type(duration) (括号中的duration代表这个模板实例化时要传递的参数类型是duration)</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu950abyvrj20km03i0sv.jpg" align="left"><br><br><br><br><br>这是一个针对std::chrono::duration的std::common_type的specialization.</p>
-<p>它根据两个std::chrono::duration定义了一个最精确的std::chrono::duration类型的变量.</p>
-<p>它默认返回一个由std::common_type&lt;Rep1,Rep2&gt;为duration第一个模板参数，Period1和Period2的最大公约数为第二个模板参数生成的std:chrono::duration的obj.</p>
-<h4 id="类模板实例化后的类的成员"><a href="#类模板实例化后的类的成员" class="headerlink" title="类模板实例化后的类的成员"></a>类模板实例化后的类的成员</h4><table>
-<thead>
-<tr>
-<th>member type</th>
-<th>定义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>最准确的common duration</td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-<hr>
-<h3 id="std-chrono-common-type-time-point"><a href="#std-chrono-common-type-time-point" class="headerlink" title="std::chrono::common_type(time_point)"></a>std::chrono::common_type(time_point)</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu95lps3zuj20nt03jmxb.jpg" align="left"><br><br><br><br><br>这是一个针对std::chrono::time_point的std::common_type的specialization。</p>
-<p>它定义了两个std::chrono::time_point的common type,通过利用相同的clock以及两个duration的std::chrono::common_type(duration).</p>
-<h4 id="类模板实例化后的类的成员-1"><a href="#类模板实例化后的类的成员-1" class="headerlink" title="类模板实例化后的类的成员"></a>类模板实例化后的类的成员</h4><table>
-<thead>
-<tr>
-<th>member type</th>
-<th>定义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>time_point的common_type</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h3 id="std-remove-reference"><a href="#std-remove-reference" class="headerlink" title="std::remove_reference"></a>std::remove_reference</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuaw8qfihlj20uq02saa3.jpg" align="left"><br>获取T的非引用type，记得是用类模板实例化后的类的成员‘type’来获取。</p>
-<h4 id="类模板实例化后的类的成员-2"><a href="#类模板实例化后的类的成员-2" class="headerlink" title="类模板实例化后的类的成员"></a>类模板实例化后的类的成员</h4><table>
-<thead>
-<tr>
-<th>member type</th>
-<th>定义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>若T是引用类型，则type是被引用var的类型，否则type就是T</td>
-</tr>
-</tbody>
-</table>
-<h4 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// remove_reference</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;type_traits&gt;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">  typedef int&amp;&amp; rval_int;</span><br><span class="line">  typedef std::remove_reference&lt;int&gt;::type A;</span><br><span class="line">  typedef std::remove_reference&lt;int&amp;&gt;::type B;</span><br><span class="line">  typedef std::remove_reference&lt;int&amp;&amp;&gt;::type C;</span><br><span class="line">  typedef std::remove_reference&lt;rval_int&gt;::type D;</span><br><span class="line"></span><br><span class="line">  std::cout &lt;&lt; std::boolalpha;</span><br><span class="line">  std::cout &lt;&lt; &quot;typedefs of int:&quot; &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; &quot;A: &quot; &lt;&lt; std::is_same&lt;int,A&gt;::value &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; &quot;B: &quot; &lt;&lt; std::is_same&lt;int,B&gt;::value &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; &quot;C: &quot; &lt;&lt; std::is_same&lt;int,C&gt;::value &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; &quot;D: &quot; &lt;&lt; std::is_same&lt;int,D&gt;::value &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/English1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/13/English1/" itemprop="url">the usage of 'to which'</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T21:24:45+08:00">
-                2018-08-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/English-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">English Learning</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/13/English1/" class="leancloud_visitors" data-flag-title="the usage of 'to which'">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Obtains the common type for the types in the Types list to which all of them can be converted.<br>                    || (means equivalent)<br>obtains the commoi type for the types in the Types list which all of them can be converted to.                    </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1951,7 +1895,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1962,7 +1906,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
