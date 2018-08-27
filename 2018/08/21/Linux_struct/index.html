@@ -79,22 +79,28 @@
 
 
 
-<meta name="description" content="struct epoll_event epoll_event.events可以通过位或运算同时传递多个上述参数。  IPv4地址的结构体">
+<meta name="description" content="struct epoll_event epoll_event.events可以通过位或运算同时传递多个上述参数。  IPv4地址的结构体 member  字节序 高位字节和低位字节00000000 0000000 00000000 00000001&amp;lt;–越靠左越高位，越靠右越低位–&amp;gt; 字节序（Order） 网络字节序在通过网络传输数据时约定同一方式，这种约定称为网络字节序（network">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux&#39;s struct">
 <meta property="og:url" content="http://yoursite.com/2018/08/21/Linux_struct/index.html">
 <meta property="og:site_name" content="QiChan&#39;s Blog">
-<meta property="og:description" content="struct epoll_event epoll_event.events可以通过位或运算同时传递多个上述参数。  IPv4地址的结构体">
+<meta property="og:description" content="struct epoll_event epoll_event.events可以通过位或运算同时传递多个上述参数。  IPv4地址的结构体 member  字节序 高位字节和低位字节00000000 0000000 00000000 00000001&amp;lt;–越靠左越高位，越靠右越低位–&amp;gt; 字节序（Order） 网络字节序在通过网络传输数据时约定同一方式，这种约定称为网络字节序（network">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuhr2ztbugj20hp089dgd.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuidbk0c2cj20nm076q68.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1ful2tscalkj20md07mtab.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1ful2u201cdj20mc0du0vy.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1ful3w1fvhqj20q40giq9m.jpg">
-<meta property="og:updated_time" content="2018-08-27T03:33:22.834Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuo3uvo2u5j20ic06o408.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuo417ltjmj20op039gms.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuo417ltjmj20op039gms.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuo4gkr21rj20k50313zn.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuo4ipt3rcj20os0203zd.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuo4jj0t44j20ol0ckwj6.jpg">
+<meta property="og:updated_time" content="2018-08-27T04:03:24.936Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux&#39;s struct">
-<meta name="twitter:description" content="struct epoll_event epoll_event.events可以通过位或运算同时传递多个上述参数。  IPv4地址的结构体">
+<meta name="twitter:description" content="struct epoll_event epoll_event.events可以通过位或运算同时传递多个上述参数。  IPv4地址的结构体 member  字节序 高位字节和低位字节00000000 0000000 00000000 00000001&amp;lt;–越靠左越高位，越靠右越低位–&amp;gt; 字节序（Order） 网络字节序在通过网络传输数据时约定同一方式，这种约定称为网络字节序（network">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuhr2ztbugj20hp089dgd.jpg">
 
 
@@ -386,6 +392,12 @@
 <h4 id="epoll-event-events"><a href="#epoll-event-events" class="headerlink" title="epoll_event.events"></a>epoll_event.events</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuidbk0c2cj20nm076q68.jpg"><br>可以通过位或运算同时传递多个上述参数。</p>
 <hr>
 <h3 id="IPv4地址的结构体"><a href="#IPv4地址的结构体" class="headerlink" title="IPv4地址的结构体"></a>IPv4地址的结构体</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1ful2tscalkj20md07mtab.jpg"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1ful2u201cdj20mc0du0vy.jpg"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1ful3w1fvhqj20q40giq9m.jpg"></p>
+<h4 id="member"><a href="#member" class="headerlink" title="member"></a>member</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo3uvo2u5j20ic06o408.jpg"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo417ltjmj20op039gms.jpg"></p>
+<hr>
+<h3 id="字节序"><a href="#字节序" class="headerlink" title="字节序"></a>字节序</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo417ltjmj20op039gms.jpg"></p>
+<h4 id="高位字节和低位字节"><a href="#高位字节和低位字节" class="headerlink" title="高位字节和低位字节"></a>高位字节和低位字节</h4><p>00000000 0000000 00000000 00000001<br>&lt;–越靠左越高位，越靠右越低位–&gt;</p>
+<h4 id="字节序（Order）"><a href="#字节序（Order）" class="headerlink" title="字节序（Order）"></a>字节序（Order）</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo4gkr21rj20k50313zn.jpg"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo4ipt3rcj20os0203zd.jpg"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo4jj0t44j20ol0ckwj6.jpg"></p>
+<h4 id="网络字节序"><a href="#网络字节序" class="headerlink" title="网络字节序"></a>网络字节序</h4><p>在通过网络传输数据时约定同一方式，这种约定称为网络字节序（network byte order），统一为大端序。</p>
 <hr>
 
       
@@ -526,7 +538,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -572,7 +584,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#struct-epoll-event"><span class="nav-number">1.</span> <span class="nav-text">struct epoll_event</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#epoll-event-events"><span class="nav-number">1.1.</span> <span class="nav-text">epoll_event.events</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IPv4地址的结构体"><span class="nav-number">2.</span> <span class="nav-text">IPv4地址的结构体</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#struct-epoll-event"><span class="nav-number">1.</span> <span class="nav-text">struct epoll_event</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#epoll-event-events"><span class="nav-number">1.1.</span> <span class="nav-text">epoll_event.events</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IPv4地址的结构体"><span class="nav-number">2.</span> <span class="nav-text">IPv4地址的结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#member"><span class="nav-number">2.1.</span> <span class="nav-text">member</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字节序"><span class="nav-number">3.</span> <span class="nav-text">字节序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#高位字节和低位字节"><span class="nav-number">3.1.</span> <span class="nav-text">高位字节和低位字节</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字节序（Order）"><span class="nav-number">3.2.</span> <span class="nav-text">字节序（Order）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络字节序"><span class="nav-number">3.3.</span> <span class="nav-text">网络字节序</span></a></li></ol></li></ol></div>
             
 
           </div>

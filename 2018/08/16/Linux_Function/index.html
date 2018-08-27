@@ -96,7 +96,24 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuikjjmztrj20lh04kgnr.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1ful82cuf17j20fm06g768.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1ful8j3gw17j20pj0bedjh.jpg">
-<meta property="og:updated_time" content="2018-08-27T03:24:35.594Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuo4phsr3ej20oy0fjtf5.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuo52b9mh7j211y0b0n28.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuo54pf6i8j212005xwfk.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuo5k6xmkpj21280li43d.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuooma1hysj20lv06qaae.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuoopf8dz8j20l204jdge.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuoopztdi2j20lm0713z8.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuopgj60whj20lg0cfjt6.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuoqob6t3cj20la07omxp.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuoqxg93fkj20lb0gvgn6.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuor13youhj20l607k74x.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuorbzxaxrj20lk0cndia.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuorksf4twj20lb08rmxw.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuorvqb507j20lj098gmb.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuosdmz3kcj20le06pjsk.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuosf8yjasj20l802ldg0.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuosgz3betj20l902dweo.jpg">
+<meta property="og:updated_time" content="2018-08-27T17:52:23.212Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux function">
 <meta name="twitter:description" content="read()  eventfd()使用这个函数来创建一个事件对象，linux线程间通信为了提高效率，大多使用异步通信，采用事件监听和回调函数的方式来实现高效的任务处理方式（虽然会将逻辑变得复杂）。 linux内核会为这个事件对象维护一个64位的计数器(uint64_t).并在初始化时用传进去的initval来初始化这个计数器，然后返回一个文件描述符来代表这个事件对象。 第二个参数是描述这个事件对象">
@@ -450,6 +467,31 @@
 <p>套接字类型（type）<br>套接字类型1：面向连接的套接字（SOCK_STREAM）,基于TCP<br>套接字类型2：面向消息的套接字（sock_DGRAM），基于UDP</p>
 <p>procotol<br>大部分情况下传递0即可</p>
 <hr>
+<h3 id="hton"><a href="#hton" class="headerlink" title="hton()"></a>hton()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo4phsr3ej20oy0fjtf5.jpg"><br>ipv4的地址长度为32位</p>
+<h4 id="INADDR-ANY"><a href="#INADDR-ANY" class="headerlink" title="INADDR_ANY"></a>INADDR_ANY</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo52b9mh7j211y0b0n28.jpg"><br>转换过来就是0.0.0.0，泛指本机的意思，也就是表示本机的所有IP，因为有些机子不止一块网卡，多网卡的情况下，这个就表示所有网卡ip地址的意思。<br>比如一台电脑有3块网卡，分别连接三个网络，那么这台电脑就有3个ip地址了，如果某个应用程序需要监听某个端口，那他要监听哪个网卡地址的端口呢？<br>如果绑定某个具体的ip地址，你只能监听你所设置的ip地址所在的网卡的端口，其它两块网卡无法监听端口，如果我需要三个网卡都监听，那就需要绑定3个ip，也就等于需要管理3个套接字进行数据交换，这样岂不是很繁琐？<br>所以出现INADDR_ANY，你只需绑定INADDR_ANY，管理一个套接字就行，不管数据是从哪个网卡过来的，只要是绑定的端口号过来的数据，都可以接收到。</p>
+<h4 id="Internet-domain-socket"><a href="#Internet-domain-socket" class="headerlink" title="Internet domain socket"></a>Internet domain socket</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo54pf6i8j212005xwfk.jpg"></p>
+<h4 id="multihomed-host"><a href="#multihomed-host" class="headerlink" title="multihomed host"></a>multihomed host</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo5k6xmkpj21280li43d.jpg"></p>
+<hr>
+<h3 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuooma1hysj20lv06qaae.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuoopf8dz8j20l204jdge.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuoopztdi2j20lm0713z8.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuopgj60whj20lg0cfjt6.jpg"></p>
+<hr>
+<h3 id="listen"><a href="#listen" class="headerlink" title="listen()"></a>listen()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuoqob6t3cj20la07omxp.jpg"></p>
+<h4 id="param-2"><a href="#param-2" class="headerlink" title="param"></a>param</h4><p>backlog<br><img src="http://ww1.sinaimg.cn/large/be778adagy1fuoqxg93fkj20lb0gvgn6.jpg"></p>
+<hr>
+<h3 id="accept"><a href="#accept" class="headerlink" title="accept()"></a>accept()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuor13youhj20l607k74x.jpg"></p>
+<h4 id="param-3"><a href="#param-3" class="headerlink" title="param"></a>param</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuorbzxaxrj20lk0cndia.jpg"></p>
+<hr>
+<h3 id="inet-ntoa"><a href="#inet-ntoa" class="headerlink" title="inet_ntoa()"></a>inet_ntoa()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuorksf4twj20lb08rmxw.jpg"></p>
+<p>“The word static refers to things that happen at compile time and link time when the program is constructed—as opposed to load time or run time when the program is actually started.”</p>
+<p>“The term dynamic refers to things that take place when a program is loaded and executed. ”</p>
+<hr>
+<h3 id="pthread-create"><a href="#pthread-create" class="headerlink" title="pthread_create()"></a>pthread_create()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuorvqb507j20lj098gmb.jpg"></p>
+<h4 id="param-4"><a href="#param-4" class="headerlink" title="param"></a>param</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuosdmz3kcj20le06pjsk.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuosf8yjasj20l802ldg0.jpg"><br>???</p>
+<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuosgz3betj20l902dweo.jpg"></p>
+<hr>
 
       
     </div>
@@ -589,7 +631,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -635,7 +677,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#read"><span class="nav-number">1.</span> <span class="nav-text">read()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eventfd"><span class="nav-number">2.</span> <span class="nav-text">eventfd()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flags"><span class="nav-number">2.1.</span> <span class="nav-text">flags</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#open"><span class="nav-number">3.</span> <span class="nav-text">open()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#close-on-exec-flag"><span class="nav-number">3.1.</span> <span class="nav-text">close-on-exec flag</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#close"><span class="nav-number">4.</span> <span class="nav-text">close()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exec"><span class="nav-number">5.</span> <span class="nav-text">exec()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bzero"><span class="nav-number">6.</span> <span class="nav-text">bzero()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-create"><span class="nav-number">7.</span> <span class="nav-text">epoll_create()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#parameter"><span class="nav-number">7.1.</span> <span class="nav-text">parameter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-create1"><span class="nav-number">8.</span> <span class="nav-text">epoll_create1()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-ctl"><span class="nav-number">9.</span> <span class="nav-text">epoll_ctl()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#parameter-1"><span class="nav-number">9.1.</span> <span class="nav-text">parameter</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#parameter-op"><span class="nav-number">9.1.1.</span> <span class="nav-text">parameter op</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-wait"><span class="nav-number">10.</span> <span class="nav-text">epoll_wait()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#param"><span class="nav-number">10.1.</span> <span class="nav-text">param</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#socket"><span class="nav-number">11.</span> <span class="nav-text">socket()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#param-1"><span class="nav-number">11.1.</span> <span class="nav-text">param</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#read"><span class="nav-number">1.</span> <span class="nav-text">read()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eventfd"><span class="nav-number">2.</span> <span class="nav-text">eventfd()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flags"><span class="nav-number">2.1.</span> <span class="nav-text">flags</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#open"><span class="nav-number">3.</span> <span class="nav-text">open()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#close-on-exec-flag"><span class="nav-number">3.1.</span> <span class="nav-text">close-on-exec flag</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#close"><span class="nav-number">4.</span> <span class="nav-text">close()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exec"><span class="nav-number">5.</span> <span class="nav-text">exec()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bzero"><span class="nav-number">6.</span> <span class="nav-text">bzero()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-create"><span class="nav-number">7.</span> <span class="nav-text">epoll_create()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#parameter"><span class="nav-number">7.1.</span> <span class="nav-text">parameter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-create1"><span class="nav-number">8.</span> <span class="nav-text">epoll_create1()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-ctl"><span class="nav-number">9.</span> <span class="nav-text">epoll_ctl()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#parameter-1"><span class="nav-number">9.1.</span> <span class="nav-text">parameter</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#parameter-op"><span class="nav-number">9.1.1.</span> <span class="nav-text">parameter op</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#epoll-wait"><span class="nav-number">10.</span> <span class="nav-text">epoll_wait()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#param"><span class="nav-number">10.1.</span> <span class="nav-text">param</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#socket"><span class="nav-number">11.</span> <span class="nav-text">socket()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#param-1"><span class="nav-number">11.1.</span> <span class="nav-text">param</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hton"><span class="nav-number">12.</span> <span class="nav-text">hton()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#INADDR-ANY"><span class="nav-number">12.1.</span> <span class="nav-text">INADDR_ANY</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Internet-domain-socket"><span class="nav-number">12.2.</span> <span class="nav-text">Internet domain socket</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#multihomed-host"><span class="nav-number">12.3.</span> <span class="nav-text">multihomed host</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind"><span class="nav-number">13.</span> <span class="nav-text">bind()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#listen"><span class="nav-number">14.</span> <span class="nav-text">listen()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#param-2"><span class="nav-number">14.1.</span> <span class="nav-text">param</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#accept"><span class="nav-number">15.</span> <span class="nav-text">accept()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#param-3"><span class="nav-number">15.1.</span> <span class="nav-text">param</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inet-ntoa"><span class="nav-number">16.</span> <span class="nav-text">inet_ntoa()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pthread-create"><span class="nav-number">17.</span> <span class="nav-text">pthread_create()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#param-4"><span class="nav-number">17.1.</span> <span class="nav-text">param</span></a></li></ol></li></ol></div>
             
 
           </div>
