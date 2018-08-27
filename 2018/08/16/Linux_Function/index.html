@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuikjjmztrj20lh04kgnr.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1ful82cuf17j20fm06g768.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1ful8j3gw17j20pj0bedjh.jpg">
-<meta property="og:updated_time" content="2018-08-27T03:07:24.545Z">
+<meta property="og:updated_time" content="2018-08-27T03:24:35.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux function">
 <meta name="twitter:description" content="read()  eventfd()使用这个函数来创建一个事件对象，linux线程间通信为了提高效率，大多使用异步通信，采用事件监听和回调函数的方式来实现高效的任务处理方式（虽然会将逻辑变得复杂）。 linux内核会为这个事件对象维护一个64位的计数器(uint64_t).并在初始化时用传进去的initval来初始化这个计数器，然后返回一个文件描述符来代表这个事件对象。 第二个参数是描述这个事件对象">
@@ -447,7 +447,7 @@
 <hr>
 <h3 id="socket"><a href="#socket" class="headerlink" title="socket()"></a>socket()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1ful82cuf17j20fm06g768.jpg"><br>创建socket</p>
 <h4 id="param-1"><a href="#param-1" class="headerlink" title="param"></a>param</h4><p>domain(procotol family)<br><img src="http://ww1.sinaimg.cn/large/be778adagy1ful8j3gw17j20pj0bedjh.jpg"></p>
-<p>套接字类型（type）<br>套接字类型1：面向连接的套接字（SOCK_STREAM）<br>套接字类型2：面向消息的套接字（sock_DGRAM）</p>
+<p>套接字类型（type）<br>套接字类型1：面向连接的套接字（SOCK_STREAM）,基于TCP<br>套接字类型2：面向消息的套接字（sock_DGRAM），基于UDP</p>
 <p>procotol<br>大部分情况下传递0即可</p>
 <hr>
 
@@ -589,7 +589,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -600,7 +600,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
