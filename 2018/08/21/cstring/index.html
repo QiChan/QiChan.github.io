@@ -88,7 +88,12 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuhq4rhu1oj209s0j474k.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuhpyvw7ikj20v0035gli.jpg">
-<meta property="og:updated_time" content="2018-08-21T15:09:35.869Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fusvunno1hj20uo0690t0.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuswlsgw9mj20ur051t8x.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuswoan4tsj20uj059jrm.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fusyoapuk8j20un06974n.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fusyor2m42j20ny052wev.jpg">
+<meta property="og:updated_time" content="2018-08-31T08:26:44.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="header &amp;lt;cstring&amp;gt;">
 <meta name="twitter:description" content="contents of header  memset()set the first num bytes of the block of memory pointed by ptr to the specified value (interpreted as an unsigned char). codes example1234567891011/* memset example */#inclu">
@@ -384,6 +389,16 @@
 <h3 id="memset"><a href="#memset" class="headerlink" title="memset()"></a>memset()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuhpyvw7ikj20v0035gli.jpg"><br>set the first num bytes of the block of memory pointed by ptr to the specified value (interpreted as an unsigned char).</p>
 <h4 id="codes-example"><a href="#codes-example" class="headerlink" title="codes example"></a>codes example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/* memset example */</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  char str[] = &quot;almost every programmer should know memset!&quot;;</span><br><span class="line">  memset (str,&apos;-&apos;,6);</span><br><span class="line">  puts (str);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
+<h3 id="strstr"><a href="#strstr" class="headerlink" title="strstr()"></a>strstr()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fusvunno1hj20uo0690t0.jpg"></p>
+<hr>
+<h3 id="strcpy"><a href="#strcpy" class="headerlink" title="strcpy()"></a>strcpy()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuswlsgw9mj20ur051t8x.jpg"></p>
+<hr>
+<h3 id="strtok"><a href="#strtok" class="headerlink" title="strtok()"></a>strtok()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuswoan4tsj20uj059jrm.jpg"></p>
+<p>On a first call, the function expects a C string as argument for str, whose first character is used as the starting location to scan for tokens. In subsequent calls, the function expects a null pointer and uses the position right after the end of the last token as the new starting location for scanning.</p>
+<h4 id="code-example"><a href="#code-example" class="headerlink" title="code example"></a>code example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/* strtok example */</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  char str[] =&quot;- This, a sample string.&quot;;</span><br><span class="line">  char * pch;</span><br><span class="line">  printf (&quot;Splitting string \&quot;%s\&quot; into tokens:\n&quot;,str);</span><br><span class="line">  pch = strtok (str,&quot; ,.-&quot;);</span><br><span class="line">  while (pch != NULL)</span><br><span class="line">  &#123;</span><br><span class="line">    printf (&quot;%s\n&quot;,pch);</span><br><span class="line">    pch = strtok (NULL, &quot; ,.-&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="strcmp"><a href="#strcmp" class="headerlink" title="strcmp()"></a>strcmp()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fusyoapuk8j20un06974n.jpg"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1fusyor2m42j20ny052wev.jpg"></p>
+<hr>
 
       
     </div>
@@ -569,7 +584,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#contents-of-header"><span class="nav-number">1.</span> <span class="nav-text">contents of header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#memset"><span class="nav-number">2.</span> <span class="nav-text">memset()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#codes-example"><span class="nav-number">2.1.</span> <span class="nav-text">codes example</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#contents-of-header"><span class="nav-number">1.</span> <span class="nav-text">contents of header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#memset"><span class="nav-number">2.</span> <span class="nav-text">memset()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#codes-example"><span class="nav-number">2.1.</span> <span class="nav-text">codes example</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strstr"><span class="nav-number">3.</span> <span class="nav-text">strstr()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strcpy"><span class="nav-number">4.</span> <span class="nav-text">strcpy()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strtok"><span class="nav-number">5.</span> <span class="nav-text">strtok()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#code-example"><span class="nav-number">5.1.</span> <span class="nav-text">code example</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strcmp"><span class="nav-number">6.</span> <span class="nav-text">strcmp()</span></a></li></ol></div>
             
 
           </div>

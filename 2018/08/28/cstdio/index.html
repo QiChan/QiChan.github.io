@@ -88,7 +88,10 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuopogl83zj20ut06gt92.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuopx59gxvj20uy068glz.jpg">
-<meta property="og:updated_time" content="2018-08-27T16:21:52.643Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fusvqqxk2uj20up052mxf.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuswd302rxj20ul0500sy.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fusz35y2gyj20uj05bglw.jpg">
+<meta property="og:updated_time" content="2018-08-31T08:49:56.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="header &amp;lt;cstdio&amp;gt;">
 <meta name="twitter:description" content="fputs() codes example123456789101112131415/* fputs example */#include &amp;lt;stdio.h&amp;gt;int main ()&amp;#123;   FILE * pFile;   char sentence [256];   printf (&amp;quot;Enter sentence to append: &amp;quot;);   fgets">
@@ -386,6 +389,13 @@
 <h3 id="fputc"><a href="#fputc" class="headerlink" title="fputc()"></a>fputc()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuopx59gxvj20uy068glz.jpg"></p>
 <h4 id="codes-example-1"><a href="#codes-example-1" class="headerlink" title="codes example"></a>codes example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/* fputc example: alphabet writer */</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  FILE * pFile;</span><br><span class="line">  char c;</span><br><span class="line"></span><br><span class="line">  pFile = fopen (&quot;alphabet.txt&quot;,&quot;w&quot;);</span><br><span class="line">  if (pFile!=NULL) &#123;</span><br><span class="line"></span><br><span class="line">    for (c = &apos;A&apos; ; c &lt;= &apos;Z&apos; ; c++)</span><br><span class="line">      fputc ( c , pFile );</span><br><span class="line"></span><br><span class="line">    fclose (pFile);</span><br><span class="line">  &#125;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
+<h3 id="fgets"><a href="#fgets" class="headerlink" title="fgets()"></a>fgets()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fusvqqxk2uj20up052mxf.jpg"></p>
+<h4 id="return-value"><a href="#return-value" class="headerlink" title="return value"></a>return value</h4><p>on success, the function returns str.</p>
+<hr>
+<h3 id="fflush"><a href="#fflush" class="headerlink" title="fflush()"></a>fflush()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuswd302rxj20ul0500sy.jpg"></p>
+<hr>
+<h3 id="sprintf"><a href="#sprintf" class="headerlink" title="sprintf()"></a>sprintf()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fusz35y2gyj20uj05bglw.jpg"></p>
+<hr>
 
       
     </div>
@@ -567,7 +577,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#fputs"><span class="nav-number">1.</span> <span class="nav-text">fputs()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#codes-example"><span class="nav-number">1.1.</span> <span class="nav-text">codes example</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fputc"><span class="nav-number">2.</span> <span class="nav-text">fputc()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#codes-example-1"><span class="nav-number">2.1.</span> <span class="nav-text">codes example</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#fputs"><span class="nav-number">1.</span> <span class="nav-text">fputs()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#codes-example"><span class="nav-number">1.1.</span> <span class="nav-text">codes example</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fputc"><span class="nav-number">2.</span> <span class="nav-text">fputc()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#codes-example-1"><span class="nav-number">2.1.</span> <span class="nav-text">codes example</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fgets"><span class="nav-number">3.</span> <span class="nav-text">fgets()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#return-value"><span class="nav-number">3.1.</span> <span class="nav-text">return value</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fflush"><span class="nav-number">4.</span> <span class="nav-text">fflush()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sprintf"><span class="nav-number">5.</span> <span class="nav-text">sprintf()</span></a></li></ol></div>
             
 
           </div>
