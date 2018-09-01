@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="__thread 关键字thread是GCC内置的线程局部存储设施,存取效率可以和全局变量相比.thread变量使每一个线程有一份独立实体,各个线程的值互不干扰,可以用来修饰那些带有全局性且值可以变,但是又不值的用全局变量保护的变量.">
+<meta name="description" content="__thread 关键字thread是GCC内置的线程局部存储设施,存取效率可以和全局变量相比.thread变量使每一个线程有一份独立实体,各个线程的值互不干扰,可以用来修饰那些带有全局性且值可以变,但是又不值的用全局变量保护的变量.  -pthread 选项在linux上执行gcc thread.c,  结果出现编译错误undefined reference to ‘pthread_create">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GCC">
 <meta property="og:url" content="http://yoursite.com/2018/08/16/Linux_GCC_Keyword/index.html">
 <meta property="og:site_name" content="QiChan&#39;s Blog">
-<meta property="og:description" content="__thread 关键字thread是GCC内置的线程局部存储设施,存取效率可以和全局变量相比.thread变量使每一个线程有一份独立实体,各个线程的值互不干扰,可以用来修饰那些带有全局性且值可以变,但是又不值的用全局变量保护的变量.">
+<meta property="og:description" content="__thread 关键字thread是GCC内置的线程局部存储设施,存取效率可以和全局变量相比.thread变量使每一个线程有一份独立实体,各个线程的值互不干扰,可以用来修饰那些带有全局性且值可以变,但是又不值的用全局变量保护的变量.  -pthread 选项在linux上执行gcc thread.c,  结果出现编译错误undefined reference to ‘pthread_create">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-16T11:44:52.339Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1futtrcra7ej20bf00k742.jpg">
+<meta property="og:updated_time" content="2018-09-01T02:21:56.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GCC">
-<meta name="twitter:description" content="__thread 关键字thread是GCC内置的线程局部存储设施,存取效率可以和全局变量相比.thread变量使每一个线程有一份独立实体,各个线程的值互不干扰,可以用来修饰那些带有全局性且值可以变,但是又不值的用全局变量保护的变量.">
+<meta name="twitter:description" content="__thread 关键字thread是GCC内置的线程局部存储设施,存取效率可以和全局变量相比.thread变量使每一个线程有一份独立实体,各个线程的值互不干扰,可以用来修饰那些带有全局性且值可以变,但是又不值的用全局变量保护的变量.  -pthread 选项在linux上执行gcc thread.c,  结果出现编译错误undefined reference to ‘pthread_create">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/be778adagy1futtrcra7ej20bf00k742.jpg">
 
 
 
@@ -377,6 +379,9 @@
 
       
         <h3 id="thread-关键字"><a href="#thread-关键字" class="headerlink" title="__thread 关键字"></a>__thread 关键字</h3><p><strong>thread是GCC内置的线程局部存储设施,存取效率可以和全局变量相比.</strong>thread变量使每一个线程有一份独立实体,各个线程的值互不干扰,可以用来修饰那些带有全局性且值可以变,但是又不值的用全局变量保护的变量.</p>
+<hr>
+<h3 id="pthread-选项"><a href="#pthread-选项" class="headerlink" title="-pthread 选项"></a>-pthread 选项</h3><p>在linux上执行gcc thread.c,  结果出现编译错误undefined reference to ‘pthread_create’。由于pthread库不是标准linux库， 所以出错。<br>改用 -pthread 选项即可编译通过：<br><img src="http://ww1.sinaimg.cn/large/be778adagy1futtrcra7ej20bf00k742.jpg"></p>
+<hr>
 
       
     </div>
@@ -516,7 +521,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -527,7 +532,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -562,7 +567,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#thread-关键字"><span class="nav-number">1.</span> <span class="nav-text">__thread 关键字</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#thread-关键字"><span class="nav-number">1.</span> <span class="nav-text">__thread 关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pthread-选项"><span class="nav-number">2.</span> <span class="nav-text">-pthread 选项</span></a></li></ol></div>
             
 
           </div>

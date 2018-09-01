@@ -273,6 +273,494 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/21/cstring/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/21/cstring/" itemprop="url">header &lt;cstring&gt;</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T23:09:35+08:00">
+                2018-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/21/cstring/" class="leancloud_visitors" data-flag-title="header &lt;cstring&gt;">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="contents-of-header"><a href="#contents-of-header" class="headerlink" title="contents of header"></a>contents of header</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuhq4rhu1oj209s0j474k.jpg"></p>
+<hr>
+<h3 id="memset"><a href="#memset" class="headerlink" title="memset()"></a>memset()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuhpyvw7ikj20v0035gli.jpg"><br>set the first num bytes of the block of memory pointed by ptr to the specified value (interpreted as an unsigned char).</p>
+<h4 id="codes-example"><a href="#codes-example" class="headerlink" title="codes example"></a>codes example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/* memset example */</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  char str[] = &quot;almost every programmer should know memset!&quot;;</span><br><span class="line">  memset (str,&apos;-&apos;,6);</span><br><span class="line">  puts (str);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="strstr"><a href="#strstr" class="headerlink" title="strstr()"></a>strstr()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fusvunno1hj20uo0690t0.jpg"></p>
+<hr>
+<h3 id="strcpy"><a href="#strcpy" class="headerlink" title="strcpy()"></a>strcpy()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuswlsgw9mj20ur051t8x.jpg"></p>
+<hr>
+<h3 id="strtok"><a href="#strtok" class="headerlink" title="strtok()"></a>strtok()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuswoan4tsj20uj059jrm.jpg"></p>
+<p>On a first call, the function expects a C string as argument for str, whose first character is used as the starting location to scan for tokens. In subsequent calls, the function expects a null pointer and uses the position right after the end of the last token as the new starting location for scanning.</p>
+<h4 id="code-example"><a href="#code-example" class="headerlink" title="code example"></a>code example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/* strtok example */</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  char str[] =&quot;- This, a sample string.&quot;;</span><br><span class="line">  char * pch;</span><br><span class="line">  printf (&quot;Splitting string \&quot;%s\&quot; into tokens:\n&quot;,str);</span><br><span class="line">  pch = strtok (str,&quot; ,.-&quot;);</span><br><span class="line">  while (pch != NULL)</span><br><span class="line">  &#123;</span><br><span class="line">    printf (&quot;%s\n&quot;,pch);</span><br><span class="line">    pch = strtok (NULL, &quot; ,.-&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="strcmp"><a href="#strcmp" class="headerlink" title="strcmp()"></a>strcmp()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fusyoapuk8j20un06974n.jpg"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1fusyor2m42j20ny052wev.jpg"></p>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/18/map/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/18/map/" itemprop="url">header &lt;map&gt;</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T21:13:14+08:00">
+                2018-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/18/map/" class="leancloud_visitors" data-flag-title="header &lt;map&gt;">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="contents-of-header-map"><a href="#contents-of-header-map" class="headerlink" title="contents of header map"></a>contents of header map</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue5tqgcljj209u02h3ya.jpg"></p>
+<hr>
+<h3 id="std-map"><a href="#std-map" class="headerlink" title="std::map"></a>std::map</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue5v1krffj20ul05774f.jpg"></p>
+<h4 id="std-map-find"><a href="#std-map-find" class="headerlink" title="std::map::find"></a>std::map::find</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue5wjm3fpj20ut03ddfu.jpg"><br>Searches the container for an element with a key equivalent to k and returns an iterator to it if found, otherwise it returns an iterator to map::end.</p>
+<h5 id="codes-example"><a href="#codes-example" class="headerlink" title="codes example"></a>codes example</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// map::find</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  std::map&lt;char,int&gt; mymap;</span><br><span class="line">  std::map&lt;char,int&gt;::iterator it;</span><br><span class="line"></span><br><span class="line">  mymap[&apos;a&apos;]=50;</span><br><span class="line">  mymap[&apos;b&apos;]=100;</span><br><span class="line">  mymap[&apos;c&apos;]=150;</span><br><span class="line">  mymap[&apos;d&apos;]=200;</span><br><span class="line"></span><br><span class="line">  it = mymap.find(&apos;b&apos;);</span><br><span class="line">  if (it != mymap.end())</span><br><span class="line">    mymap.erase (it);</span><br><span class="line"></span><br><span class="line">  // print content:</span><br><span class="line">  std::cout &lt;&lt; &quot;elements in mymap:&quot; &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; &quot;a =&gt; &quot; &lt;&lt; mymap.find(&apos;a&apos;)-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; &quot;c =&gt; &quot; &lt;&lt; mymap.find(&apos;c&apos;)-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; &quot;d =&gt; &quot; &lt;&lt; mymap.find(&apos;d&apos;)-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="std-map-end"><a href="#std-map-end" class="headerlink" title="std::map::end"></a>std::map::end</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue630v3i5j20ux04y0st.jpg"><br>Returns an iterator referring to the past-the-end element in the map container.</p>
+<h5 id="codes-example-1"><a href="#codes-example-1" class="headerlink" title="codes example"></a>codes example</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// map::begin/end</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  std::map&lt;char,int&gt; mymap;</span><br><span class="line"></span><br><span class="line">  mymap[&apos;b&apos;] = 100;</span><br><span class="line">  mymap[&apos;a&apos;] = 200;</span><br><span class="line">  mymap[&apos;c&apos;] = 300;</span><br><span class="line"></span><br><span class="line">  // show content:</span><br><span class="line">  for (std::map&lt;char,int&gt;::iterator it=mymap.begin(); it!=mymap.end(); ++it)</span><br><span class="line">    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="std-map-erase"><a href="#std-map-erase" class="headerlink" title="std::map::erase"></a>std::map::erase</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuihb5sjz1j20um05pdg5.jpg"><br>Removes from the map container either a single element or a range of elements ([first,last)).</p>
+<p>This effectively reduces the container size by the number of elements removed, which are destroyed.</p>
+<h5 id="codes-example-2"><a href="#codes-example-2" class="headerlink" title="codes example"></a>codes example</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// erasing from map</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  std::map&lt;char,int&gt; mymap;</span><br><span class="line">  std::map&lt;char,int&gt;::iterator it;</span><br><span class="line"></span><br><span class="line">  // insert some values:</span><br><span class="line">  mymap[&apos;a&apos;]=10;</span><br><span class="line">  mymap[&apos;b&apos;]=20;</span><br><span class="line">  mymap[&apos;c&apos;]=30;</span><br><span class="line">  mymap[&apos;d&apos;]=40;</span><br><span class="line">  mymap[&apos;e&apos;]=50;</span><br><span class="line">  mymap[&apos;f&apos;]=60;</span><br><span class="line"></span><br><span class="line">  it=mymap.find(&apos;b&apos;);</span><br><span class="line">  mymap.erase (it);                   // erasing by iterator</span><br><span class="line"></span><br><span class="line">  mymap.erase (&apos;c&apos;);                  // erasing by key</span><br><span class="line"></span><br><span class="line">  it=mymap.find (&apos;e&apos;);</span><br><span class="line">  mymap.erase ( it, mymap.end() );    // erasing by range</span><br><span class="line"></span><br><span class="line">// show content:</span><br><span class="line">  for (it=mymap.begin(); it!=mymap.end(); ++it)</span><br><span class="line">    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/18/ios/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/18/ios/" itemprop="url">header &lt;ios&gt;</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T20:47:16+08:00">
+                2018-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/18/ios/" class="leancloud_visitors" data-flag-title="header &lt;ios&gt;">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="contents-of-header-ios"><a href="#contents-of-header-ios" class="headerlink" title="contents of header ios"></a>contents of header ios</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue52jq7ifj209y0qi74v.jpg"></p>
+<hr>
+<h3 id="std-hex"><a href="#std-hex" class="headerlink" title="std::hex"></a>std::hex</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue54v465sj20us02yt8l.jpg"></p>
+<h4 id="codes-example"><a href="#codes-example" class="headerlink" title="codes example"></a>codes example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// modify basefield</span><br><span class="line">#include &lt;iostream&gt;     // std::cout, std::dec, std::hex, std::oct</span><br><span class="line"></span><br><span class="line">int main () &#123;</span><br><span class="line">  int n = 70;</span><br><span class="line">  std::cout &lt;&lt; std::dec &lt;&lt; n &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; std::hex &lt;&lt; n &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; std::oct &lt;&lt; n &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/doubtsCollection/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1375,575 +1863,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/Linux_Function/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/Linux_Function/" itemprop="url">Linux function</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T20:26:18+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/16/Linux_Function/" class="leancloud_visitors" data-flag-title="Linux function">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="read"><a href="#read" class="headerlink" title="read()"></a>read()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubtalmxi5j20l80570sy.jpg"></p>
-<hr>
-<h3 id="eventfd"><a href="#eventfd" class="headerlink" title="eventfd()"></a>eventfd()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fucnxe6owgj20cc05emx3.jpg"><br>使用这个函数来创建一个事件对象，linux线程间通信为了提高效率，大多使用异步通信，采用事件监听和回调函数的方式来实现高效的任务处理方式（虽然会将逻辑变得复杂）。</p>
-<p>linux内核会为这个事件对象维护一个64位的计数器(uint64_t).并在初始化时用传进去的initval来初始化这个计数器，然后返回一个文件描述符来代表这个事件对象。</p>
-<p>第二个参数是描述这个事件对象的属性，可以设置为EFD_NONBLOCK , EFD_CLOEXEC；前面的是设置对象为非阻塞状态，如果没有设置为非阻塞状态，read系统调用来读这个计数器，且计数器的值为0时，就会一直阻塞在read系统调用上，反之如果设置了该标志位，就会返回EAGAIN错误。后面的EFD_CLOEXEC功能是在程序调用exec()函数族加载其他程序时自动关闭当前已有的文件描述符（具体为什么暂不解释）。</p>
-<p>通过此函数得到的对象既然是一个计数器，我们就可以对它进行读和写：</p>
-<p>使用write将缓冲区写入的8字节整形值加到内核计数器上。</p>
-<p>使用read将内核计数的8字节值读取到缓冲区中，并把计数器重设为0，如果buffer的长度小于8字节则read会失败，错误码设为EINVAl。</p>
-<p>用处：对eventfd进行Epoll监听.</p>
-<h4 id="flags"><a href="#flags" class="headerlink" title="flags"></a>flags</h4><p>The following values may be bitwise ORed in flags to change the behaviour of eventfd():</p>
-<p>FD_CLOEXEC (since Linux 2.6.27)<br>Set the close-on-exec (FD_CLOEXEC) flag on the new file descriptor. See the description of the O_CLOEXEC flag in open(2) for reasons why this may be useful.</p>
-<p>EFD_NONBLOCK (since Linux 2.6.27)（就是将新文件描述符设置成非阻塞）<br>Set the O_NONBLOCK file status flag on the new open file description. Using this flag saves extra calls to fcntl(2) to achieve the same result.</p>
-<hr>
-<h3 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h3><p>Table Values for the flags argument of open()</p>
-<table>
-<thead>
-<tr>
-<th>Flag</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>O_CLOEXEC</td>
-<td>Set the close-on-exec flag</td>
-</tr>
-<tr>
-<td>O_NONBLOCK</td>
-<td>Open in nonblocking mode</td>
-</tr>
-</tbody>
-</table>
-<h4 id="close-on-exec-flag"><a href="#close-on-exec-flag" class="headerlink" title="close-on-exec flag"></a>close-on-exec flag</h4><p>the kernel provides a close-on-exec flag for each file descriptor. if this flag is set, then the file descriptor is automatically closed during a successful exec(), but left open if the exec() fails.</p>
-<hr>
-<h3 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuik8w6fh3j20ka032jrb.jpg"><br>closing a file</p>
-<hr>
-<h3 id="exec"><a href="#exec" class="headerlink" title="exec()"></a>exec()</h3><p>Name<br>execl, execlp, execle, execv, execvp, execvpe - execute a file</p>
-<p>Synopsis</p>
-<p>#include &lt;unistd.h&gt;</p>
-<p>extern char **environ;</p>
-<p>int execl(const char <em>path, const char </em>arg, …);<br>int execlp(const char <em>file, const char </em>arg, …);<br>int execle(const char <em>path, const char </em>arg,<br>…, char <em> const envp[]);<br>int execv(const char </em>path, char <em>const argv[]);<br>int execvp(const char </em>file, char <em>const argv[]);<br>int execvpe(const char </em>file, char <em>const argv[],<br>char </em>const envp[]);</p>
-<p>The exec() family of functions replaces the current process with a new process image.<br>fork函数是用于创建一个子进程，该子进程几乎是父进程的副本，而有时我们希望子进程去执行另外的程序，exec函数族就提供了一个在进程中启动另一个程序执行的方法。它可以根据指定的文件名或目录名找到可执行文件，并用它来取代原调用进程的数据段、代码段和堆栈段，在执行完之后，原调用进程的内容除了进程号外，其他全部被新程序的内容替换了。另外，这里的可执行文件既可以是二进制文件，也可以是Linux下任何可执行脚本文件。</p>
-<hr>
-<h3 id="bzero"><a href="#bzero" class="headerlink" title="bzero()"></a>bzero()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuhqkivo8oj20bs0753yl.jpg"><br>set the first n bytes of the area starting at s to zero (bytes constaining aq\0aq).</p>
-<hr>
-<h3 id="epoll-create"><a href="#epoll-create" class="headerlink" title="epoll_create()"></a>epoll_create()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuij77pr21j20dx03xaax.jpg"><br>creating an epoll instance.</p>
-<h4 id="parameter"><a href="#parameter" class="headerlink" title="parameter"></a>parameter</h4><p>size&emsp;&emsp;epoll实例的大小</p>
-<hr>
-<h3 id="epoll-create1"><a href="#epoll-create1" class="headerlink" title="epoll_create1()"></a>epoll_create1()</h3><p>#include &lt;sys/epoll.h&gt;<br>int epoll_create1(int flags);<br><img src="http://ww1.sinaimg.cn/large/be778adagy1fuijhiwxqpj210407kt9k.jpg"><br>如果flags为0，则除了原size参数被省略了，其它都和epoll_create()一样的。</p>
-<hr>
-<h3 id="epoll-ctl"><a href="#epoll-ctl" class="headerlink" title="epoll_ctl()"></a>epoll_ctl()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuhrgjkfo7j20k903274b.jpg"><br>生成epoll例程后，应在其内部注册监视对象文件描述符，此时使用epoll_ctl().</p>
-<p> performs control operations on the epoll instance referred to by the file descriptor epfd. It requests that the operation op be performed for the target file descriptor, fd.</p>
-<h4 id="parameter-1"><a href="#parameter-1" class="headerlink" title="parameter"></a>parameter</h4><p>epfd&emsp;&emsp;用于注册监视对象的epoll例程的文件描述符<br>op&emsp;&emsp;用于指定监视对象的添加，删除或更改等操作<br>fd&emsp;&emsp;需要注册的监视对象文件描述符<br>event&emsp;&emsp;监视对象的事件类型</p>
-<h5 id="parameter-op"><a href="#parameter-op" class="headerlink" title="parameter op"></a>parameter op</h5><p>EPOLL_CTL_ADD:将文件描述符注册到epoll例程<br>EPOLL_CTL_DEL:从epoll例程中删除文件描述符<br>EPOLL_CTL_MOD:更改注册的文件描述符的关注事件发生情况 ???</p>
-<hr>
-<h3 id="epoll-wait"><a href="#epoll-wait" class="headerlink" title="epoll_wait()"></a>epoll_wait()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuikjjmztrj20lh04kgnr.jpg"><br>waiting for events,the epoll_wait() system call returns information about ready file descriptors from the epoll instance referred to by the file descriptor epfd. A single epoll_wait() call can return information about multiple ready file descriptors.</p>
-<h4 id="param"><a href="#param" class="headerlink" title="param"></a>param</h4><p>epfd&emsp;&emsp;表示事件发生监视范围的epoll例程的文件描述符<br>events&emsp;&emsp;保存发生事件的文件描述符集合的结构体地址值<br>maxevents&emsp;&emsp;第二个参数中可以保存的最大事件数<br>timeout&emsp;&emsp;以1/1000秒为单位的等待时间，传递-1时，一直等待直到发生事件</p>
-<hr>
-<h3 id="socket"><a href="#socket" class="headerlink" title="socket()"></a>socket()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1ful82cuf17j20fm06g768.jpg"><br>创建socket</p>
-<h4 id="param-1"><a href="#param-1" class="headerlink" title="param"></a>param</h4><p>domain(procotol family)<br><img src="http://ww1.sinaimg.cn/large/be778adagy1ful8j3gw17j20pj0bedjh.jpg"></p>
-<p>套接字类型（type）<br>套接字类型1：面向连接的套接字（SOCK_STREAM）,基于TCP<br>套接字类型2：面向消息的套接字（sock_DGRAM），基于UDP</p>
-<p>procotol<br>大部分情况下传递0即可</p>
-<hr>
-<h3 id="hton"><a href="#hton" class="headerlink" title="hton()"></a>hton()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo4phsr3ej20oy0fjtf5.jpg"><br>ipv4的地址长度为32位</p>
-<h4 id="INADDR-ANY"><a href="#INADDR-ANY" class="headerlink" title="INADDR_ANY"></a>INADDR_ANY</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo52b9mh7j211y0b0n28.jpg"><br>转换过来就是0.0.0.0，泛指本机的意思，也就是表示本机的所有IP，因为有些机子不止一块网卡，多网卡的情况下，这个就表示所有网卡ip地址的意思。<br>比如一台电脑有3块网卡，分别连接三个网络，那么这台电脑就有3个ip地址了，如果某个应用程序需要监听某个端口，那他要监听哪个网卡地址的端口呢？<br>如果绑定某个具体的ip地址，你只能监听你所设置的ip地址所在的网卡的端口，其它两块网卡无法监听端口，如果我需要三个网卡都监听，那就需要绑定3个ip，也就等于需要管理3个套接字进行数据交换，这样岂不是很繁琐？<br>所以出现INADDR_ANY，你只需绑定INADDR_ANY，管理一个套接字就行，不管数据是从哪个网卡过来的，只要是绑定的端口号过来的数据，都可以接收到。</p>
-<h4 id="Internet-domain-socket"><a href="#Internet-domain-socket" class="headerlink" title="Internet domain socket"></a>Internet domain socket</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo54pf6i8j212005xwfk.jpg"></p>
-<h4 id="multihomed-host"><a href="#multihomed-host" class="headerlink" title="multihomed host"></a>multihomed host</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuo5k6xmkpj21280li43d.jpg"></p>
-<hr>
-<h3 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuooma1hysj20lv06qaae.jpg"></p>
-<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuoopf8dz8j20l204jdge.jpg"></p>
-<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuoopztdi2j20lm0713z8.jpg"></p>
-<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuopgj60whj20lg0cfjt6.jpg"></p>
-<hr>
-<h3 id="listen"><a href="#listen" class="headerlink" title="listen()"></a>listen()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuoqob6t3cj20la07omxp.jpg"></p>
-<h4 id="param-2"><a href="#param-2" class="headerlink" title="param"></a>param</h4><p>backlog<br><img src="http://ww1.sinaimg.cn/large/be778adagy1fuoqxg93fkj20lb0gvgn6.jpg"></p>
-<hr>
-<h3 id="accept"><a href="#accept" class="headerlink" title="accept()"></a>accept()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuor13youhj20l607k74x.jpg"></p>
-<h4 id="param-3"><a href="#param-3" class="headerlink" title="param"></a>param</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuorbzxaxrj20lk0cndia.jpg"></p>
-<hr>
-<h3 id="inet-ntoa"><a href="#inet-ntoa" class="headerlink" title="inet_ntoa()"></a>inet_ntoa()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuorksf4twj20lb08rmxw.jpg"></p>
-<p>“The word static refers to things that happen at compile time and link time when the program is constructed—as opposed to load time or run time when the program is actually started.”</p>
-<p>“The term dynamic refers to things that take place when a program is loaded and executed. ”</p>
-<hr>
-<h3 id="pthread-create"><a href="#pthread-create" class="headerlink" title="pthread_create()"></a>pthread_create()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuorvqb507j20lj098gmb.jpg"></p>
-<h4 id="param-4"><a href="#param-4" class="headerlink" title="param"></a>param</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuosdmz3kcj20le06pjsk.jpg"></p>
-<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuosf8yjasj20l802ldg0.jpg">???</p>
-<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuosgz3betj20l902dweo.jpg"></p>
-<hr>
-<h3 id="dup"><a href="#dup" class="headerlink" title="dup()"></a>dup()</h3><p>#include &lt;unistd.h&gt;<br>int dup(int oldfd);<br>create a  copy of the file descriptor oldfd, uses the lowest-numbered unused descriptor for the new descriptor.</p>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/Linux_system_data_types/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/Linux_system_data_types/" itemprop="url">system data types</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T19:52:25+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/16/Linux_system_data_types/" class="leancloud_visitors" data-flag-title="system data types">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>SUSv3 类型要求</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ssize_t</td>
-<td>signed integer</td>
-<td>Byte count or (negative) error indication</td>
-</tr>
-</tbody>
-</table>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/Linux_GCC_Keyword/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/16/Linux_GCC_Keyword/" itemprop="url">GCC</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T19:44:52+08:00">
-                2018-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/16/Linux_GCC_Keyword/" class="leancloud_visitors" data-flag-title="GCC">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="thread-关键字"><a href="#thread-关键字" class="headerlink" title="__thread 关键字"></a>__thread 关键字</h3><p><strong>thread是GCC内置的线程局部存储设施,存取效率可以和全局变量相比.</strong>thread变量使每一个线程有一份独立实体,各个线程的值互不干扰,可以用来修饰那些带有全局性且值可以变,但是又不值的用全局变量保护的变量.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1989,7 +1913,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2000,7 +1924,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

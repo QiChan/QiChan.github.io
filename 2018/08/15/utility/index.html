@@ -79,20 +79,22 @@
 
 
 
-<meta name="description" content="std::swap交换a和b的值。 代码示例12345678910111213141516171819// swap algorithm example (C++11)#include &amp;lt;iostream&amp;gt;     // std::cout#include &amp;lt;utility&amp;gt;      // std::swapint main () &amp;#123;  int x=10, y=">
+<meta name="description" content="contents of header &amp;lt;utility&amp;gt;  std::swap交换a和b的值。 代码示例12345678910111213141516171819// swap algorithm example (C++11)#include &amp;lt;iostream&amp;gt;     // std::cout#include &amp;lt;utility&amp;gt;      // std::">
 <meta property="og:type" content="article">
 <meta property="og:title" content="header &amp;lt;utility&amp;gt;">
 <meta property="og:url" content="http://yoursite.com/2018/08/15/utility/index.html">
 <meta property="og:site_name" content="QiChan&#39;s Blog">
-<meta property="og:description" content="std::swap交换a和b的值。 代码示例12345678910111213141516171819// swap algorithm example (C++11)#include &amp;lt;iostream&amp;gt;     // std::cout#include &amp;lt;utility&amp;gt;      // std::swapint main () &amp;#123;  int x=10, y=">
+<meta property="og:description" content="contents of header &amp;lt;utility&amp;gt;  std::swap交换a和b的值。 代码示例12345678910111213141516171819// swap algorithm example (C++11)#include &amp;lt;iostream&amp;gt;     // std::cout#include &amp;lt;utility&amp;gt;      // std::">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1futzwnlqvrj209r0axjrp.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fua5wa5zfxj20uw06574u.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuace09dp3j20us03adfv.jpg">
-<meta property="og:updated_time" content="2018-08-22T16:34:21.628Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1futzumcljuj20um06l3yu.jpg">
+<meta property="og:updated_time" content="2018-09-01T05:57:07.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="header &amp;lt;utility&amp;gt;">
-<meta name="twitter:description" content="std::swap交换a和b的值。 代码示例12345678910111213141516171819// swap algorithm example (C++11)#include &amp;lt;iostream&amp;gt;     // std::cout#include &amp;lt;utility&amp;gt;      // std::swapint main () &amp;#123;  int x=10, y=">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/be778adagy1fua5wa5zfxj20uw06574u.jpg">
+<meta name="twitter:description" content="contents of header &amp;lt;utility&amp;gt;  std::swap交换a和b的值。 代码示例12345678910111213141516171819// swap algorithm example (C++11)#include &amp;lt;iostream&amp;gt;     // std::cout#include &amp;lt;utility&amp;gt;      // std::">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/be778adagy1futzwnlqvrj209r0axjrp.jpg">
 
 
 
@@ -379,7 +381,9 @@
       
 
       
-        <h3 id="std-swap"><a href="#std-swap" class="headerlink" title="std::swap"></a>std::swap</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fua5wa5zfxj20uw06574u.jpg" align="left"><br>交换a和b的值。</p>
+        <h3 id="contents-of-header-lt-utility-gt"><a href="#contents-of-header-lt-utility-gt" class="headerlink" title="contents of header &lt;utility&gt;"></a>contents of header &lt;utility&gt;</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1futzwnlqvrj209r0axjrp.jpg"></p>
+<hr>
+<h3 id="std-swap"><a href="#std-swap" class="headerlink" title="std::swap"></a>std::swap</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fua5wa5zfxj20uw06574u.jpg" align="left"><br>交换a和b的值。</p>
 <h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// swap algorithm example (C++11)</span><br><span class="line">#include &lt;iostream&gt;     // std::cout</span><br><span class="line">#include &lt;utility&gt;      // std::swap</span><br><span class="line"></span><br><span class="line">int main () &#123;</span><br><span class="line"></span><br><span class="line">  int x=10, y=20;                  // x:10 y:20</span><br><span class="line">  std::swap(x,y);                  // x:20 y:10</span><br><span class="line"></span><br><span class="line">  int foo[4];                      // foo: ?  ?  ?  ?</span><br><span class="line">  int bar[] = &#123;10,20,30,40&#125;;       // foo: ?  ?  ?  ?    bar: 10 20 30 40</span><br><span class="line">  std::swap(foo,bar);              // foo: 10 20 30 40   bar: ?  ?  ?  ?</span><br><span class="line"></span><br><span class="line">  std::cout &lt;&lt; &quot;foo contains:&quot;;</span><br><span class="line">  for (int i: foo) std::cout &lt;&lt; &apos; &apos; &lt;&lt; i;</span><br><span class="line">  std::cout &lt;&lt; &apos;\n&apos;;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <h3 id="std-move"><a href="#std-move" class="headerlink" title="std::move"></a>std::move</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuace09dp3j20us03adfv.jpg" align="left"><br>返回一个arg的右值引用。</p>
@@ -402,6 +406,9 @@
 <hr>
 <h4 id="Reference-Collapsing-and-左值引用参数"><a href="#Reference-Collapsing-and-左值引用参数" class="headerlink" title="Reference Collapsing and 左值引用参数"></a>Reference Collapsing and 左值引用参数</h4><p>有：template <typename t=""> void f3(T&amp;&amp;);<br>tip：当一个函数的参数是reference，例如func(int &amp;),则实参传递给函数时实质发生了reference与实参绑定。<br>假设i是一个int型obj，我们会觉得f3(i)是非法的，因为i是左值，而常规来说是不能将右值引用与左值绑定的。但是，有两条额外规定附加于常规中：<br>&emsp;&emsp;1.当传递了实参为左值（e.g.,i）给函数形参为template type param的右值引用（e.g.,T&amp;&amp;），编译器会把template type param推算为实参的左值引用类型，所以，当调用f3(i)，编译器会推算T的类型为int&amp;。这样，f3函数的参数变成f3(int&amp; &amp;&amp;)即对int&amp;的右值引用，常规来说是不能直接定义对引用的引用的，但可以间接地通过type alias或template type param实现。<br>&emsp;&emsp;2.若间接地实现了对引用的引用，则这些引用将“collapse“：引用将collapse to形成一个常规的左值引用，或当且仅当情况为对右值的右值引用时，引用将collapse to形成一个右值引用。归纳起来就是：对于一个给定的类型 X：<br>&emsp;&emsp;&emsp;&emsp;I. X&amp; &amp;, X&amp; &amp;&amp;, 和 X&amp;&amp; &amp; 都会collapse to形成 X&amp;<br>&emsp;&emsp;&emsp;&emsp;II. X&amp;&amp; &amp;&amp; 会collapse to形成 X&amp;&amp;</typename></p>
 <p>综上，所以我们可以传任意类型的实参给形参为T&amp;&amp;的模板函数，因为这样的形参明显可以接受右值，又如上述所说，也可以接受左值。</p>
+<hr>
+<h3 id="std-pair"><a href="#std-pair" class="headerlink" title="std::pair"></a>std::pair</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1futzumcljuj20um06l3yu.jpg"></p>
+<h4 id="codes-example"><a href="#codes-example" class="headerlink" title="codes example"></a>codes example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::pair&lt;Timestamp, Timer*&gt; Entry;</span><br></pre></td></tr></table></figure>
 <hr>
 
       
@@ -542,7 +549,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -553,7 +560,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -588,7 +595,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#std-swap"><span class="nav-number">1.</span> <span class="nav-text">std::swap</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码示例"><span class="nav-number">1.1.</span> <span class="nav-text">代码示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#std-move"><span class="nav-number">2.</span> <span class="nav-text">std::move</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码示例-1"><span class="nav-number">2.1.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#左值和右值"><span class="nav-number">2.2.</span> <span class="nav-text">左值和右值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#右值引用"><span class="nav-number">2.3.</span> <span class="nav-text">右值引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reference-Collapsing-and-左值引用参数"><span class="nav-number">2.4.</span> <span class="nav-text">Reference Collapsing and 左值引用参数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#contents-of-header-lt-utility-gt"><span class="nav-number">1.</span> <span class="nav-text">contents of header &lt;utility&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#std-swap"><span class="nav-number">2.</span> <span class="nav-text">std::swap</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码示例"><span class="nav-number">2.1.</span> <span class="nav-text">代码示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#std-move"><span class="nav-number">3.</span> <span class="nav-text">std::move</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码示例-1"><span class="nav-number">3.1.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#左值和右值"><span class="nav-number">3.2.</span> <span class="nav-text">左值和右值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#右值引用"><span class="nav-number">3.3.</span> <span class="nav-text">右值引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reference-Collapsing-and-左值引用参数"><span class="nav-number">3.4.</span> <span class="nav-text">Reference Collapsing and 左值引用参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#std-pair"><span class="nav-number">4.</span> <span class="nav-text">std::pair</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#codes-example"><span class="nav-number">4.1.</span> <span class="nav-text">codes example</span></a></li></ol></li></ol></div>
             
 
           </div>

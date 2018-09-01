@@ -273,6 +273,480 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/TCP_IP_protocol/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/02/TCP_IP_protocol/" itemprop="url">TCP/IP协议详解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T02:04:54+08:00">
+                2018-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TCP-IP/" itemprop="url" rel="index">
+                    <span itemprop="name">TCP/IP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/02/TCP_IP_protocol/" class="leancloud_visitors" data-flag-title="TCP/IP协议详解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="四层协议系统"><a href="#四层协议系统" class="headerlink" title="四层协议系统"></a>四层协议系统</h3><p>关于协议（Protocol）<br>“计算机间对话必备通信规则”，为了完成数据交换而定好的约定。</p>
+<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuukt7qplrj20or0ctmzy.jpg"></p>
+<p>数据链路层<br>–实现了网卡接口的网络驱动程序，以处理数据在物理媒介上的传输。<br>–使用ARP（Address Resolve Protocol）和RARP（Reverse Address Resolve Protocol）协议，实现IP地址和机器物理地址之间的相互转换。<br>–RARP协议仅用于网络上的某些无盘工作站。因为缺乏存储设备，无盘工作站无法记住自己的IP地址，但它们可以利用网卡上的物理地址来向网络管理者（服务器或网络管理软件）查询自身的IP地址。运行RARP服务的网络管理者通常存有该网络上所有机器的物理地址到IP地址的映射。</p>
+<p>网络层<br>–实现数据包的选路和转发。<br>–WAN通常使用众多分级的路由器来连接分散的主机或LAN，通信的两台主机一般不是直接相连的，而是通过多个中间节点（路由器）连接。<br>–网络层对上层协议隐藏了网络拓扑连接的细节，使在传输层和网络应用程序看来，通信双方是直接相连的。<br>–使用IP协议，其根据数据包的目标IP决定如何投递它，若数据包不能直接发送给目标主机，则协议为它寻找合适的下一跳（next hop）路由器，并将数据包交付给该路由器来转发，多次重复此一过程至数据包最终到达目标主机，或因发送失败而被丢弃。<br>–IP协议使用逐跳（hop by hop）的方式确定通信路径。<br>–使用ICMP（Internet Control Message Protocol）协议，用于检测网络连接。<br><img src="http://ww1.sinaimg.cn/large/be778adagy1fuumcynol8j20kr04u3z3.jpg"><br>–如上图，8位类型字段用于区分报文类型，它将ICMP报文分为两大类：一类是差错报文，用来回应网络错误；另一类是查询报文，这类报文用来查询网络信息。<br>–有的ICMP报文还用8位代码字段来进一步细分不同的条件<br>–ICMP报文使用16位校验和字段对整个报文（包括头部和内容部分）进行循环冗余校验（Cyclic Redundancy Check，CRC），以检验报文在传输过程中是否损坏。</p>
+<p>传输层<br>–位两台主机上的应用程序提供端到端（end to end）的通信。<br>–与网络层使用的hop by hop方式不同，传输层只关心通信的起始端和目的端，而不在乎数据包的中转过程。<br><img src="http://ww1.sinaimg.cn/large/be778adagy1fuumsxsqmhj20ka0d5wgv.jpg"><br>–如上图，数据链路层（驱动程序）封装了物理网络的电气细节；网络层封装了网络连接的细节；传输层则为应用程序封装了一条端到端的逻辑通信链路，它负责数据的收发，链路的超时重连等。<br>–传输层使用的协议主要有三个：TCP协议，UDP协议和SCTP协议。<br>–TCP协议（Transmission Control Protocol）为应用层提供可靠的，面向连接的和基于流（stream）的服务。<br>–UDP协议（User Datagram Protocol）与TCP协议完全相反，它为应用层提供不可靠，无连接和基于数据报的服务。<br>–SCTP协议（Stream Control Transmission Protocol），它是为了在因特网上传输电话信号而设计的。</p>
+<p>应用层<br>–负责处理应用程序的逻辑。<br>–应用层的协议很多，例如：<br>&emsp;&emsp;ping是应用程序，不是协议，它利用ICMP报文检测网络连接，是调试网络环境的必备工具。<br>&emsp;&emsp;telnet协议是一种远程登陆协议，它使我们能在本地完成远程任务。<br>&emsp;&emsp;OSPF（Open Shortest Path First，开放最短路径优先）协议是一种动态路由更新协议，用于路由器之间的通信，以告知对方各自的路由信息。<br>&emsp;&emsp;DNS（Domain Name Service，域名服务）协议提供机器域名到IP地址的转换。<br>–应用层协议（或程序）可能跳过传输层直接使用网络层提供的服务。<br>–通过/etc/services文件查看所有知名的应用层协议，以及它们都能使用哪些传输层服务。</p>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/functional/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/functional/" itemprop="url">header &lt;functional&gt;</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T14:43:06+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/01/functional/" class="leancloud_visitors" data-flag-title="header &lt;functional&gt;">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="contents-of-header"><a href="#contents-of-header" class="headerlink" title="contents of header"></a>contents of header</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuu1a0t86qj20a213wta0.jpg"></p>
+<hr>
+<h3 id="std-bind"><a href="#std-bind" class="headerlink" title="std::bind"></a>std::bind</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuu1aco207j20un09g0tx.jpg"></p>
+<h4 id="codes-example"><a href="#codes-example" class="headerlink" title="codes example"></a>codes example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">// bind example</span><br><span class="line">#include &lt;iostream&gt;     // std::cout</span><br><span class="line">#include &lt;functional&gt;   // std::bind</span><br><span class="line"></span><br><span class="line">// a function: (also works with function object: std::divides&lt;double&gt; my_divide;)</span><br><span class="line">double my_divide (double x, double y) &#123;return x/y;&#125;</span><br><span class="line"></span><br><span class="line">struct MyPair &#123;</span><br><span class="line">  double a,b;</span><br><span class="line">  double multiply() &#123;return a*b;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main () &#123;</span><br><span class="line">  using namespace std::placeholders;    // adds visibility of _1, _2, _3,...</span><br><span class="line"></span><br><span class="line">  // binding functions:</span><br><span class="line">  auto fn_five = std::bind (my_divide,10,2);               // returns 10/2</span><br><span class="line">  std::cout &lt;&lt; fn_five() &lt;&lt; &apos;\n&apos;;                          // 5</span><br><span class="line"></span><br><span class="line">  auto fn_half = std::bind (my_divide,_1,2);               // returns x/2</span><br><span class="line">  std::cout &lt;&lt; fn_half(10) &lt;&lt; &apos;\n&apos;;                        // 5</span><br><span class="line"></span><br><span class="line">  auto fn_invert = std::bind (my_divide,_2,_1);            // returns y/x</span><br><span class="line">  std::cout &lt;&lt; fn_invert(10,2) &lt;&lt; &apos;\n&apos;;                    // 0.2</span><br><span class="line"></span><br><span class="line">  auto fn_rounding = std::bind&lt;int&gt; (my_divide,_1,_2);     // returns int(x/y)</span><br><span class="line">  std::cout &lt;&lt; fn_rounding(10,3) &lt;&lt; &apos;\n&apos;;                  // 3</span><br><span class="line"></span><br><span class="line">  MyPair ten_two &#123;10,2&#125;;</span><br><span class="line"></span><br><span class="line">  // binding members:</span><br><span class="line">  auto bound_member_fn = std::bind (&amp;MyPair::multiply,_1); // returns x.multiply()</span><br><span class="line">  std::cout &lt;&lt; bound_member_fn(ten_two) &lt;&lt; &apos;\n&apos;;           // 20</span><br><span class="line"></span><br><span class="line">  auto bound_member_data = std::bind (&amp;MyPair::a,ten_two); // returns ten_two.a</span><br><span class="line">  std::cout &lt;&lt; bound_member_data() &lt;&lt; &apos;\n&apos;;                // 10</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/set/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/set/" itemprop="url">header &lt;set&gt;</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T13:48:08+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/01/set/" class="leancloud_visitors" data-flag-title="header &lt;set&gt;">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="contens-of-header-lt-set-gt"><a href="#contens-of-header-lt-set-gt" class="headerlink" title="contens of header &lt;set&gt;"></a>contens of header &lt;set&gt;</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1futzgm5xx3j209v02b0si.jpg"></p>
+<hr>
+<h3 id="std-set"><a href="#std-set" class="headerlink" title="std::set"></a>std::set</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1futzh1plksj20ux069glu.jpg"></p>
+<h4 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1futzorqip7j20vq0gdq4g.jpg"></p>
+<h5 id="codes-example"><a href="#codes-example" class="headerlink" title="codes example"></a>codes example</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// constructing sets</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;set&gt;</span><br><span class="line"></span><br><span class="line">bool fncomp (int lhs, int rhs) &#123;return lhs&lt;rhs;&#125;</span><br><span class="line"></span><br><span class="line">struct classcomp &#123;</span><br><span class="line">  bool operator() (const int&amp; lhs, const int&amp; rhs) const</span><br><span class="line">  &#123;return lhs&lt;rhs;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  std::set&lt;int&gt; first;                           // empty set of ints</span><br><span class="line"></span><br><span class="line">  int myints[]= &#123;10,20,30,40,50&#125;;</span><br><span class="line">  std::set&lt;int&gt; second (myints,myints+5);        // range</span><br><span class="line"></span><br><span class="line">  std::set&lt;int&gt; third (second);                  // a copy of second</span><br><span class="line"></span><br><span class="line">  std::set&lt;int&gt; fourth (second.begin(), second.end());  // iterator ctor.</span><br><span class="line"></span><br><span class="line">  std::set&lt;int,classcomp&gt; fifth;                 // class as Compare</span><br><span class="line"></span><br><span class="line">  bool(*fn_pt)(int,int) = fncomp;</span><br><span class="line">  std::set&lt;int,bool(*)(int,int)&gt; sixth (fn_pt);  // function pointer as Compare</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/cstdio/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -544,6 +1018,8 @@
         
           
             <h3 id="pthread-data-type"><a href="#pthread-data-type" class="headerlink" title="pthread data type"></a>pthread data type</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1ful49nsof3j20or0da0vc.jpg"></p>
+<hr>
+<h3 id="测试服务器时，在broswer中按F12查看状态码，请求方式等"><a href="#测试服务器时，在broswer中按F12查看状态码，请求方式等" class="headerlink" title="测试服务器时，在broswer中按F12查看状态码，请求方式等"></a>测试服务器时，在broswer中按F12查看状态码，请求方式等</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1futx8p5lccj2100044wer.jpg"></p>
 <hr>
 
           
@@ -1366,499 +1842,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/21/cstring/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/21/cstring/" itemprop="url">header &lt;cstring&gt;</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T23:09:35+08:00">
-                2018-08-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/21/cstring/" class="leancloud_visitors" data-flag-title="header &lt;cstring&gt;">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="contents-of-header"><a href="#contents-of-header" class="headerlink" title="contents of header"></a>contents of header</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuhq4rhu1oj209s0j474k.jpg"></p>
-<hr>
-<h3 id="memset"><a href="#memset" class="headerlink" title="memset()"></a>memset()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuhpyvw7ikj20v0035gli.jpg"><br>set the first num bytes of the block of memory pointed by ptr to the specified value (interpreted as an unsigned char).</p>
-<h4 id="codes-example"><a href="#codes-example" class="headerlink" title="codes example"></a>codes example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/* memset example */</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  char str[] = &quot;almost every programmer should know memset!&quot;;</span><br><span class="line">  memset (str,&apos;-&apos;,6);</span><br><span class="line">  puts (str);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="strstr"><a href="#strstr" class="headerlink" title="strstr()"></a>strstr()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fusvunno1hj20uo0690t0.jpg"></p>
-<hr>
-<h3 id="strcpy"><a href="#strcpy" class="headerlink" title="strcpy()"></a>strcpy()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuswlsgw9mj20ur051t8x.jpg"></p>
-<hr>
-<h3 id="strtok"><a href="#strtok" class="headerlink" title="strtok()"></a>strtok()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuswoan4tsj20uj059jrm.jpg"></p>
-<p>On a first call, the function expects a C string as argument for str, whose first character is used as the starting location to scan for tokens. In subsequent calls, the function expects a null pointer and uses the position right after the end of the last token as the new starting location for scanning.</p>
-<h4 id="code-example"><a href="#code-example" class="headerlink" title="code example"></a>code example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/* strtok example */</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  char str[] =&quot;- This, a sample string.&quot;;</span><br><span class="line">  char * pch;</span><br><span class="line">  printf (&quot;Splitting string \&quot;%s\&quot; into tokens:\n&quot;,str);</span><br><span class="line">  pch = strtok (str,&quot; ,.-&quot;);</span><br><span class="line">  while (pch != NULL)</span><br><span class="line">  &#123;</span><br><span class="line">    printf (&quot;%s\n&quot;,pch);</span><br><span class="line">    pch = strtok (NULL, &quot; ,.-&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="strcmp"><a href="#strcmp" class="headerlink" title="strcmp()"></a>strcmp()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fusyoapuk8j20un06974n.jpg"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1fusyor2m42j20ny052wev.jpg"></p>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/18/map/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/18/map/" itemprop="url">header &lt;map&gt;</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T21:13:14+08:00">
-                2018-08-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/18/map/" class="leancloud_visitors" data-flag-title="header &lt;map&gt;">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="contents-of-header-map"><a href="#contents-of-header-map" class="headerlink" title="contents of header map"></a>contents of header map</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue5tqgcljj209u02h3ya.jpg"></p>
-<hr>
-<h3 id="std-map"><a href="#std-map" class="headerlink" title="std::map"></a>std::map</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue5v1krffj20ul05774f.jpg"></p>
-<h4 id="std-map-find"><a href="#std-map-find" class="headerlink" title="std::map::find"></a>std::map::find</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue5wjm3fpj20ut03ddfu.jpg"><br>Searches the container for an element with a key equivalent to k and returns an iterator to it if found, otherwise it returns an iterator to map::end.</p>
-<h5 id="codes-example"><a href="#codes-example" class="headerlink" title="codes example"></a>codes example</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// map::find</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  std::map&lt;char,int&gt; mymap;</span><br><span class="line">  std::map&lt;char,int&gt;::iterator it;</span><br><span class="line"></span><br><span class="line">  mymap[&apos;a&apos;]=50;</span><br><span class="line">  mymap[&apos;b&apos;]=100;</span><br><span class="line">  mymap[&apos;c&apos;]=150;</span><br><span class="line">  mymap[&apos;d&apos;]=200;</span><br><span class="line"></span><br><span class="line">  it = mymap.find(&apos;b&apos;);</span><br><span class="line">  if (it != mymap.end())</span><br><span class="line">    mymap.erase (it);</span><br><span class="line"></span><br><span class="line">  // print content:</span><br><span class="line">  std::cout &lt;&lt; &quot;elements in mymap:&quot; &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; &quot;a =&gt; &quot; &lt;&lt; mymap.find(&apos;a&apos;)-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; &quot;c =&gt; &quot; &lt;&lt; mymap.find(&apos;c&apos;)-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; &quot;d =&gt; &quot; &lt;&lt; mymap.find(&apos;d&apos;)-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="std-map-end"><a href="#std-map-end" class="headerlink" title="std::map::end"></a>std::map::end</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue630v3i5j20ux04y0st.jpg"><br>Returns an iterator referring to the past-the-end element in the map container.</p>
-<h5 id="codes-example-1"><a href="#codes-example-1" class="headerlink" title="codes example"></a>codes example</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// map::begin/end</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  std::map&lt;char,int&gt; mymap;</span><br><span class="line"></span><br><span class="line">  mymap[&apos;b&apos;] = 100;</span><br><span class="line">  mymap[&apos;a&apos;] = 200;</span><br><span class="line">  mymap[&apos;c&apos;] = 300;</span><br><span class="line"></span><br><span class="line">  // show content:</span><br><span class="line">  for (std::map&lt;char,int&gt;::iterator it=mymap.begin(); it!=mymap.end(); ++it)</span><br><span class="line">    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="std-map-erase"><a href="#std-map-erase" class="headerlink" title="std::map::erase"></a>std::map::erase</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuihb5sjz1j20um05pdg5.jpg"><br>Removes from the map container either a single element or a range of elements ([first,last)).</p>
-<p>This effectively reduces the container size by the number of elements removed, which are destroyed.</p>
-<h5 id="codes-example-2"><a href="#codes-example-2" class="headerlink" title="codes example"></a>codes example</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// erasing from map</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">  std::map&lt;char,int&gt; mymap;</span><br><span class="line">  std::map&lt;char,int&gt;::iterator it;</span><br><span class="line"></span><br><span class="line">  // insert some values:</span><br><span class="line">  mymap[&apos;a&apos;]=10;</span><br><span class="line">  mymap[&apos;b&apos;]=20;</span><br><span class="line">  mymap[&apos;c&apos;]=30;</span><br><span class="line">  mymap[&apos;d&apos;]=40;</span><br><span class="line">  mymap[&apos;e&apos;]=50;</span><br><span class="line">  mymap[&apos;f&apos;]=60;</span><br><span class="line"></span><br><span class="line">  it=mymap.find(&apos;b&apos;);</span><br><span class="line">  mymap.erase (it);                   // erasing by iterator</span><br><span class="line"></span><br><span class="line">  mymap.erase (&apos;c&apos;);                  // erasing by key</span><br><span class="line"></span><br><span class="line">  it=mymap.find (&apos;e&apos;);</span><br><span class="line">  mymap.erase ( it, mymap.end() );    // erasing by range</span><br><span class="line"></span><br><span class="line">// show content:</span><br><span class="line">  for (it=mymap.begin(); it!=mymap.end(); ++it)</span><br><span class="line">    std::cout &lt;&lt; it-&gt;first &lt;&lt; &quot; =&gt; &quot; &lt;&lt; it-&gt;second &lt;&lt; &apos;\n&apos;;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/18/ios/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/18/ios/" itemprop="url">header &lt;ios&gt;</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T20:47:16+08:00">
-                2018-08-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/18/ios/" class="leancloud_visitors" data-flag-title="header &lt;ios&gt;">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="contents-of-header-ios"><a href="#contents-of-header-ios" class="headerlink" title="contents of header ios"></a>contents of header ios</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue52jq7ifj209y0qi74v.jpg"></p>
-<hr>
-<h3 id="std-hex"><a href="#std-hex" class="headerlink" title="std::hex"></a>std::hex</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fue54v465sj20us02yt8l.jpg"></p>
-<h4 id="codes-example"><a href="#codes-example" class="headerlink" title="codes example"></a>codes example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// modify basefield</span><br><span class="line">#include &lt;iostream&gt;     // std::cout, std::dec, std::hex, std::oct</span><br><span class="line"></span><br><span class="line">int main () &#123;</span><br><span class="line">  int n = 70;</span><br><span class="line">  std::cout &lt;&lt; std::dec &lt;&lt; n &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; std::hex &lt;&lt; n &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  std::cout &lt;&lt; std::oct &lt;&lt; n &lt;&lt; &apos;\n&apos;;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1904,7 +1892,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1915,7 +1903,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

@@ -273,6 +273,497 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/C++Trick/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/15/C++Trick/" itemprop="url">C++ Trick</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T10:56:37+08:00">
+                2018-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/15/C++Trick/" class="leancloud_visitors" data-flag-title="C++ Trick">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="一个重载用于多个定义多个重载"><a href="#一个重载用于多个定义多个重载" class="headerlink" title="一个重载用于多个定义多个重载"></a>一个重载用于多个定义多个重载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">inline bool operator&lt;(Timestamp lhs, Timestamp rhs)</span><br><span class="line">&#123;</span><br><span class="line">	return lhs.microSecondsSinceEpoch() &lt; rhs.microSecondsSinceEpoch();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline bool operator&gt;(Timestamp lhs, Timestamp rhs)</span><br><span class="line">&#123;</span><br><span class="line">	return rhs &lt; lhs;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline bool operator&lt;=(Timestamp lhs, Timestamp rhs)</span><br><span class="line">&#123;</span><br><span class="line">	return !(lhs &gt; rhs);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline bool operator&gt;=(Timestamp lhs, Timestamp rhs)</span><br><span class="line">&#123;</span><br><span class="line">	return !(lhs &lt; rhs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/utility/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/15/utility/" itemprop="url">header &lt;utility&gt;</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T10:11:39+08:00">
+                2018-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/15/utility/" class="leancloud_visitors" data-flag-title="header &lt;utility&gt;">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="contents-of-header-lt-utility-gt"><a href="#contents-of-header-lt-utility-gt" class="headerlink" title="contents of header &lt;utility&gt;"></a>contents of header &lt;utility&gt;</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1futzwnlqvrj209r0axjrp.jpg"></p>
+<hr>
+<h3 id="std-swap"><a href="#std-swap" class="headerlink" title="std::swap"></a>std::swap</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fua5wa5zfxj20uw06574u.jpg" align="left"><br>交换a和b的值。</p>
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// swap algorithm example (C++11)</span><br><span class="line">#include &lt;iostream&gt;     // std::cout</span><br><span class="line">#include &lt;utility&gt;      // std::swap</span><br><span class="line"></span><br><span class="line">int main () &#123;</span><br><span class="line"></span><br><span class="line">  int x=10, y=20;                  // x:10 y:20</span><br><span class="line">  std::swap(x,y);                  // x:20 y:10</span><br><span class="line"></span><br><span class="line">  int foo[4];                      // foo: ?  ?  ?  ?</span><br><span class="line">  int bar[] = &#123;10,20,30,40&#125;;       // foo: ?  ?  ?  ?    bar: 10 20 30 40</span><br><span class="line">  std::swap(foo,bar);              // foo: 10 20 30 40   bar: ?  ?  ?  ?</span><br><span class="line"></span><br><span class="line">  std::cout &lt;&lt; &quot;foo contains:&quot;;</span><br><span class="line">  for (int i: foo) std::cout &lt;&lt; &apos; &apos; &lt;&lt; i;</span><br><span class="line">  std::cout &lt;&lt; &apos;\n&apos;;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="std-move"><a href="#std-move" class="headerlink" title="std::move"></a>std::move</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuace09dp3j20us03adfv.jpg" align="left"><br>返回一个arg的右值引用。</p>
+<p>调用std::move就是告诉编译器有一个左值我们想要把它当成右值使用，本质就是向编译器保证：除了重新向该左值（var）赋值或销毁它，不会再去使用它。否则在调用std::move后，若直接访问该左值会产生不确定的数值。</p>
+<h4 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// move example</span><br><span class="line">#include &lt;utility&gt;      // std::move</span><br><span class="line">#include &lt;iostream&gt;     // std::cout</span><br><span class="line">#include &lt;vector&gt;       // std::vector</span><br><span class="line">#include &lt;string&gt;       // std::string</span><br><span class="line"></span><br><span class="line">int main () &#123;</span><br><span class="line">  std::string foo = &quot;foo-string&quot;;</span><br><span class="line">  std::string bar = &quot;bar-string&quot;;</span><br><span class="line">  std::vector&lt;std::string&gt; myvector;</span><br><span class="line"></span><br><span class="line">  myvector.push_back (foo);                    // copies</span><br><span class="line">  myvector.push_back (std::move(bar));         // moves</span><br><span class="line"></span><br><span class="line">  std::cout &lt;&lt; bar &lt;&lt; std::endl;</span><br><span class="line">  std::cout &lt;&lt; myvector[1] &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="左值和右值"><a href="#左值和右值" class="headerlink" title="左值和右值"></a>左值和右值</h4><p>当把一个obj用作右值时，用的是obj的value（它的内容）。</p>
+<p>当把一个obj用作左值时，用的是obj的identity（它的内存地址）。</p>
+<p>当右值需要时，可以用左值来替换，但反过来不行。</p>
+<p>取址符&amp;会产生右值，其他运算符都产生左值。</p>
+<p>左值拥有persist state， 右值是literals或temporary obj。</p>
+<h4 id="右值引用"><a href="#右值引用" class="headerlink" title="右值引用"></a>右值引用</h4><p>这是一个必须与右值绑定的引用。</p>
+<p>右值引用通过&amp;&amp;而不是&amp;来获取。</p>
+<p>右值引用的重要属性: 它只能与即将要销毁的obj绑定，所以我们可自由地把资源从右值引用‘移动’至另一个obj。</p>
+<p>与任何引用一般，右值引用也只是一个obj的别名而已。</p>
+<p>我们不能使常规引用（通过&amp;获得的引用，亦称左值引用）去绑定一个需要conversion的表达式，或一个literals，或一个返回右值的表达式。但右值引用刚好相反：它可以绑定上述的任何表达式，但不能直接绑定一个左值。</p>
+<p>返回左值引用的函数，以及assignment，subscript，dereference和prefix increment/decrement 运算符，全都返回左值，所以可以将左值引用与任一绑定。</p>
+<p>返回值为非引用的函数，以及arithmetic，relational，bitwise和postfix increment/decrement 运算符，全都返回右值，所以可以将右值引用或const左值引用与任一绑定。</p>
+<p>因为右值引用只能绑定temporary obj，所以：<br>&emsp;&emsp;被绑定的obj即将销毁<br>&emsp;&emsp;被绑定的obj没有user使用<br>所以可以自由地接管被绑定的obj中的资源</p>
+<p>变量（非临时）都是左值。</p>
+<hr>
+<h4 id="Reference-Collapsing-and-左值引用参数"><a href="#Reference-Collapsing-and-左值引用参数" class="headerlink" title="Reference Collapsing and 左值引用参数"></a>Reference Collapsing and 左值引用参数</h4><p>有：template <typename t=""> void f3(T&amp;&amp;);<br>tip：当一个函数的参数是reference，例如func(int &amp;),则实参传递给函数时实质发生了reference与实参绑定。<br>假设i是一个int型obj，我们会觉得f3(i)是非法的，因为i是左值，而常规来说是不能将右值引用与左值绑定的。但是，有两条额外规定附加于常规中：<br>&emsp;&emsp;1.当传递了实参为左值（e.g.,i）给函数形参为template type param的右值引用（e.g.,T&amp;&amp;），编译器会把template type param推算为实参的左值引用类型，所以，当调用f3(i)，编译器会推算T的类型为int&amp;。这样，f3函数的参数变成f3(int&amp; &amp;&amp;)即对int&amp;的右值引用，常规来说是不能直接定义对引用的引用的，但可以间接地通过type alias或template type param实现。<br>&emsp;&emsp;2.若间接地实现了对引用的引用，则这些引用将“collapse“：引用将collapse to形成一个常规的左值引用，或当且仅当情况为对右值的右值引用时，引用将collapse to形成一个右值引用。归纳起来就是：对于一个给定的类型 X：<br>&emsp;&emsp;&emsp;&emsp;I. X&amp; &amp;, X&amp; &amp;&amp;, 和 X&amp;&amp; &amp; 都会collapse to形成 X&amp;<br>&emsp;&emsp;&emsp;&emsp;II. X&amp;&amp; &amp;&amp; 会collapse to形成 X&amp;&amp;</typename></p>
+<p>综上，所以我们可以传任意类型的实参给形参为T&amp;&amp;的模板函数，因为这样的形参明显可以接受右值，又如上述所说，也可以接受左值。</p>
+<hr>
+<h3 id="std-pair"><a href="#std-pair" class="headerlink" title="std::pair"></a>std::pair</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1futzumcljuj20um06l3yu.jpg"></p>
+<h4 id="codes-example"><a href="#codes-example" class="headerlink" title="codes example"></a>codes example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::pair&lt;Timestamp, Timer*&gt; Entry;</span><br></pre></td></tr></table></figure>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/14/ctime/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QiChan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QiChan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/14/ctime/" itemprop="url">header &lt;ctime&gt; (time.h)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-14T21:30:09+08:00">
+                2018-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/14/ctime/" class="leancloud_visitors" data-flag-title="header &lt;ctime&gt; (time.h)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="localtime"><a href="#localtime" class="headerlink" title="localtime()"></a>localtime()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu9k20ljltj20bt02vmx0.jpg" align="left"><br><br><br><br><br>根据timer指向的代表时间的数值去填结构tm，时间是属于系统所在时区。</p>
+<h4 id="形参"><a href="#形参" class="headerlink" title="形参"></a>形参</h4><p>timer<br>&emsp;&emsp;一个指向含有时间值的obj的指针，time_t是一种类型用来表示时间。</p>
+<h4 id="localtime-s"><a href="#localtime-s" class="headerlink" title="localtime_s()"></a>localtime_s()</h4><p>和localtime()有相同效果，但是专用于Windows平台。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;time.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	time_t time_seconds = time(0);</span><br><span class="line">	struct tm now_time;</span><br><span class="line">	localtime_s(&amp;now_time,&amp;time_seconds);</span><br><span class="line"></span><br><span class="line">	printf(&quot;%d-%d-%d %d:%d:%d\n&quot;, now_time.tm_year + 1900, now_time.tm_mon + 1,</span><br><span class="line">		now_time.tm_mday, now_time.tm_hour, now_time.tm_min, now_time.tm_sec);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/type_traits/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1489,500 +1980,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/markdown1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/13/markdown1/" itemprop="url">markdown usage</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T21:24:44+08:00">
-                2018-08-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">markdown</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/13/markdown1/" class="leancloud_visitors" data-flag-title="markdown usage">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="pic-amp-link"><a href="#pic-amp-link" class="headerlink" title="pic&amp;link"></a>pic&amp;link</h5><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu63bazdbjj20lk0jon1a.jpg" alt=""></p>
-<hr>
-<h5 id="separator"><a href="#separator" class="headerlink" title="separator"></a>separator</h5><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu63bax1ovj20j60htgo8.jpg" alt=""></p>
-<hr>
-<h5 id="codeBlock"><a href="#codeBlock" class="headerlink" title="codeBlock"></a>codeBlock</h5><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu642vp7iwj20j30523yj.jpg" alt=""><br>用三个`把代码块包起来即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">string Timestamp::toString() const</span><br><span class="line">&#123;</span><br><span class="line">    char buf[32] = &#123; 0 &#125;;</span><br><span class="line">    int64_t seconds = microSecondsSinceEpoch_ / kMicroSecondsPerSecond;</span><br><span class="line">    int64_t microseconds = microSecondsSinceEpoch_ % kMicroSecondsPerSecond;</span><br><span class="line">    snprintf(buf, sizeof(buf)-1, &quot;%ld.%06ld&quot;, seconds, microseconds);</span><br><span class="line">	// &apos;-1&apos; is leave a byte for the terminating null byte.</span><br><span class="line">    return buf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h5 id="indent"><a href="#indent" class="headerlink" title="indent"></a>indent</h5><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu70o6fdfzj20bi08h0sy.jpg" alt=""><br>tip: 一般用两个&amp;emsp;作为首行缩进</p>
-<hr>
-<h4 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h4><p>用反斜杠’\’进行转义</p>
-<hr>
-<h4 id="常用转义字符"><a href="#常用转义字符" class="headerlink" title="常用转义字符"></a>常用转义字符</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu715dls3zj20vr0dxaam.jpg" alt=""></p>
-<hr>
-<h4 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu8i3zn2upj20fx04u0sm.jpg" align="left"><br><br><br><br><br><br></p>
-<hr>
-<h4 id="左对齐图片，控制图片style"><a href="#左对齐图片，控制图片style" class="headerlink" title="左对齐图片，控制图片style"></a>左对齐图片，控制图片style</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu8i96axvqj21ed012mx3.jpg" align="left"><br><br></p>
-<hr>
-<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu8ij9ji3sj20is0t80u3.jpg"></p>
-<hr>
-<h4 id="居中"><a href="#居中" class="headerlink" title="居中"></a>居中</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fujsn3nafkj208d00tjr5.jpg"></p>
-<hr>
-<h4 id="多图并排"><a href="#多图并排" class="headerlink" title="多图并排"></a>多图并排</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fukprszw0gj217v04t0sx.jpg"></p>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/Chrome_hot-key1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/13/Chrome_hot-key1/" itemprop="url">hot-key to open chrome's book-label</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T21:24:44+08:00">
-                2018-08-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Chrome-s-hot-key/" itemprop="url" rel="index">
-                    <span itemprop="name">Chrome's hot-key</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/13/Chrome_hot-key1/" class="leancloud_visitors" data-flag-title="hot-key to open chrome's book-label">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>shift + ctl + o</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/hexo_command/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="QiChan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="QiChan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/13/hexo_command/" itemprop="url">hexo command</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T21:24:44+08:00">
-                2018-08-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/08/13/hexo_command/" class="leancloud_visitors" data-flag-title="hexo command">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu619bbdvaj20kr051gll.jpg" alt="clean"><br>此命令可用于清除categories.</p>
-<hr>
-<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu61jz1d3pj20kw0a73yi.jpg" alt="generate"></p>
-<hr>
-<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu61mhicfcj20ks08imx6.jpg" alt="server"><br>可简写为 ‘hexo s’</p>
-<hr>
-<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fu61jqkhozj20kr098dfs.jpg" alt="deploy"></p>
-<hr>
-<h4 id="发布博客的command（发布静态网页文件到服务器）"><a href="#发布博客的command（发布静态网页文件到服务器）" class="headerlink" title="发布博客的command（发布静态网页文件到服务器）:"></a>发布博客的command（发布静态网页文件到服务器）:</h4><p>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2028,7 +2030,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2039,7 +2041,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
