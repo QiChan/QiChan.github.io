@@ -377,7 +377,7 @@
       
         
           
-            <h3 id="read"><a href="#read" class="headerlink" title="read()"></a>read()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubtalmxi5j20l80570sy.jpg"></p>
+            <h3 id="read"><a href="#read" class="headerlink" title="read()"></a>read()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fubtalmxi5j20l80570sy.jpg"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1fuvn7owrt9j20l802xmxf.jpg"></p>
 <hr>
 <h3 id="eventfd"><a href="#eventfd" class="headerlink" title="eventfd()"></a>eventfd()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fucnxe6owgj20cc05emx3.jpg"><br>使用这个函数来创建一个事件对象，linux线程间通信为了提高效率，大多使用异步通信，采用事件监听和回调函数的方式来实现高效的任务处理方式（虽然会将逻辑变得复杂）。</p>
 <p>linux内核会为这个事件对象维护一个64位的计数器(uint64_t).并在初始化时用传进去的initval来初始化这个计数器，然后返回一个文件描述符来代表这个事件对象。</p>
@@ -470,6 +470,10 @@
 <h3 id="pthread-deatch"><a href="#pthread-deatch" class="headerlink" title="pthread_deatch()"></a>pthread_deatch()</h3><p>#include &lt;pthread.h&gt;<br>int pthread_detach(pthread_t thread);<br>The pthread_detach() function marks the thread identified by thread as detached. When a detached thread terminates, its resources are automatically released back to the system without the need for another thread to join with the terminated thread.</p>
 <hr>
 <h3 id="timerfd-create"><a href="#timerfd-create" class="headerlink" title="timerfd_create()"></a>timerfd_create()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1futys9gs5tj20mn0f0764.jpg"></p>
+<hr>
+<h3 id="write"><a href="#write" class="headerlink" title="write()"></a>write()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuv3atz7tyj20lb06eaac.jpg"></p>
+<hr>
+<h3 id="timer-settime"><a href="#timer-settime" class="headerlink" title="timer_settime()"></a>timer_settime()</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuv9119sooj20lg0luq5h.jpg"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1fuvarspqhrj20ld0au40d.jpg"><br><img src="http://ww1.sinaimg.cn/large/be778adagy1fuvas2otn9j20l703qt93.jpg"></p>
 <hr>
 
           

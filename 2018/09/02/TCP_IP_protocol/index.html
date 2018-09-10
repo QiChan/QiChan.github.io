@@ -89,7 +89,15 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuukt7qplrj20or0ctmzy.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuumcynol8j20kr04u3z3.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuumsxsqmhj20ka0d5wgv.jpg">
-<meta property="og:updated_time" content="2018-09-01T19:32:10.014Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuwn2kfyc3j20oo0fxdjm.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuwns4777ij20ol0cnjuq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuwo1gf9uoj20o104s40w.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuwo766n67j20o30ds43l.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuwodqtjgkj20oc055dhx.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuwogjz8cpj20ot0outht.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuwt9et8s0j20o609xtcv.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/be778adagy1fuwtajob0nj20k6083jrx.jpg">
+<meta property="og:updated_time" content="2018-09-03T16:58:32.225Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP&#x2F;IP协议详解">
 <meta name="twitter:description" content="四层协议系统关于协议（Protocol）“计算机间对话必备通信规则”，为了完成数据交换而定好的约定。  数据链路层–实现了网卡接口的网络驱动程序，以处理数据在物理媒介上的传输。–使用ARP（Address Resolve Protocol）和RARP（Reverse Address Resolve Protocol）协议，实现IP地址和机器物理地址之间的相互转换。–RARP协议仅用于网络上的某些无">
@@ -387,6 +395,15 @@
 <p>传输层<br>–位两台主机上的应用程序提供端到端（end to end）的通信。<br>–与网络层使用的hop by hop方式不同，传输层只关心通信的起始端和目的端，而不在乎数据包的中转过程。<br><img src="http://ww1.sinaimg.cn/large/be778adagy1fuumsxsqmhj20ka0d5wgv.jpg"><br>–如上图，数据链路层（驱动程序）封装了物理网络的电气细节；网络层封装了网络连接的细节；传输层则为应用程序封装了一条端到端的逻辑通信链路，它负责数据的收发，链路的超时重连等。<br>–传输层使用的协议主要有三个：TCP协议，UDP协议和SCTP协议。<br>–TCP协议（Transmission Control Protocol）为应用层提供可靠的，面向连接的和基于流（stream）的服务。<br>–UDP协议（User Datagram Protocol）与TCP协议完全相反，它为应用层提供不可靠，无连接和基于数据报的服务。<br>–SCTP协议（Stream Control Transmission Protocol），它是为了在因特网上传输电话信号而设计的。</p>
 <p>应用层<br>–负责处理应用程序的逻辑。<br>–应用层的协议很多，例如：<br>&emsp;&emsp;ping是应用程序，不是协议，它利用ICMP报文检测网络连接，是调试网络环境的必备工具。<br>&emsp;&emsp;telnet协议是一种远程登陆协议，它使我们能在本地完成远程任务。<br>&emsp;&emsp;OSPF（Open Shortest Path First，开放最短路径优先）协议是一种动态路由更新协议，用于路由器之间的通信，以告知对方各自的路由信息。<br>&emsp;&emsp;DNS（Domain Name Service，域名服务）协议提供机器域名到IP地址的转换。<br>–应用层协议（或程序）可能跳过传输层直接使用网络层提供的服务。<br>–通过/etc/services文件查看所有知名的应用层协议，以及它们都能使用哪些传输层服务。</p>
 <hr>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuwn2kfyc3j20oo0fxdjm.jpg"></p>
+<h4 id="封装后的数据"><a href="#封装后的数据" class="headerlink" title="封装后的数据"></a>封装后的数据</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuwns4777ij20ol0cnjuq.jpg"><br>quiz：数据由上往下传时，TCP报文中的TCP内核缓冲区是发送缓冲区，数据由下往上传时，TCP报文中的TCP内核缓冲区是接收缓冲区？？？</p>
+<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuwo1gf9uoj20o104s40w.jpg"></p>
+<p>经过IP封装后的数据成为IP数据报（IP datagram）。IP数据报也包括头部信息和数据部分，其中数据部分就是一个TCP报文段，UDP数据报或者ICMP报文。</p>
+<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuwo766n67j20o30ds43l.jpg"></p>
+<h3 id="分用"><a href="#分用" class="headerlink" title="分用"></a>分用</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuwodqtjgkj20oc055dhx.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuwogjz8cpj20ot0outht.jpg"></p>
+<h3 id="ARP高速缓存的查看和修改"><a href="#ARP高速缓存的查看和修改" class="headerlink" title="ARP高速缓存的查看和修改"></a>ARP高速缓存的查看和修改</h3><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuwt9et8s0j20o609xtcv.jpg"></p>
+<h4 id="网关"><a href="#网关" class="headerlink" title="网关"></a>网关</h4><p><img src="http://ww1.sinaimg.cn/large/be778adagy1fuwtajob0nj20k6083jrx.jpg"><br>MAC地址就是主机的物理地址</p>
 
       
     </div>
@@ -568,7 +585,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#四层协议系统"><span class="nav-number">1.</span> <span class="nav-text">四层协议系统</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#四层协议系统"><span class="nav-number">1.</span> <span class="nav-text">四层协议系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封装"><span class="nav-number">2.</span> <span class="nav-text">封装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#封装后的数据"><span class="nav-number">2.1.</span> <span class="nav-text">封装后的数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分用"><span class="nav-number">3.</span> <span class="nav-text">分用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP高速缓存的查看和修改"><span class="nav-number">4.</span> <span class="nav-text">ARP高速缓存的查看和修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网关"><span class="nav-number">4.1.</span> <span class="nav-text">网关</span></a></li></ol></li></ol></div>
             
 
           </div>
